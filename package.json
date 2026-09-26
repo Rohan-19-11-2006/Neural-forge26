@@ -1,0 +1,9 @@
+{
+  "name": "neural-forge-26",
+  "version": "1.0.0",
+  "description": "Neural Forge 26 Hackathon Portal",
+  "private": true,
+  "scripts": {
+    "start": "node serve.js"
+  }
+}

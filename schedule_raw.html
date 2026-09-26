@@ -1,0 +1,566 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport">
+<title>Neural Forge 2026 - Schedule</title>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300..800;1,300..800&amp;family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&amp;family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-bright": "#f8f9ff",
+            "on-tertiary": "#ffffff",
+            "tertiary-fixed-dim": "#ffb4ab",
+            "outline": "#916f6b",
+            "inverse-surface": "#213145",
+            "secondary": "#565e74",
+            "surface": "#f8f9ff",
+            "primary-fixed-dim": "#ffb4ab",
+            "surface-container": "#e5eeff",
+            "secondary-fixed": "#dae2fd",
+            "tertiary-fixed": "#ffdad6",
+            "on-secondary-fixed": "#131b2e",
+            "primary": "#b70011",
+            "secondary-container": "#dae2fd",
+            "primary-fixed": "#ffdad6",
+            "primary-container": "#dc2626",
+            "on-primary": "#ffffff",
+            "on-secondary-container": "#5c647a",
+            "surface-tint": "#bf0715",
+            "surface-dim": "#cbdbf5",
+            "on-tertiary-fixed-variant": "#93000b",
+            "on-surface-variant": "#5c403c",
+            "on-primary-container": "#fff6f5",
+            "on-tertiary-container": "#fff7f6",
+            "outline-variant": "#e6bdb8",
+            "inverse-primary": "#ffb4ab",
+            "on-tertiary-fixed": "#410002",
+            "on-error": "#ffffff",
+            "on-secondary": "#ffffff",
+            "on-primary-fixed-variant": "#93000b",
+            "surface-container-highest": "#d3e4fe",
+            "background": "#f8f9ff",
+            "on-surface": "#0b1c30",
+            "on-background": "#0b1c30",
+            "surface-container-lowest": "#ffffff",
+            "inverse-on-surface": "#eaf1ff",
+            "secondary-fixed-dim": "#bec6e0",
+            "error-container": "#ffdad6",
+            "on-primary-fixed": "#410002",
+            "on-error-container": "#93000a",
+            "tertiary-container": "#d6332d",
+            "surface-container-low": "#eff4ff",
+            "surface-variant": "#d3e4fe",
+            "surface-container-high": "#dce9ff",
+            "tertiary": "#b21618",
+            "error": "#ba1a1a",
+            "on-secondary-fixed-variant": "#3f465c"
+          },
+          borderRadius: {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          spacing: {
+            "space-3xs": "0.125rem",
+            "space-2xs": "0.25rem",
+            "space-xs": "0.5rem",
+            "space-sm": "0.75rem",
+            "space-md": "1rem",
+            "space-lg": "1.5rem",
+            "space-xl": "2rem",
+            "space-2xl": "3rem",
+            "space-3xl": "4rem",
+            "margin-mobile": "1rem",
+            "margin-tablet": "2rem",
+            "margin-desktop": "3rem"
+          },
+          fontFamily: {
+            "headline-sm": ["Space Grotesk", "sans-serif"],
+            "display-hero-mobile": ["Space Grotesk", "sans-serif"],
+            "headline-md": ["Space Grotesk", "sans-serif"],
+            "body-lg": ["Hanken Grotesk", "sans-serif"],
+            "display-hero": ["Space Grotesk", "sans-serif"],
+            "label-regular": ["JetBrains Mono", "monospace"],
+            "headline-lg": ["Space Grotesk", "sans-serif"],
+            "body-sm": ["Hanken Grotesk", "sans-serif"],
+            "body-md": ["Hanken Grotesk", "sans-serif"],
+            "headline-lg-mobile": ["Space Grotesk", "sans-serif"],
+            "label-caps": ["JetBrains Mono", "monospace"],
+            "code-inline": ["JetBrains Mono", "monospace"]
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    @layer base {
+      html, body {
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+        background-color: #f8f9ff;
+        color: #0b1c30;
+      }
+      body {
+        overscroll-behavior: none;
+      }
+      .pb-safe {
+        padding-bottom: env(safe-area-inset-bottom, 16px);
+      }
+      .pt-safe {
+        padding-top: env(safe-area-inset-top, 0px);
+      }
+    }
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+</head>
+<body class="bg-transparent font-body-md text-body-md text-on-surface flex flex-col min-h-screen antialiased selection:bg-primary-container selection:text-white relative">
+<!-- WebGL Circuit Shader Background Animation -->
+<div class="fixed inset-0 w-full h-full pointer-events-none -z-10" style="display:block;">
+<canvas class="w-full h-full block" id="shader-canvas-schedule"></canvas>
+<script>
+  (function() {
+    const canvas = document.getElementById('shader-canvas-schedule');
+    function syncSize() {
+      const w = window.innerWidth;
+      const h = window.innerHeight;
+      if (canvas.width !== w || canvas.height !== h) {
+        canvas.width = w;
+        canvas.height = h;
+      }
+    }
+    window.addEventListener('resize', syncSize);
+    syncSize();
+    const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+    if (!gl) return;
+    const vs = 'attribute vec2 a_position; void main() { gl_Position = vec4(a_position, 0.0, 1.0); }';
+    const fs = 'precision highp float; uniform float u_time; uniform vec2 u_resolution; float lineSegment(vec2 p, vec2 a, vec2 b, float w) { vec2 pa = p - a, ba = b - a; float h = clamp(dot(pa, ba)/dot(ba, ba), 0.0, 1.0); return smoothstep(w, 0.0, length(pa - ba * h)); } void main() { vec2 uv = gl_FragCoord.xy / u_resolution.xy; vec2 aspect = vec2(u_resolution.x / u_resolution.y, 1.0); vec2 st = uv * aspect * 6.0; vec3 col = mix(vec3(0.97, 0.98, 1.0), vec3(0.93, 0.95, 0.99), uv.y); vec3 circuitRed = vec3(0.86, 0.15, 0.15); vec3 circuitBright = vec3(1.0, 0.35, 0.35); float t = u_time * 0.8; float totalLines = 0.0; float glowNodes = 0.0; for (int i = 0; i < 5; i++) { float fi = float(i); float offset = fi * 1.35; vec2 p1 = vec2(0.2 + fi * 0.1, 1.2 + offset); vec2 p2 = vec2(1.5 + fi * 0.2, 1.2 + offset); vec2 p3 = vec2(3.2 + fi * 0.3, 2.9 + offset); vec2 p4 = vec2(3.2 + fi * 0.3, 4.8 + offset); vec2 p = st; p.y += mod(t * 0.5, 4.0); vec2 st_mod = mod(p, vec2(6.0, 6.0)); totalLines += max(lineSegment(st_mod, p1, p2, 0.035), max(lineSegment(st_mod, p2, p3, 0.035), lineSegment(st_mod, p3, p4, 0.035))); float d1 = length(st_mod - p1); glowNodes += (smoothstep(0.02, 0.0, abs(d1 - 0.12)) + smoothstep(0.06, 0.0, d1) * (0.6 + 0.4 * sin(t * 3.0 + fi))); float d2 = length(st_mod - p3); glowNodes += (smoothstep(0.02, 0.0, abs(d2 - 0.12)) + smoothstep(0.06, 0.0, d2) * (0.6 + 0.4 * cos(t * 2.5 + fi))); float pulsePhase = mod(t * 1.5 + fi * 0.7, 3.0); vec2 pulsePos = pulsePhase < 1.0 ? mix(p1, p2, pulsePhase) : (pulsePhase < 2.0 ? mix(p2, p3, pulsePhase - 1.0) : mix(p3, p4, pulsePhase - 2.0)); glowNodes += smoothstep(0.18, 0.0, length(st_mod - pulsePos)) * 1.4; } col = mix(col, circuitRed, clamp(totalLines * 0.65, 0.0, 1.0)); col += circuitBright * clamp(glowNodes * 0.75, 0.0, 1.0); vec2 grid = abs(fract(st * 2.0 - 0.5) - 0.5); col -= vec3(smoothstep(0.06, 0.0, length(grid)) * 0.03); gl_FragColor = vec4(col, 1.0); }';
+    function cs(type, src) { const s = gl.createShader(type); gl.shaderSource(s, src); gl.compileShader(s); return s; }
+    const prog = gl.createProgram(); gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs)); gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs)); gl.linkProgram(prog); gl.useProgram(prog);
+    const buf = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, buf); gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+    const pos = gl.getAttribLocation(prog, 'a_position'); gl.enableVertexAttribArray(pos); gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+    const uTime = gl.getUniformLocation(prog, 'u_time'); const uRes = gl.getUniformLocation(prog, 'u_resolution');
+    function render(t) { gl.viewport(0, 0, canvas.width, canvas.height); if (uTime) gl.uniform1f(uTime, t * 0.001); if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height); gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4); requestAnimationFrame(render); }
+    requestAnimationFrame(render);
+  })();
+  </script>
+</div>
+<!-- Top Navigation Header -->
+<header class="backdrop-blur-xl bg-white/70 border-b border-white/60 px-4 py-2.5 flex items-center justify-between sticky top-0 z-50 shadow-sm glass-card">
+<div class="flex items-center gap-2.5">
+<button aria-label="Open Navigation Drawer" class="p-1.5 -ml-1 text-slate-800 hover:bg-white/60 rounded-lg transition-colors" onclick="document.getElementById('mobile-drawer').classList.remove('-translate-x-full'); document.getElementById('drawer-backdrop').classList.remove('opacity-0', 'pointer-events-none');">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</button>
+<div class="flex items-center space-x-2">
+<img alt="SRM TRP Engineering College" class="h-7 w-auto object-contain max-w-[130px]" src="https://lh3.googleusercontent.com/aida/AEtjO1WvV6bvBzF6RecO5K7NwDy2Mc_7DjmQW6rpYLbC9fRIVaPMddB5qx2wJZFlVUPcOG8Z3cMt3gYXFG_3sN-ZlAsUjXaiwZLiIkTJBgM9y6YALAgWUejhuvAaqp--oOaL7naysRu85Z_8YjFMtuE6wDgAcD730_zkXEa0cN1SZA_RgRiLTlcFUTe_fqOVuTS9yM9-QfNdFVprKkNVh6WpJ_olydeaXdnHCQmgpXtZM83RHoUKoEW1E2UTErbMgq6tARrP34UNSFOdXQ">
+<div class="h-4 w-px bg-slate-300/60"></div>
+<img alt="Code Crafters" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1W4ScVqiDA1f0B-j2cObpPP-XFb0VM8_7kO3B7UYngwVb9Ku-zmTGHdWBo3qy2RHLVs9pIb-M-_Dxl69-46mV5QtnegqdeJAWEYLr16oX4DVm1uu5XWsGu61Glolc3jrYqRFP__qw62yDcd__Q4sAMtTb3nIfkMTxKYFmKix-8j0dAiMLdtpb16nWD1jIWKOKMDGvPYziEY3tro2rAIII3NrCmJaSPh8oJYIlBupcrPysP09L_NlGu73nrtGAwlnsui9_H5CcsdPxk">
+</div>
+</div>
+<span class="text-slate-900 font-bold text-base tracking-tight font-headline-sm">Schedule</span>
+</header>
+<!-- Side Navigation Drawer Backdrop -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/40 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 glass-card" id="drawer-backdrop" onclick="document.getElementById('mobile-drawer').classList.add('-translate-x-full'); this.classList.add('opacity-0', 'pointer-events-none');"></div>
+<!-- Side Navigation Drawer -->
+<aside class="fixed top-0 left-0 bottom-0 w-4/5 max-w-xs z-50 backdrop-blur-2xl bg-white/90 border-r border-white/60 shadow-2xl -translate-x-full transition-transform duration-300 ease-in-out flex flex-col justify-between pt-safe pb-safe glass-card" id="mobile-drawer">
+<div class="p-space-lg flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md text-primary font-bold tracking-tight">NEURAL FORGE</span>
+<span class="font-label-caps text-label-caps text-secondary">SRM TRP // CODE CRAFTERS</span>
+</div>
+<button class="w-10 h-10 flex items-center justify-center text-secondary rounded-lg hover:bg-slate-100/70" onclick="document.getElementById('mobile-drawer').classList.add('-translate-x-full'); document.getElementById('drawer-backdrop').classList.add('opacity-0', 'pointer-events-none');">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="h-px bg-slate-200 w-full my-1"></div>
+<div class="flex flex-col gap-space-xs font-headline-sm text-[16px]">
+<a class="flex items-center gap-space-sm px-space-sm py-2 rounded text-on-surface hover:bg-white/60 transition-colors" href="#" onclick="document.getElementById('mobile-drawer').classList.add('-translate-x-full'); document.getElementById('drawer-backdrop').classList.add('opacity-0', 'pointer-events-none');">
+<span class="material-symbols-outlined text-secondary">terminal</span><span>Home</span>
+</a>
+<a class="flex items-center gap-space-sm px-space-sm py-2 rounded text-on-surface hover:bg-white/60 transition-colors" href="#" onclick="document.getElementById('mobile-drawer').classList.add('-translate-x-full'); document.getElementById('drawer-backdrop').classList.add('opacity-0', 'pointer-events-none');">
+<span class="material-symbols-outlined text-secondary">hub</span><span>Tracks</span>
+</a>
+<a class="flex items-center gap-space-sm px-space-sm py-2 rounded bg-white/70 text-primary font-semibold transition-colors shadow-sm" href="#schedule-section" onclick="document.getElementById('mobile-drawer').classList.add('-translate-x-full'); document.getElementById('drawer-backdrop').classList.add('opacity-0', 'pointer-events-none');">
+<span class="material-symbols-outlined text-primary">calendar_today</span><span>Schedule</span>
+</a>
+<a class="flex items-center gap-space-sm px-space-sm py-2 rounded text-on-surface hover:bg-white/60 transition-colors" href="#" onclick="document.getElementById('mobile-drawer').classList.add('-translate-x-full'); document.getElementById('drawer-backdrop').classList.add('opacity-0', 'pointer-events-none');">
+<span class="material-symbols-outlined text-secondary">info</span><span>About Us</span>
+</a>
+</div>
+</div>
+<div class="p-space-lg bg-slate-50/70 border-t border-slate-200/60 flex flex-col gap-1">
+<span class="font-label-caps text-[11px] text-secondary font-semibold">POWERED BY</span>
+<span class="font-headline-sm text-sm text-on-surface font-bold">Code Crafters Club</span>
+<span class="font-body-sm text-[12px] text-on-surface-variant">Dept of CSE, SRM TRPEC</span>
+</div>
+</aside>
+<!-- Main Content Container -->
+<main class="flex flex-col relative w-full pb-safe min-h-screen">
+<!-- Top System Protocol Bar -->
+<div class="px-margin-mobile pt-3 pb-2 flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+<span class="font-label-caps text-[11px] text-secondary font-bold uppercase tracking-wider">CHRONO-PROTOCOL // OFFICIAL TIMELINE</span>
+</div>
+<div class="flex items-center gap-1 font-label-caps text-[11px] bg-white/75 backdrop-blur-md border border-white/80 px-2 py-0.5 rounded text-secondary font-medium shadow-sm glass-card">
+<span class="material-symbols-outlined text-[13px] text-primary">schedule</span>
+<span>IST (UTC+5:30)</span>
+</div>
+</div>
+<!-- Hero Card Banner / Official Schedule Header (Liquid Glass) -->
+<section class="px-margin-mobile mb-5">
+<div class="backdrop-blur-xl bg-white/75 border border-white/80 shadow-[0_8px_30px_rgb(0,0,0,0.04)] rounded-2xl p-5 relative overflow-hidden glass-card">
+<div class="absolute -right-10 -bottom-10 w-36 h-36 bg-red-100/40 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex flex-col gap-2 relative z-10">
+<div class="inline-flex items-center gap-1.5 self-start px-2.5 py-1 bg-red-50/90 border border-red-200 text-primary rounded text-[11px] font-label-caps font-bold">
+<span class="material-symbols-outlined text-[14px]">event_available</span>
+<span>2-DAY OFFICIAL SCHEDULE</span>
+</div>
+<h1 class="font-headline-lg-mobile text-[26px] leading-tight text-on-surface font-bold tracking-tight">
+          Neural Forge <span class="text-[#dc2626]">2026</span> Schedule
+        </h1>
+<p class="font-body-sm text-[13px] leading-relaxed text-secondary">
+          Structured hackathon sprint timetable as authorized by Code Crafters and CSE Department. Follow all checkpoints precisely.
+        </p>
+<!-- Day 1 & Day 2 Quick KPI Summary Cards -->
+<div class="grid grid-cols-2 gap-2 mt-2 pt-2 border-t border-slate-100">
+<div class="bg-white/60 border border-white/80 backdrop-blur-md p-2.5 rounded-xl flex items-center gap-2.5 shadow-sm glass-card">
+<div class="w-8 h-8 rounded-lg bg-blue-100 text-blue-800 flex items-center justify-center font-bold text-xs">
+              D1
+            </div>
+<div class="flex flex-col">
+<span class="font-label-caps text-[10px] text-secondary font-semibold">DAY 1 TOTAL</span>
+<span class="font-headline-sm text-sm font-bold text-on-surface">7 Hours Run</span>
+</div>
+</div>
+<div class="bg-white/60 border border-white/80 backdrop-blur-md p-2.5 rounded-xl flex items-center gap-2.5 shadow-sm glass-card">
+<div class="w-8 h-8 rounded-lg bg-amber-100 text-amber-900 flex items-center justify-center font-bold text-xs">
+              D2
+            </div>
+<div class="flex flex-col">
+<span class="font-label-caps text-[10px] text-secondary font-semibold">DAY 2 TOTAL</span>
+<span class="font-headline-sm text-sm font-bold text-on-surface">6.5 Hours (Breaks)</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- STATS BANNER: 2d 10h NON-STOP | 04 TRACKS | ₹100K BOUNTY (Placed ABOVE Eligibility) -->
+<section class="px-margin-mobile mb-5">
+<div class="backdrop-blur-xl bg-white/75 border border-white/80 shadow-[0_8px_30px_rgb(0,0,0,0.04)] rounded-2xl p-3 sm:p-4 grid grid-cols-3 divide-x divide-slate-200/70 text-center glass-card">
+<div class="flex flex-col items-center justify-center px-2 py-1">
+<span class="font-headline-md text-lg sm:text-xl font-bold text-[#dc2626] leading-none">2d 10h</span>
+<span class="font-label-caps text-[10px] text-secondary tracking-wider mt-1 uppercase font-semibold">NON-STOP</span>
+</div>
+<div class="flex flex-col items-center justify-center px-2 py-1">
+<span class="font-headline-md text-lg sm:text-xl font-bold text-slate-800 leading-none">04</span>
+<span class="font-label-caps text-[10px] text-secondary tracking-wider mt-1 uppercase font-semibold">TRACKS</span>
+</div>
+<div class="flex flex-col items-center justify-center px-2 py-1">
+<span class="font-headline-md text-lg sm:text-xl font-bold text-[#dc2626] leading-none">₹100K</span>
+<span class="font-label-caps text-[10px] text-secondary tracking-wider mt-1 uppercase font-semibold">BOUNTY</span>
+</div>
+</div>
+</section>
+<!-- SECTION: ELIGIBILITY & DEPARTMENTS -->
+<section class="px-margin-mobile mb-5">
+<div class="backdrop-blur-xl bg-white/75 border border-white/80 shadow-[0_8px_30px_rgb(0,0,0,0.04)] rounded-2xl p-5 flex flex-col gap-3.5 glass-card">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[22px] text-primary">school</span>
+<h2 class="font-headline-sm text-[18px] text-on-surface font-bold leading-tight">Eligibility &amp; Departments</h2>
+</div>
+<ul class="flex flex-col gap-2 font-body-sm text-[13px] text-on-surface-variant leading-relaxed">
+<li class="flex items-start gap-2">
+<span class="text-primary font-bold text-base leading-none mt-0.5">•</span>
+<span>Open to <strong class="text-on-surface font-semibold">1st, 2nd, and 3rd Year B.E. / B.Tech students</strong> of SRM TRP Engineering College.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="text-primary font-bold text-base leading-none mt-0.5">•</span>
+<span>Teams of 2 to 4 members with cross-department collaboration welcomed.</span>
+</li>
+</ul>
+<div class="flex flex-col gap-1.5 pt-1">
+<span class="font-label-caps text-[11px] text-secondary font-semibold uppercase tracking-wider">ELIGIBLE BRANCHES</span>
+<div class="flex flex-wrap items-center gap-1.5">
+<span class="px-2.5 py-1 bg-white/70 text-[#2563eb] border border-blue-200 backdrop-blur-sm font-label-caps text-[11px] font-bold rounded glass-card">AIDS</span>
+<span class="px-2.5 py-1 bg-white/70 text-[#2563eb] border border-blue-200 backdrop-blur-sm font-label-caps text-[11px] font-bold rounded glass-card">AIML</span>
+<span class="px-2.5 py-1 bg-white/70 text-[#2563eb] border border-blue-200 backdrop-blur-sm font-label-caps text-[11px] font-bold rounded glass-card">CSE</span>
+<span class="px-2.5 py-1 bg-white/70 text-[#2563eb] border border-blue-200 backdrop-blur-sm font-label-caps text-[11px] font-bold rounded glass-card">IT</span>
+<span class="px-2.5 py-1 bg-white/70 text-[#2563eb] border border-blue-200 backdrop-blur-sm font-label-caps text-[11px] font-bold rounded glass-card">ECE</span>
+<span class="px-2.5 py-1 bg-white/70 text-[#2563eb] border border-blue-200 backdrop-blur-sm font-label-caps text-[11px] font-bold rounded glass-card">MECH</span>
+</div>
+</div>
+<div class="bg-blue-50/70 border border-blue-200/80 rounded-xl px-3.5 py-2.5 flex items-center justify-between mt-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">groups</span>
+<span class="font-headline-sm text-[13px] font-bold text-on-surface">Team Requirement:</span>
+</div>
+<span class="font-label-caps text-[13px] text-primary font-bold tracking-wide">2 – 4 Members</span>
+</div>
+</div>
+</section>
+<!-- SECTION: TIMELINE & MILESTONES (DAY 1 & DAY 2) -->
+<section class="px-margin-mobile pt-1 flex flex-col gap-4 mb-5" id="schedule-section">
+<!-- Section Header -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-white/80 border border-white flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined text-[20px]">pace</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-[18px] text-on-surface font-bold leading-tight">Timeline &amp; Milestones</h2>
+<p class="font-label-caps text-[11px] text-secondary">STEP-BY-STEP FLOW PROTOCOL</p>
+</div>
+</div>
+</div>
+<!-- DAY 1 CONTAINER (Liquid Glass) -->
+<div class="backdrop-blur-xl bg-white/75 border border-white/80 shadow-[0_8px_30px_rgb(0,0,0,0.04)] p-4 sm:p-5 rounded-2xl flex flex-col gap-3 glass-card">
+<!-- Day Header -->
+<div class="flex items-center justify-between pb-2 border-b border-slate-100">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-blue-100/80 text-blue-900 font-label-caps text-[11px] font-bold">DAY 1</span>
+<span class="font-headline-sm text-[16px] text-on-surface font-bold">Day 1 — 9:00 AM to 4:00 PM</span>
+</div>
+<span class="font-label-caps text-[11px] text-primary font-semibold">7h Total</span>
+</div>
+<!-- Sequential Timeline Blocks with Connectors -->
+<div class="flex flex-col items-center gap-0 w-full pt-1">
+<!-- Day 1 Step 1 -->
+<div class="w-full bg-[#e8f1fd]/80 hover:bg-[#e0ecfc] transition-colors rounded-xl border border-[#bad5f7] p-4 text-center shadow-sm">
+<div class="font-label-caps text-[#2563eb] text-[13px] font-semibold tracking-wide">
+            9:00 AM – 11:00 AM
+          </div>
+<div class="font-headline-sm text-[18px] text-[#0f356b] font-bold mt-1">
+            1. Inauguration
+          </div>
+<div class="mt-2 inline-flex items-center gap-1.5 text-xs text-[#33598a] font-body-sm bg-white/80 px-2.5 py-1 rounded-full border border-blue-100">
+<span class="material-symbols-outlined text-[14px]">campaign</span>
+<span>Keynote, Welcome Address &amp; Hackathon Directive</span>
+</div>
+</div>
+<!-- Connecting Arrow 1 -->
+<div class="flex flex-col items-center py-1">
+<div class="w-0.5 h-4 bg-gray-400"></div>
+<span class="material-symbols-outlined text-gray-500 text-[18px] -mt-1">keyboard_arrow_down</span>
+</div>
+<!-- Day 1 Step 2 -->
+<div class="w-full bg-[#e8f1fd]/80 hover:bg-[#e0ecfc] transition-colors rounded-xl border border-[#bad5f7] p-4 text-center shadow-sm">
+<div class="font-label-caps text-[#2563eb] text-[13px] font-semibold tracking-wide">
+            11:00 – 11:30 AM
+          </div>
+<div class="font-headline-sm text-[18px] text-[#0f356b] font-bold mt-1">
+            2. Venue allocation
+          </div>
+<div class="mt-2 inline-flex items-center gap-1.5 text-xs text-[#33598a] font-body-sm bg-white/80 px-2.5 py-1 rounded-full border border-blue-100">
+<span class="material-symbols-outlined text-[14px]">meeting_room</span>
+<span>Lab Seat Allocation &amp; System Access Handover</span>
+</div>
+</div>
+<!-- Connecting Arrow 2 -->
+<div class="flex flex-col items-center py-1">
+<div class="w-0.5 h-4 bg-gray-400"></div>
+<span class="material-symbols-outlined text-gray-500 text-[18px] -mt-1">keyboard_arrow_down</span>
+</div>
+<!-- Day 1 Step 3 -->
+<div class="w-full bg-[#e8f1fd]/80 hover:bg-[#e0ecfc] transition-colors rounded-xl border border-[#bad5f7] p-4 text-center shadow-sm">
+<div class="font-label-caps text-[#2563eb] text-[13px] font-semibold tracking-wide">
+            11:30 AM – 4:00 PM
+          </div>
+<div class="font-headline-sm text-[18px] text-[#0f356b] font-bold mt-1">
+            3. Round 1: MVP development
+          </div>
+<div class="mt-2 inline-flex items-center gap-1.5 text-xs text-[#33598a] font-body-sm bg-white/80 px-2.5 py-1 rounded-full border border-blue-100">
+<span class="material-symbols-outlined text-[14px]">terminal</span>
+<span>Sprint kick-off, architecture lock, &amp; prototype build</span>
+</div>
+</div>
+</div>
+<!-- Day 1 Total Footer Label -->
+<div class="pt-2 text-center border-t border-slate-100 mt-1">
+<span class="font-label-caps text-[12px] text-secondary font-semibold">
+          Day 1 total: 7 hours
+        </span>
+</div>
+</div>
+<!-- DAY 2 CONTAINER (Liquid Glass) -->
+<div class="backdrop-blur-xl bg-white/75 border border-white/80 shadow-[0_8px_30px_rgb(0,0,0,0.04)] p-4 sm:p-5 rounded-2xl flex flex-col gap-3 glass-card">
+<!-- Day Header -->
+<div class="flex items-center justify-between pb-2 border-b border-slate-100">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-amber-100/80 text-amber-900 font-label-caps text-[11px] font-bold">DAY 2</span>
+<span class="font-headline-sm text-[16px] text-on-surface font-bold">Day 2 — 9:00 AM to 4:30 PM</span>
+</div>
+<span class="font-label-caps text-[11px] text-primary font-semibold">6.5h Total</span>
+</div>
+<!-- Sequential Timeline Blocks with Connectors -->
+<div class="flex flex-col items-center gap-0 w-full pt-1">
+<!-- Day 2 Step 1 -->
+<div class="w-full bg-[#faedd9]/80 hover:bg-[#f5e3c7] transition-colors rounded-xl border border-[#f0cfa3] p-4 text-center shadow-sm">
+<div class="font-label-caps text-[#b46816] text-[13px] font-semibold tracking-wide">
+            9:00 AM – 12:00 PM
+          </div>
+<div class="font-headline-sm text-[18px] text-[#4a2b06] font-bold mt-1">
+            1. Surprise challenge/constraint
+          </div>
+<div class="mt-2 inline-flex items-center gap-1.5 text-xs text-[#714614] font-body-sm bg-white/80 px-2.5 py-1 rounded-full border border-amber-100">
+<span class="material-symbols-outlined text-[14px]">psychology_alt</span>
+<span>Dynamic pivot vector introduced to test system agility</span>
+</div>
+</div>
+<!-- Connecting Arrow 1 -->
+<div class="flex flex-col items-center py-1">
+<div class="w-0.5 h-4 bg-gray-400"></div>
+<span class="material-symbols-outlined text-gray-500 text-[18px] -mt-1">keyboard_arrow_down</span>
+</div>
+<!-- Day 2 Step 2 -->
+<div class="w-full bg-[#dff5ec]/80 hover:bg-[#d0efe3] transition-colors rounded-xl border border-[#a8dfc8] p-4 text-center shadow-sm">
+<div class="font-label-caps text-[#117a58] text-[13px] font-semibold tracking-wide">
+            1:00 – 3:00 PM
+          </div>
+<div class="font-headline-sm text-[18px] text-[#0d4f39] font-bold mt-1">
+            2. Jury round
+          </div>
+<div class="mt-2 inline-flex items-center gap-1.5 text-xs text-[#136147] font-body-sm bg-white/80 px-2.5 py-1 rounded-full border border-teal-100">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+<span>Live presentation, code walk-through &amp; QA defense</span>
+</div>
+</div>
+<!-- Connecting Arrow 2 -->
+<div class="flex flex-col items-center py-1">
+<div class="w-0.5 h-4 bg-gray-400"></div>
+<span class="material-symbols-outlined text-gray-500 text-[18px] -mt-1">keyboard_arrow_down</span>
+</div>
+<!-- Day 2 Step 3 -->
+<div class="w-full bg-[#fbe7e3]/80 hover:bg-[#f6dad5] transition-colors rounded-xl border border-[#f4c0b8] p-4 text-center shadow-sm">
+<div class="font-label-caps text-[#c0392b] text-[13px] font-semibold tracking-wide">
+            3:30 – 4:30 PM
+          </div>
+<div class="font-headline-sm text-[18px] text-[#5c1d16] font-bold mt-1">
+            3. Prize distribution
+          </div>
+<div class="mt-2 inline-flex items-center gap-1.5 text-xs text-[#7d2c22] font-body-sm bg-white/80 px-2.5 py-1 rounded-full border border-red-100">
+<span class="material-symbols-outlined text-[14px]">military_tech</span>
+<span>Award announcements, merit citations &amp; valedictory</span>
+</div>
+</div>
+</div>
+<!-- Day 2 Total Footer Label -->
+<div class="pt-2 text-center border-t border-slate-100 mt-1">
+<span class="font-label-caps text-[12px] text-secondary font-semibold">
+          Day 2 total: 6.5 hours (with breaks)
+        </span>
+</div>
+</div>
+</section>
+<!-- SECTION: CONTACT & COORDINATORS HELP DESK (Liquid Glass) -->
+<section class="px-margin-mobile flex flex-col gap-space-sm mb-6">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-lg bg-white/80 border border-white flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined text-[20px]">support_agent</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-[18px] text-on-surface font-bold">Contact &amp; Coordinators</span>
+<span class="font-label-caps text-[11px] text-secondary">SUPPORT &amp; HELP DESK</span>
+</div>
+</div>
+<div class="grid grid-cols-1 gap-2.5">
+<!-- Faculty Liaison -->
+<div class="backdrop-blur-xl bg-white/75 border border-white/80 shadow-[0_8px_30px_rgb(0,0,0,0.04)] p-3.5 rounded-2xl flex items-center justify-between glass-card">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-red-50 text-primary border border-red-100 flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">person</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-sm text-on-surface font-bold">Mrs. Sampavi R</span>
+<span class="font-body-sm text-xs text-secondary">Faculty Convener • Dept of CSE</span>
+<div class="flex flex-wrap items-center gap-2 mt-0.5">
+<a class="font-code-inline text-[11px] text-primary hover:underline flex items-center gap-1" href="tel:+917940742268">
+<span class="material-symbols-outlined text-[12px]">call</span>
+<span>+91 7940742268</span>
+</a>
+<span class="text-secondary text-[10px]">•</span>
+<a class="font-code-inline text-[11px] text-primary hover:underline" href="mailto:cse.conveners@srmtrp.edu.in">cse.conveners@srmtrp.edu.in</a>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-1.5">
+<a aria-label="Call Convener" class="w-9 h-9 rounded-lg bg-white/80 border border-slate-200/60 flex items-center justify-center text-secondary hover:text-primary transition-colors shadow-sm" href="tel:+917940742268">
+<span class="material-symbols-outlined text-[18px]">call</span>
+</a>
+<a aria-label="Mail Convener" class="w-9 h-9 rounded-lg bg-white/80 border border-slate-200/60 flex items-center justify-center text-secondary hover:text-primary transition-colors shadow-sm" href="mailto:cse.conveners@srmtrp.edu.in">
+<span class="material-symbols-outlined text-[18px]">mail</span>
+</a>
+</div>
+</div>
+<!-- Student Club Desk -->
+<div class="backdrop-blur-xl bg-white/75 border border-white/80 shadow-[0_8px_30px_rgb(0,0,0,0.04)] p-3.5 rounded-2xl flex items-center justify-between glass-card">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-red-50 text-primary border border-red-100 flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">groups</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-sm text-on-surface font-bold">Code Crafters Secretariat</span>
+<span class="font-body-sm text-xs text-secondary">Student Technical Ops Desk</span>
+<span class="font-code-inline text-[11px] text-primary">forge.support@srmtrp.edu.in</span>
+</div>
+</div>
+<a aria-label="Mail Support" class="w-9 h-9 rounded-lg bg-white/80 border border-slate-200/60 flex items-center justify-center text-secondary hover:text-primary transition-colors shadow-sm" href="mailto:forge.support@srmtrp.edu.in">
+<span class="material-symbols-outlined text-[18px]">mail</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Institutional Affiliation Footer -->
+<footer class="w-full mt-auto py-6 px-margin-mobile backdrop-blur-xl bg-white/75 border-t border-white/80 mb-20 flex flex-col gap-4 glass-card">
+<div class="flex flex-col gap-1">
+<span class="font-label-caps text-[11px] text-primary font-bold uppercase">ORGANIZED BY</span>
+<span class="font-headline-sm text-sm font-bold text-on-surface">Department of Computer Science and Engineering</span>
+<span class="font-body-sm text-xs text-on-surface-variant">In Association with Code Crafters Club • SRM TRPEC, Trichy</span>
+</div>
+<div class="flex flex-wrap items-center gap-1.5">
+<span class="px-2 py-0.5 bg-white/80 border border-slate-200 text-on-surface font-label-caps text-[10px] rounded">AIDS</span>
+<span class="px-2 py-0.5 bg-white/80 border border-slate-200 text-on-surface font-label-caps text-[10px] rounded">AIML</span>
+<span class="px-2 py-0.5 bg-white/80 border border-slate-200 text-on-surface font-label-caps text-[10px] rounded">CSE</span>
+<span class="px-2 py-0.5 bg-white/80 border border-slate-200 text-on-surface font-label-caps text-[10px] rounded">IT</span>
+<span class="px-2 py-0.5 bg-white/80 border border-slate-200 text-on-surface font-label-caps text-[10px] rounded">ECE</span>
+<span class="px-2 py-0.5 bg-white/80 border border-slate-200 text-on-surface font-label-caps text-[10px] rounded">MECH</span>
+</div>
+<div class="flex flex-col gap-1 font-label-regular text-[11px] text-secondary">
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[14px]">mail</span> codecrafters@srmtrp.edu.in</span>
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[14px]">location_on</span> Trichy - Chennai Highway, Irungalur, TN</span>
+</div>
+</footer>
+</main>
+<!-- Bottom Navigation Bar (Frosted Liquid Glass) -->
+<nav class="fixed bottom-0 w-full z-40 pb-safe backdrop-blur-xl bg-white/80 border-t border-white/60 shadow-lg glass-card">
+<div class="flex justify-around items-center h-14 px-2">
+<a class="flex flex-col items-center justify-center gap-0.5 min-w-[50px] text-slate-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">home</span>
+<span class="font-label-caps text-[10px]">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center gap-0.5 min-w-[50px] text-slate-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">hub</span>
+<span class="font-label-caps text-[10px]">Tracks</span>
+</a>
+<a aria-current="page" class="flex flex-col items-center justify-center gap-0.5 min-w-[50px] text-[#dc2626] font-semibold transition-colors" href="#schedule-section">
+<span class="material-symbols-outlined text-[20px]">calendar_today</span>
+<span class="font-label-caps text-[10px] text-[#dc2626]">Schedule</span>
+</a>
+<a class="flex flex-col items-center justify-center gap-0.5 min-w-[50px] text-slate-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">info</span>
+<span class="font-label-caps text-[10px]">About Us</span>
+</a>
+</div>
+</nav>
+</body></html>

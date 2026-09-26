@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neural Forge 2026 • Living Background Artwork in Moving Form</title>
+  <meta name="description"
+    content="Official high-resolution living background artwork in moving form for Neural Forge 2026 Hackathon - Department of CSE, SRM TRP Engineering College.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Pirata+One&family=New+Rocker&family=Grenze+Gotisch:wght@700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #010402;
+      color: #cbd5e1;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      user-select: none;
+    }
+
+
+    /* Viewport Container */
+    .hero-viewport-container {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #010402;
+    }
+
+    /* Frame container */
+    .hero-frame-16-9 {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      max-width: 100vw;
+      max-height: 100vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #030704;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* 16:9 Aspect Ratio Mode */
+    .hero-viewport-container.locked-16-9 .hero-frame-16-9 {
+      width: 96vw;
+      height: 54vw;
+      /* 16:9 ratio */
+      max-height: 94vh;
+      max-width: 167.1vh;
+      border-radius: 20px;
+      border: 1px solid rgba(74, 222, 128, 0.25);
+      box-shadow: 0 30px 90px -15px rgba(0, 0, 0, 0.95), 0 0 50px rgba(74, 222, 128, 0.2);
+    }
+
+    /* ── The Official Poster Background in Moving Form ────────────────────────── */
+    /* Master Moving Layer: Cinematic Breathing & Fluid Multi-Axis Drift */
+    .moving-bg-layer {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      background: #000000 url('assets/clean_cosmic_widescreen.jpg') no-repeat center center / cover;
+      filter: none;
+      animation: none !important;
+      will-change: auto !important;
+      transform-origin: center center;
+      translate: none !important;
+      transform: none !important;
+      transition: none !important;
+    }
+
+    @media (max-aspect-ratio: 1/1) {
+      .moving-bg-layer {
+        background-image: url('assets/clean_cosmic_portrait.jpg');
+        background-size: cover;
+        background-position: center center;
+      }
+    }
+
+    /* Soft Contrast Vignette */
+    .moving-bg-layer::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 50% 50%, transparent 48%, rgba(0, 0, 0, 0.42) 82%, #000000 100%),
+        linear-gradient(180deg, rgba(0, 0, 0, 0.42) 0%, transparent 20%, transparent 76%, rgba(0, 0, 0, 0.78) 100%);
+      pointer-events: none;
+    }
+
+    .moving-bg-layer.paused {
+      animation-play-state: paused !important;
+    }
+
+    @keyframes heroBreathingDrift {
+      0% {
+        transform: scale(1.0) translate3d(0%, 0%, 0) rotate(0deg);
+      }
+
+      25% {
+        transform: scale(1.045) translate3d(-1.6%, -0.9%, 0) rotate(0.25deg);
+      }
+
+      50% {
+        transform: scale(1.025) translate3d(1.0%, -1.6%, 0) rotate(-0.2deg);
+      }
+
+      75% {
+        transform: scale(1.05) translate3d(-0.6%, 1.2%, 0) rotate(0.18deg);
+      }
+
+      100% {
+        transform: scale(1.035) translate3d(1.5%, 0.6%, 0) rotate(-0.15deg);
+      }
+    }
+
+    /* ── Background Animation Movement Modes Completely Disabled ────────────────── */
+    .moving-bg-layer,
+    .moving-bg-layer.motion-orbit,
+    .moving-bg-layer.motion-warp,
+    .moving-bg-layer.motion-pulse,
+    .moving-bg-layer.motion-drift,
+    .moving-bg-layer.motion-scanner {
+      animation: none !important;
+      transform: none !important;
+      translate: none !important;
+    }
+
+    @keyframes bgMotionOrbit {
+      0% {
+        transform: scale(1.0) translate3d(0%, 0%, 0) rotate(0deg);
+      }
+
+      25% {
+        transform: scale(1.045) translate3d(-1.8%, -1.2%, 0) rotate(0.45deg);
+      }
+
+      50% {
+        transform: scale(1.025) translate3d(1.2%, -2.2%, 0) rotate(-0.35deg);
+      }
+
+      75% {
+        transform: scale(1.055) translate3d(-0.8%, 1.5%, 0) rotate(0.3deg);
+      }
+
+      100% {
+        transform: scale(1.0) translate3d(0%, 0%, 0) rotate(0deg);
+      }
+    }
+
+    @keyframes bgMotionWarp {
+      0% {
+        transform: scale(0.98) translate3d(0, 0, 0);
+        filter: brightness(1.0) contrast(1.18) saturate(1.15);
+      }
+
+      50% {
+        transform: scale(1.12) translate3d(0, -1.8%, 0);
+        filter: brightness(1.22) contrast(1.35) saturate(1.35);
+      }
+
+      100% {
+        transform: scale(0.98) translate3d(0, 0, 0);
+        filter: brightness(1.0) contrast(1.18) saturate(1.15);
+      }
+    }
+
+    @keyframes bgMotionPulse {
+      0% {
+        transform: scale(1.0) translate3d(0, 0, 0);
+        filter: brightness(1.0) contrast(1.18);
+      }
+
+      14% {
+        transform: scale(1.065) translate3d(0, -0.6%, 0);
+        filter: brightness(1.25) contrast(1.38);
+      }
+
+      24% {
+        transform: scale(1.02) translate3d(0, 0, 0);
+        filter: brightness(1.02) contrast(1.2);
+      }
+
+      36% {
+        transform: scale(1.085) translate3d(0, -1.0%, 0);
+        filter: brightness(1.3) contrast(1.45);
+      }
+
+      55% {
+        transform: scale(1.01) translate3d(0, 0.4%, 0);
+        filter: brightness(1.0) contrast(1.18);
+      }
+
+      100% {
+        transform: scale(1.0) translate3d(0, 0, 0);
+        filter: brightness(1.0) contrast(1.18);
+      }
+    }
+
+    @keyframes bgMotionDrift {
+      0% {
+        transform: scale(1.02) translate3d(-2.5%, -1.8%, 0) rotate(-1.2deg);
+      }
+
+      50% {
+        transform: scale(1.07) translate3d(2.5%, 2.0%, 0) rotate(1.2deg);
+      }
+
+      100% {
+        transform: scale(1.02) translate3d(-2.5%, -1.8%, 0) rotate(-1.2deg);
+      }
+    }
+
+    @keyframes bgMotionScanner {
+      0% {
+        transform: scale(1.03) translate3d(0, 0, 0);
+      }
+
+      20% {
+        transform: scale(1.06) translate3d(2.2%, -2.0%, 0);
+      }
+
+      40% {
+        transform: scale(1.02) translate3d(-2.4%, 1.2%, 0);
+      }
+
+      60% {
+        transform: scale(1.07) translate3d(1.8%, 2.2%, 0);
+      }
+
+      80% {
+        transform: scale(1.03) translate3d(-1.5%, -1.8%, 0);
+      }
+
+      100% {
+        transform: scale(1.03) translate3d(0, 0, 0);
+      }
+    }
+
+    /* ── Interactive Cursor Follower Reticle & Trailing Particles ── */
+    .cyber-cursor-glow {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 99998;
+      transform: translate(-50%, -50%);
+      border: 1.5px solid rgba(74, 222, 128, 0.75);
+      box-shadow: 0 0 16px rgba(74, 222, 128, 0.65), inset 0 0 8px rgba(163, 230, 53, 0.45);
+      transition: width 0.22s cubic-bezier(0.16, 1, 0.3, 1), height 0.22s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease, box-shadow 0.2s ease, opacity 0.25s ease, border-radius 0.22s ease;
+      opacity: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      will-change: transform, left, top;
+    }
+
+    .cyber-cursor-glow::after {
+      content: '';
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #4ade80;
+      box-shadow: 0 0 8px #4ade80;
+    }
+
+    .cyber-cursor-glow.is-hovering {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      border-color: #a3e635;
+      box-shadow: 0 0 28px rgba(74, 222, 128, 0.95), 0 0 50px rgba(163, 230, 53, 0.6), inset 0 0 14px rgba(74, 222, 128, 0.5);
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    .cursor-stream-particle {
+      position: fixed;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 99997;
+      transform: translate(-50%, -50%);
+      animation: cursorParticleFade var(--life, 0.6s) ease-out forwards;
+    }
+
+    @keyframes cursorParticleFade {
+      0% {
+        opacity: 0.95;
+        transform: translate(-50%, -50%) scale(1.0);
+      }
+
+      50% {
+        opacity: 0.65;
+      }
+
+      100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) translate(var(--vx, 0px), var(--vy, 0px)) scale(0.1);
+      }
+    }
+
+    /* Doomsday Central Laser Flare & Cosmic Emerald Shimmer */
+    .moving-aurora-shimmer {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.65;
+      mix-blend-mode: screen;
+      background:
+        radial-gradient(circle at 50% 50%, rgba(74, 222, 128, 0.75) 0%, rgba(34, 197, 94, 0.35) 24%, transparent 60%),
+        radial-gradient(circle at 50% 16%, rgba(163, 230, 53, 0.5) 0%, transparent 45%),
+        linear-gradient(90deg, transparent 15%, rgba(74, 222, 128, 0.08) 35%, rgba(74, 222, 128, 0.55) 50%, rgba(74, 222, 128, 0.08) 65%, transparent 85%),
+        linear-gradient(180deg, transparent 15%, rgba(74, 222, 128, 0.08) 35%, rgba(74, 222, 128, 0.45) 50%, rgba(74, 222, 128, 0.08) 65%, transparent 85%);
+      background-size: 135% 135%;
+      animation: posterEnergySweep var(--aurora-duration, 10s) ease-in-out infinite alternate;
+    }
+
+    @keyframes posterEnergySweep {
+      0% {
+        background-position: 0% 30%;
+        opacity: 0.32;
+      }
+
+      50% {
+        background-position: 100% 70%;
+        opacity: 0.56;
+      }
+
+      100% {
+        background-position: 30% 90%;
+        opacity: 0.38;
+      }
+    }
+
+    /* Central Cyber Leader & Circuitry Luminescence Pulse */
+    .moving-nodes-pulse {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      mix-blend-mode: color-dodge;
+      opacity: 0.38;
+      background: radial-gradient(circle at 50% 46%, rgba(163, 230, 53, 0.70) 0%, rgba(74, 222, 128, 0.45) 24%, rgba(34, 197, 94, 0.25) 45%, transparent 75%),
+        radial-gradient(circle at 82% 28%, rgba(251, 191, 36, 0.58) 0%, transparent 35%);
+      animation: posterCorePulse 4.8s ease-in-out infinite alternate;
+    }
+
+    @keyframes posterCorePulse {
+      0% {
+        opacity: 0.22;
+        transform: scale(0.98);
+      }
+
+      50% {
+        opacity: 0.62;
+        transform: scale(1.03);
+      }
+
+      100% {
+        opacity: 0.68;
+        transform: scale(1.04);
+      }
+    }
+
+    /* Ambient Floating Tactical Embers & Cyber Spark Particles */
+    .ambient-dust-container {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .ambient-dust-particle {
+      position: absolute;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.95) 0%, rgba(74, 222, 128, 0.65) 50%, rgba(251, 191, 36, 0.35) 85%, transparent 100%);
+      pointer-events: none;
+      animation: floatUpward linear infinite;
+    }
+
+    @keyframes floatUpward {
+      0% {
+        transform: translateY(105vh) scale(0.6);
+        opacity: 0;
+      }
+
+      10% {
+        opacity: 0.85;
+      }
+
+      90% {
+        opacity: 0.75;
+      }
+
+      100% {
+        transform: translateY(-10vh) scale(1.2);
+        opacity: 0;
+      }
+    }
+
+    /* Clean subtle top status badge */
+    .subtle-badge-overlay {
+      position: absolute;
+      top: 24px;
+      left: 28px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(10, 16, 32, 0.70);
+      backdrop-filter: blur(24px) saturate(180%);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      padding: 8px 18px;
+      border-radius: 9999px;
+      border: 1px solid rgba(74, 222, 128, 0.28);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+      color: #cbd5e1;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.65);
+      z-index: 10;
+      transition: opacity 0.4s ease;
+    }
+
+    .pulse-indicator {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #4ade80;
+      box-shadow: 0 0 10px #4ade80;
+      animation: pulseAnim 2s infinite;
+    }
+
+    @keyframes pulseAnim {
+
+      0%,
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+
+      50% {
+        transform: scale(1.4);
+        opacity: 0.5;
+      }
+    }
+
+    /* Floating Glass Control Dock */
+    .floating-glass-dock {
+      position: absolute;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 16px;
+      background: rgba(6, 15, 9, 0.88);
+      backdrop-filter: blur(28px) saturate(200%);
+      -webkit-backdrop-filter: blur(28px) saturate(200%);
+      border-radius: 9999px;
+      border: 1px solid rgba(74, 222, 128, 0.3);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.75), inset 0 1px 1px rgba(163, 230, 53, 0.25);
+      z-index: 20;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .glass-dock-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(74, 222, 128, 0.2);
+      color: #e2e8f0;
+      padding: 7px 14px;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .glass-dock-btn:hover {
+      background: rgba(74, 222, 128, 0.22);
+      border-color: rgba(74, 222, 128, 0.6);
+      color: #4ade80;
+      box-shadow: 0 0 16px rgba(74, 222, 128, 0.35);
+    }
+
+    .glass-dock-btn.active {
+      background: rgba(74, 222, 128, 0.28);
+      border-color: #4ade80;
+      color: #4ade80;
+    }
+
+    .glass-dock-btn.portal-btn {
+      background: linear-gradient(135deg, #15803d 0%, #22c55e 50%, #a3e635 100%);
+      border-color: rgba(163, 230, 53, 0.6);
+      color: #020b05;
+      font-weight: 800;
+    }
+
+    .glass-dock-btn.portal-btn:hover {
+      background: linear-gradient(135deg, #16a34a 0%, #4ade80 50%, #fbbf24 100%);
+      box-shadow: 0 0 20px rgba(74, 222, 128, 0.55);
+    }
+
+    /* Gothic Title Typography */
+    .hero-gothic-title {
+      font-family: 'Pirata One', 'New Rocker', 'Grenze Gotisch', cursive, fantasy;
+      font-size: clamp(2.85rem, 8.6vw, 6.25rem);
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: 0.055em;
+      text-transform: uppercase;
+      text-align: center;
+      margin: 0 auto;
+      display: inline-block;
+      background: linear-gradient(180deg,
+          #ffffff 0%,
+          #e8faec 14%,
+          #a7f3b4 26%,
+          #4ade80 44%,
+          #22c55e 49%,
+          #11451f 51%,
+          #17612c 64%,
+          #15803d 76%,
+          #063318 88%,
+          #021b0d 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter:
+        drop-shadow(0 1px 0 rgba(255, 255, 255, 0.85)) drop-shadow(0 2px 1px #061e0b) drop-shadow(0 4px 6px #010603) drop-shadow(0 0 24px rgba(74, 222, 128, 0.88)) drop-shadow(0 0 55px rgba(34, 197, 94, 0.65)) drop-shadow(0 0 95px rgba(21, 128, 61, 0.45));
+      user-select: text;
+    }
+
+    /* Auto-hide UI on idle mouse */
+    body.idle .subtle-badge-overlay,
+    body.idle .floating-glass-dock {
+      opacity: 0.2;
+    }
+
+    body.idle:hover .subtle-badge-overlay,
+    body.idle:hover .floating-glass-dock {
+      opacity: 1;
+    }
+
+    /* ── Interactive Cyber Touch & Click Energy Effects ────────────────── */
+    .cyber-touch-container {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 99999;
+      overflow: hidden;
+    }
+
+    .cyber-touch-ring {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      transform: translate(-50%, -50%) scale(0.1);
+      border: 2px solid #4ade80;
+      box-shadow:
+        0 0 22px rgba(74, 222, 128, 0.95),
+        inset 0 0 16px rgba(163, 230, 53, 0.7);
+      animation: cyberShockwaveExpand 0.65s cubic-bezier(0.15, 1, 0.3, 1) forwards;
+    }
+
+    .cyber-touch-core {
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      background: radial-gradient(circle, #ffffff 0%, #a3e635 45%, #4ade80 75%, transparent 100%);
+      box-shadow:
+        0 0 24px #4ade80,
+        0 0 45px #22c55e;
+      animation: cyberCoreFlash 0.4s ease-out forwards;
+    }
+
+    .cyber-touch-spark {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 0 10px currentColor;
+      animation: cyberSparkDisperse var(--spark-duration, 0.6s) cubic-bezier(0.15, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes cyberShockwaveExpand {
+      0% {
+        width: 10px;
+        height: 10px;
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(0.2);
+      }
+
+      60% {
+        opacity: 0.85;
+      }
+
+      100% {
+        width: 150px;
+        height: 150px;
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(1.0);
+        border-width: 1px;
+      }
+    }
+
+    @keyframes cyberCoreFlash {
+      0% {
+        transform: translate(-50%, -50%) scale(0.4);
+        opacity: 1;
+      }
+
+      50% {
+        transform: translate(-50%, -50%) scale(1.8);
+        opacity: 0.9;
+      }
+
+      100% {
+        transform: translate(-50%, -50%) scale(0.1);
+        opacity: 0;
+      }
+    }
+
+    @keyframes cyberSparkDisperse {
+      0% {
+        transform: translate(-50%, -50%) translate(0, 0) scale(1.4);
+        opacity: 1;
+      }
+
+      100% {
+        transform: translate(-50%, -50%) translate(var(--tx, 0px), var(--ty, 0px)) scale(0.1);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Hanging Evil Eye Amulet Talisman (Top-Left Corner) - Click to Open Official Poster -->
+  <div class="hanging-eye-rig" id="hanging-eye-charm" role="button" tabindex="0" aria-label="Open Official Poster" onclick="window.openPosterLightbox();" onkeydown="if(event.key==='Enter'||event.key===' ')window.openPosterLightbox();" title="🧿 Click to view Official Poster">
+    <div class="eye-mount-stick" onclick="window.openPosterLightbox();" style="cursor: pointer;">
+      <svg width="90" height="38" viewBox="0 0 90 38" fill="none" xmlns="http://www.w3.org/2000/svg" class="stick-svg">
+        <defs>
+          <linearGradient id="stickWoodGradHero" x1="0" y1="0" x2="82" y2="18" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#3d1e06" />
+            <stop offset="25%" stop-color="#78350f" />
+            <stop offset="55%" stop-color="#b45309" />
+            <stop offset="85%" stop-color="#d97706" />
+            <stop offset="100%" stop-color="#92400e" />
+          </linearGradient>
+          <linearGradient id="knotGradHero" x1="64" y1="6" x2="74" y2="18" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#fde68a" />
+            <stop offset="50%" stop-color="#d97706" />
+            <stop offset="100%" stop-color="#78350f" />
+          </linearGradient>
+          <filter id="stickShadowFilterHero" x="-4" y="-4" width="100" height="46" filterUnits="userSpaceOnUse">
+            <feDropShadow dx="1" dy="3" stdDeviation="3" flood-color="#000" flood-opacity="0.85"/>
+          </filter>
+        </defs>
+        <path d="M-4 -4 L-2 12 L70 16 Q76 16 78 13 Q80 10 73 8 L-2 -4 Z" fill="url(#stickWoodGradHero)" filter="url(#stickShadowFilterHero)" />
+        <line x1="22" y1="0" x2="24" y2="13" stroke="#451a03" stroke-width="1.8" stroke-linecap="round" opacity="0.8"/>
+        <line x1="24" y1="0" x2="26" y2="13" stroke="#fef08a" stroke-width="1" stroke-linecap="round" opacity="0.45"/>
+        <line x1="48" y1="4" x2="50" y2="15" stroke="#451a03" stroke-width="1.8" stroke-linecap="round" opacity="0.8"/>
+        <line x1="50" y1="4" x2="52" y2="15" stroke="#fef08a" stroke-width="1" stroke-linecap="round" opacity="0.45"/>
+        <rect x="63" y="8" width="9" height="9" rx="2" fill="url(#knotGradHero)" stroke="#451a03" stroke-width="0.8" />
+        <line x1="64" y1="9" x2="70" y2="15" stroke="#78350f" stroke-width="1" />
+        <line x1="68" y1="9" x2="72" y2="14" stroke="#fde68a" stroke-width="0.9" />
+        <circle cx="67.5" cy="18.5" r="2.5" fill="none" stroke="#fbbf24" stroke-width="1.2" />
+      </svg>
+    </div>
+    <div class="eye-sway-assembly" onclick="window.openPosterLightbox();" style="cursor: pointer;">
+      <div class="eye-thread"></div>
+      <div class="eye-hook-ring"></div>
+      <div class="eye-charm-disc" onclick="window.openPosterLightbox();" style="cursor: pointer;">
+        <img src="assets/evil_eye_amulet.jpg" alt="Evil Eye Talisman" class="eye-img" />
+        <div class="eye-glass-reflection"></div>
+        <div class="eye-energy-pulse"></div>
+      </div>
+      <div class="eye-tassel-wrap">
+        <div class="eye-gold-bead"></div>
+        <div class="eye-tassel-fringes"></div>
+      </div>
+      <div class="eye-badge-tooltip">
+        <span class="pulse-dot" style="width: 5px; height: 5px; background: #38bdf8;"></span>
+        <span>Click for Poster</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-viewport-container" id="viewport-container">
+    <div class="hero-frame-16-9">
+      <!-- 1. Master Moving Layer: The Official Poster with Continuous Fluid Drift -->
+      <div class="moving-bg-layer" id="bg-layer"></div>
+
+      <!-- 2. Thunderstorm Green Lightning Flare & Sheet Lightning Overlay -->
+      <div class="thunderstorm-bloom-layer"></div>
+      <div class="sheet-lightning-overlay"></div>
+
+      <!-- 3. High-Performance Moving Rocks & Thunderstorm Lightning Canvas -->
+      <canvas id="cosmic-fx-canvas" class="cosmic-fx-canvas"></canvas>
+
+      <!-- 4. Ambient Floating Tactical Embers & Cyber Spark Particles -->
+      <div class="ambient-dust-container" id="dust-container"></div>
+
+      <!-- Centered Gothic Title Preview Showcase -->
+      <div
+        style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; pointer-events: none; z-index: 10; padding: 20px;"
+        id="title-preview-overlay">
+        <h1 class="hero-gothic-title"
+          style="font-size: clamp(3rem, 7.5vw, 5.5rem); animation: heroBreathingDrift 20s ease-in-out infinite alternate;">
+          NEURAL FORGE '26</h1>
+      </div>
+
+      <!-- Subtle System Telemetry Badge -->
+      <div class="subtle-badge-overlay">
+        <span class="pulse-indicator"></span>
+        <span>NEURAL FORGE '26 // COSMIC CANVAS IN LIVING MOTION</span>
+        <span style="color: rgba(255,255,255,0.25);">|</span>
+        <span style="color: #4ade80;" id="motion-status-badge">MOVING ROCKS &amp; THUNDERSTORM ACTIVE</span>
+      </div>
+
+      <!-- Floating Glass Controls Dock -->
+      <div class="floating-glass-dock">
+        <button class="glass-dock-btn active" id="btn-toggle-motion">
+          <span class="material-symbols-outlined" style="font-size: 16px;">motion_photos_on</span>
+          <span id="motion-label">Flow: 1.0x</span>
+        </button>
+
+        <button class="glass-dock-btn" id="btn-toggle-ratio">
+          <span class="material-symbols-outlined" style="font-size: 16px;">aspect_ratio</span>
+          <span id="ratio-label">16:9 Frame</span>
+        </button>
+
+        <button class="glass-dock-btn" id="btn-toggle-title">
+          <span class="material-symbols-outlined" style="font-size: 16px;">visibility</span>
+          <span id="title-toggle-label">Title: On</span>
+        </button>
+
+        <button class="glass-dock-btn" id="btn-trigger-thunder" title="Summon Green Thunderstorm Lightning Strike" onclick="if(window.triggerThunderstormStrike) window.triggerThunderstormStrike();">
+          <span class="material-symbols-outlined" style="font-size: 16px; color: #4ade80;">bolt</span>
+          <span>Thunder ⚡</span>
+        </button>
+
+        <button class="glass-dock-btn" id="btn-toggle-preset"
+          title="Switch Animation Movement Mode (Orbit, Warp, Pulse, Zero-G, Scan)">
+          <span class="material-symbols-outlined" style="font-size: 16px;">autorenew</span>
+          <span id="preset-mode-label">Mode: Orbit</span>
+        </button>
+
+        <a href="assets/clean_cosmic_widescreen.jpg" download="neural_forge_26_cosmic_widescreen.jpg"
+          class="glass-dock-btn">
+          <span class="material-symbols-outlined" style="font-size: 16px;">wallpaper</span>
+          <span>16:9 Art</span>
+        </a>
+
+        <a href="assets/clean_cosmic_portrait.jpg" download="neural_forge_26_cosmic_portrait.jpg" class="glass-dock-btn">
+          <span class="material-symbols-outlined" style="font-size: 16px;">stay_current_portrait</span>
+          <span>Portrait</span>
+        </a>
+
+        <a href="index.html" class="glass-dock-btn portal-btn">
+          <span class="material-symbols-outlined" style="font-size: 16px;">launch</span>
+          <span>Enter Portal</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      'use strict';
+
+      const container = document.getElementById('viewport-container');
+      const bgLayer = document.getElementById('bg-layer');
+      const dustContainer = document.getElementById('dust-container');
+      const btnToggleRatio = document.getElementById('btn-toggle-ratio');
+      const ratioLabel = document.getElementById('ratio-label');
+      const btnToggleMotion = document.getElementById('btn-toggle-motion');
+      const motionLabel = document.getElementById('motion-label');
+      const motionStatusBadge = document.getElementById('motion-status-badge');
+
+      // 1. Aspect Ratio Toggle
+      let is169Locked = false;
+      if (btnToggleRatio && container) {
+        btnToggleRatio.addEventListener('click', () => {
+          is169Locked = !is169Locked;
+          container.classList.toggle('locked-16-9', is169Locked);
+          btnToggleRatio.classList.toggle('active', is169Locked);
+          ratioLabel.textContent = is169Locked ? 'Fullscreen Mode' : '16:9 Frame';
+        });
+      }
+
+      // 1b. Title Showcase Overlay Toggle
+      const btnToggleTitle = document.getElementById('btn-toggle-title');
+      const titleToggleLabel = document.getElementById('title-toggle-label');
+      const titleOverlay = document.getElementById('title-preview-overlay');
+      let isTitleVisible = true;
+
+      if (btnToggleTitle && titleOverlay) {
+        btnToggleTitle.addEventListener('click', () => {
+          isTitleVisible = !isTitleVisible;
+          titleOverlay.style.display = isTitleVisible ? 'flex' : 'none';
+          btnToggleTitle.classList.toggle('active', isTitleVisible);
+          titleToggleLabel.textContent = isTitleVisible ? 'Title: On' : 'Title: Off';
+        });
+      }
+
+      // 2. Motion Velocity Speed Regulator (1.0x -> 1.75x -> Paused -> 0.5x)
+      const speeds = [
+        { label: 'Flow: 1.0x', duration: '26s', aurora: '16s', paused: false, badge: 'LIVING FLOW (1.0x)' },
+        { label: 'Flow: 2.0x', duration: '13s', aurora: '8s', paused: false, badge: 'FAST FLOW (2.0x)' },
+        { label: 'Motion: Paused', duration: '26s', aurora: '16s', paused: true, badge: 'MOTION PAUSED' },
+        { label: 'Flow: 0.5x', duration: '48s', aurora: '30s', paused: false, badge: 'GENTLE FLOW (0.5x)' }
+      ];
+      let currentSpeedIdx = 0;
+
+      if (btnToggleMotion && bgLayer) {
+        btnToggleMotion.addEventListener('click', () => {
+          currentSpeedIdx = (currentSpeedIdx + 1) % speeds.length;
+          const s = speeds[currentSpeedIdx];
+          motionLabel.textContent = s.label;
+          if (motionStatusBadge) motionStatusBadge.textContent = s.badge;
+
+          if (s.paused) {
+            bgLayer.classList.add('paused');
+            btnToggleMotion.classList.remove('active');
+          } else {
+            bgLayer.classList.remove('paused');
+            btnToggleMotion.classList.add('active');
+            bgLayer.style.setProperty('--drift-duration', s.duration);
+            const shimmer = document.getElementById('aurora-shimmer');
+            if (shimmer) shimmer.style.setProperty('--aurora-duration', s.aurora);
+          }
+        });
+      }
+
+      // 2b. Cycle Background Animation Movement Modes (Orbit, Warp, Pulse, Zero-G, Scan)
+      const motionPresets = [
+        { id: 'orbit', name: 'Orbit' },
+        { id: 'warp', name: 'Warp' },
+        { id: 'pulse', name: 'Pulse' },
+        { id: 'drift', name: 'Zero-G' },
+        { id: 'scanner', name: 'Scan' }
+      ];
+      let currentPresetIdx = 0;
+      const btnTogglePreset = document.getElementById('btn-toggle-preset');
+      const presetModeLabel = document.getElementById('preset-mode-label');
+
+      if (btnTogglePreset) {
+        btnTogglePreset.addEventListener('click', () => {
+          currentPresetIdx = (currentPresetIdx + 1) % motionPresets.length;
+          const p = motionPresets[currentPresetIdx];
+          if (presetModeLabel) presetModeLabel.textContent = `Mode: ${p.name}`;
+          if (motionStatusBadge) motionStatusBadge.textContent = `MOTION // ${p.name.toUpperCase()}`;
+          if (window.setBgMotionPreset) {
+            window.setBgMotionPreset(p.id);
+          } else if (bgLayer) {
+            motionPresets.forEach((m) => bgLayer.classList.remove(`motion-${m.id}`));
+            bgLayer.classList.add(`motion-${p.id}`);
+          }
+        });
+      }
+
+      // 3. Background motion permanently disabled
+      if (bgLayer) {
+        bgLayer.style.setProperty('--parallax-x', '0px');
+        bgLayer.style.setProperty('--parallax-y', '0px');
+      }
+
+      // 4. Ambient Energy Dust Motes
+      if (dustContainer) {
+        const dustCount = 24;
+        for (let i = 0; i < dustCount; i++) {
+          const particle = document.createElement('div');
+          particle.className = 'ambient-dust-particle';
+          const size = Math.random() * 3.5 + 1.5;
+          const left = Math.random() * 100;
+          const duration = Math.random() * 12 + 10;
+          const delay = Math.random() * 14;
+          const opacity = Math.random() * 0.55 + 0.3;
+
+          particle.style.width = `${size.toFixed(1)}px`;
+          particle.style.height = `${size.toFixed(1)}px`;
+          particle.style.left = `${left.toFixed(1)}%`;
+          particle.style.animationDuration = `${duration.toFixed(1)}s`;
+          particle.style.animationDelay = `-${delay.toFixed(1)}s`;
+          particle.style.opacity = opacity.toFixed(2);
+
+          const rand = Math.random();
+          if (rand < 0.4) {
+            particle.style.boxShadow = '0 0 8px rgba(74, 222, 128, 0.9)';
+          } else if (rand < 0.75) {
+            particle.style.boxShadow = '0 0 8px rgba(168, 85, 247, 0.9)';
+          } else {
+            particle.style.boxShadow = '0 0 6px rgba(255, 255, 255, 0.95)';
+          }
+
+          dustContainer.appendChild(particle);
+        }
+      }
+
+      // 5. Idle mouse detection to fade UI controls
+      let idleTimer = null;
+      window.addEventListener('mousemove', () => {
+        document.body.classList.remove('idle');
+        clearTimeout(idleTimer);
+        idleTimer = setTimeout(() => {
+          document.body.classList.add('idle');
+        }, 3200);
+      });
+    })();
+  </script>
+
+  <!-- ===============================================================
+       OFFICIAL POSTER LIGHTBOX MODAL (TRIGGERED BY HANGING EYE)
+       =============================================================== -->
+  <div id="poster-lightbox-modal" class="modal-overlay" onclick="if(event.target === this) window.closePosterLightbox();">
+    <div class="poster-modal-card" role="dialog" aria-label="Official Event Poster">
+      <div class="poster-modal-header">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <div style="width: 32px; height: 32px; border-radius: 50%; background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.4); display: flex; align-items: center; justify-content: center; color: #38bdf8; font-size: 18px;">
+            🧿
+          </div>
+          <div>
+            <div style="font-family: var(--font-display); font-size: 1.05rem; font-weight: 800; color: #f8fafc; letter-spacing: 0.04em;">
+              NEURAL FORGE '26 OFFICIAL POSTER
+            </div>
+            <div class="mono-label" style="font-size: 0.6875rem; color: #4ade80;">SRM TRP ENGINEERING COLLEGE • OCT 15-16, 2026</div>
+          </div>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <a href="assets/official_poster_v2.jpg" download="neural_forge_26_official_poster.jpg" class="btn-primary" style="padding: 7px 14px; font-size: 0.78rem; gap: 4px;">
+            <span class="material-symbols-outlined text-[16px]">download</span>
+            <span>Download</span>
+          </a>
+          <a href="assets/official_poster_v2.jpg" target="_blank" class="nav-cta-btn" style="padding: 7px 12px; font-size: 0.78rem; gap: 4px; background: rgba(255, 255, 255, 0.06); border-color: rgba(255, 255, 255, 0.18); color: #cbd5e1;" title="Open full resolution in new tab">
+            <span class="material-symbols-outlined text-[16px]">open_in_new</span>
+          </a>
+          <button type="button" class="track-unflip-btn" onclick="window.closePosterLightbox();" title="Close Poster">
+            <span class="material-symbols-outlined" style="font-size: 20px;">close</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="poster-modal-body">
+        <img src="assets/official_poster_v2.jpg" alt="Neural Forge '26 Hackathon Official Poster" class="poster-modal-img" />
+      </div>
+
+      <div class="poster-modal-footer">
+        <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--secondary); text-align: center;">
+          DEPARTMENT OF CSE • CODE CRAFTERS CLUB • 5TH FLOOR SEMINAR HALL • REGISTRATION DEADLINE: 02.10.2026
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>

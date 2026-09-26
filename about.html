@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>About Us // Neural Forge 2026 | SRM TRP Engineering College</title>
+  <meta name="description" content="Faculty leadership, academic advisory board, and student executive leads of Code Crafters Club, SRM TRP Engineering College.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- The Chosen Background in Living Moving Form with Moving Rocks & Thunderstorm Lightning -->
+  <div class="shader-background">
+    <div class="moving-bg-layer"></div>
+    <div class="thunderstorm-bloom-layer"></div>
+    <div class="sheet-lightning-overlay"></div>
+    <canvas id="cosmic-fx-canvas" class="cosmic-fx-canvas"></canvas>
+    <div class="ambient-dust-container"></div>
+  </div>
+
+  <!-- Hanging Evil Eye Amulet Talisman (Top-Left Corner) - Click to Open Official Poster -->
+  <div class="hanging-eye-rig" id="hanging-eye-charm" role="button" tabindex="0" aria-label="Open Official Poster" onclick="window.openPosterLightbox();" onkeydown="if(event.key==='Enter'||event.key===' ')window.openPosterLightbox();" title="🧿 Click to view Official Poster">
+    <div class="eye-mount-stick" onclick="window.openPosterLightbox();" style="cursor: pointer;">
+      <svg width="90" height="38" viewBox="0 0 90 38" fill="none" xmlns="http://www.w3.org/2000/svg" class="stick-svg">
+        <defs>
+          <linearGradient id="stickWoodGradAbt" x1="0" y1="0" x2="82" y2="18" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#3d1e06" />
+            <stop offset="25%" stop-color="#78350f" />
+            <stop offset="55%" stop-color="#b45309" />
+            <stop offset="85%" stop-color="#d97706" />
+            <stop offset="100%" stop-color="#92400e" />
+          </linearGradient>
+          <linearGradient id="knotGradAbt" x1="64" y1="6" x2="74" y2="18" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#fde68a" />
+            <stop offset="50%" stop-color="#d97706" />
+            <stop offset="100%" stop-color="#78350f" />
+          </linearGradient>
+          <filter id="stickShadowFilterAbt" x="-4" y="-4" width="100" height="46" filterUnits="userSpaceOnUse">
+            <feDropShadow dx="1" dy="3" stdDeviation="3" flood-color="#000" flood-opacity="0.85"/>
+          </filter>
+        </defs>
+        <path d="M-4 -4 L-2 12 L70 16 Q76 16 78 13 Q80 10 73 8 L-2 -4 Z" fill="url(#stickWoodGradAbt)" filter="url(#stickShadowFilterAbt)" />
+        <line x1="22" y1="0" x2="24" y2="13" stroke="#451a03" stroke-width="1.8" stroke-linecap="round" opacity="0.8"/>
+        <line x1="24" y1="0" x2="26" y2="13" stroke="#fef08a" stroke-width="1" stroke-linecap="round" opacity="0.45"/>
+        <line x1="48" y1="4" x2="50" y2="15" stroke="#451a03" stroke-width="1.8" stroke-linecap="round" opacity="0.8"/>
+        <line x1="50" y1="4" x2="52" y2="15" stroke="#fef08a" stroke-width="1" stroke-linecap="round" opacity="0.45"/>
+        <rect x="63" y="8" width="9" height="9" rx="2" fill="url(#knotGradAbt)" stroke="#451a03" stroke-width="0.8" />
+        <line x1="64" y1="9" x2="70" y2="15" stroke="#78350f" stroke-width="1" />
+        <line x1="68" y1="9" x2="72" y2="14" stroke="#fde68a" stroke-width="0.9" />
+        <circle cx="67.5" cy="18.5" r="2.5" fill="none" stroke="#fbbf24" stroke-width="1.2" />
+      </svg>
+    </div>
+    <div class="eye-sway-assembly" onclick="window.openPosterLightbox();" style="cursor: pointer;">
+      <div class="eye-thread"></div>
+      <div class="eye-hook-ring"></div>
+      <div class="eye-charm-disc" onclick="window.openPosterLightbox();" style="cursor: pointer;">
+        <img src="assets/evil_eye_amulet.jpg" alt="Evil Eye Talisman" class="eye-img" />
+        <div class="eye-glass-reflection"></div>
+        <div class="eye-energy-pulse"></div>
+      </div>
+      <div class="eye-tassel-wrap">
+        <div class="eye-gold-bead"></div>
+        <div class="eye-tassel-fringes"></div>
+      </div>
+      <div class="eye-badge-tooltip">
+        <span class="pulse-dot" style="width: 5px; height: 5px; background: #38bdf8;"></span>
+        <span>Click for Poster</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Top Sticky Navigation Bar -->
+  <header class="site-header">
+    <div class="header-container">
+      <div class="header-brand">
+        <button id="menu-btn" class="menu-toggle-btn" aria-label="Open Navigation Menu">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+        <div class="logo-group">
+          <a href="index.html">
+            <img src="assets/srm_trp_logo.png" alt="SRM TRP Engineering College" class="logo-srm">
+          </a>
+          <div class="logo-divider"></div>
+          <a href="index.html">
+            <img src="assets/code_crafters_logo.png" alt="Code Crafters Club" class="logo-ccc">
+          </a>
+        </div>
+        <div class="brand-text-block">
+          <span class="brand-title">NEURAL FORGE</span>
+          <span class="brand-sub">ABOUT & LEADERSHIP</span>
+        </div>
+      </div>
+
+      <nav class="desktop-nav">
+        <a href="index.html#home" class="nav-link" data-path="home">
+          <span class="material-symbols-outlined text-[18px]">home</span>
+          <span>Home</span>
+        </a>
+        <a href="index.html#tracks" class="nav-link" data-path="tracks">
+          <span class="material-symbols-outlined text-[18px]">hub</span>
+          <span>Tracks</span>
+        </a>
+        <a href="index.html#schedule" class="nav-link" data-path="schedule">
+          <span class="material-symbols-outlined text-[18px]">calendar_today</span>
+          <span>Schedule</span>
+        </a>
+        <a href="index.html#about" class="nav-link active" data-path="about">
+          <span class="material-symbols-outlined text-[18px]">info</span>
+          <span>About Us</span>
+        </a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdPUSn6Qpd585HlKsup8jDA4SXCDRuiGuTqHe-YNZMvdJEjgA/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer" class="nav-cta-btn" data-path="register">
+          <span class="material-symbols-outlined text-[18px]">how_to_reg</span>
+          <span>Register</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="drawer-backdrop" class="drawer-backdrop"></div>
+  <aside id="mobile-drawer" class="mobile-drawer">
+    <div>
+      <div class="drawer-header">
+        <div>
+          <div class="brand-title">NEURAL FORGE</div>
+          <div class="mono-label" style="font-size: 0.65rem; color: var(--secondary);">Intra-College Hackathon 2026</div>
+        </div>
+        <button id="drawer-close-btn" class="menu-toggle-btn" aria-label="Close Navigation Menu">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+      <div class="drawer-links">
+        <a href="index.html#home" class="drawer-link" data-path="home">
+          <span class="material-symbols-outlined text-[#94a3b8]">home</span>
+          <span>Home</span>
+        </a>
+        <a href="index.html#tracks" class="drawer-link" data-path="tracks">
+          <span class="material-symbols-outlined text-[#94a3b8]">hub</span>
+          <span>Tracks</span>
+        </a>
+        <a href="index.html#schedule" class="drawer-link" data-path="schedule">
+          <span class="material-symbols-outlined text-[#94a3b8]">calendar_today</span>
+          <span>Schedule</span>
+        </a>
+        <a href="index.html#about" class="drawer-link active" data-path="about">
+          <span class="material-symbols-outlined text-[#4ade80]">info</span>
+          <span>About Us</span>
+        </a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdPUSn6Qpd585HlKsup8jDA4SXCDRuiGuTqHe-YNZMvdJEjgA/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer" class="drawer-link" data-path="register" style="color: var(--primary); font-weight: 700;">
+          <span class="material-symbols-outlined text-[#4ade80]">how_to_reg</span>
+          <span>Register (Google Form)</span>
+        </a>
+      </div>
+    </div>
+    <div class="drawer-footer">
+      <div class="mono-label">ORGANIZED BY</div>
+      <div style="font-family: var(--font-display); font-weight: 700; font-size: 0.95rem; margin-top: 2px;">Code Crafters Club</div>
+      <div style="font-size: 0.75rem; color: var(--secondary); margin-top: 2px;">SRM TRP Engineering College</div>
+    </div>
+  </aside>
+
+  <!-- Main Viewport Content -->
+  <main class="main-content">
+    <div style="display: flex; flex-direction: column; gap: 24px;">
+
+      <!-- Banner -->
+      <section class="glass-liquid" style="padding: 24px;">
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span class="badge-pill">ORG-PROFILE-2026</span>
+            <span class="mono-label">INSTITUTIONAL HUB</span>
+          </div>
+          <h1 class="hero-heading" style="font-size: 2.25rem;">About Us</h1>
+          <p style="font-size: 0.95rem; color: var(--secondary); line-height: 1.5; max-width: 720px;">
+            Department of Computer Science & Engineering, SRM TRP Engineering College. Spearheading technological excellence and student-driven AI innovation.
+          </p>
+        </div>
+      </section>
+
+      <!-- ===============================================================
+           EVENT COORDINATORS INTERACTIVE TEAM SHOWCASE
+           Interactive Group Photo: Touch/click each person to open their LinkedIn profile
+           Placed above Head of Department as requested
+           =============================================================== -->
+      <section class="event-coordinators-showcase glass-liquid">
+        <div class="coord-showcase-header">
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span class="material-symbols-outlined text-[#4ade80] text-[20px]">groups</span>
+              <span class="mono-label" style="font-weight: 700; color: #4ade80;">CODECRAFTERS • CSE DEPT</span>
+            </div>
+            <span class="badge-pill" style="border-color: rgba(74, 222, 128, 0.4); color: #86efac;">5 EVENT COORDINATORS</span>
+          </div>
+          <h2 style="font-family: var(--font-display); font-size: 1.35rem; font-weight: 700; color: var(--on-surface); margin: 6px 0 2px;">
+            Event Coordinators
+          </h2>
+          <p style="font-size: 0.85rem; color: var(--secondary); line-height: 1.45; margin: 0;">
+            Touch or click on any person in the group photo below to view their verified LinkedIn profile.
+          </p>
+        </div>
+
+        <!-- Interactive Photo Stage with 5 Direct Click/Touch Hotspots -->
+        <div class="coordinators-stage" role="region" aria-label="Interactive Event Coordinators Photo">
+          <img src="assets/event_coordinators_team.jpg" alt="Neural Forge '26 Event Coordinators - Code Crafters Club" class="coordinators-img" />
+
+          <div class="coordinators-hotspots-layer">
+            <!-- Person 1: Yogasri Velayutham (Far Left) -->
+            <a href="https://www.linkedin.com/in/yogasri-velayutham-a0335a32a?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="coord-hotspot coord-hotspot-1"
+               data-person="1"
+               aria-label="Yogasri Velayutham - Event Coordinator (LinkedIn Profile)"
+               title="Yogasri Velayutham • Click to open LinkedIn">
+              <div class="coord-hud-pill">
+                <svg class="linkedin-svg-icon" viewBox="0 0 24 24" width="14" height="14" fill="#38bdf8"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                <span>Yogasri Velayutham</span>
+                <span class="material-symbols-outlined text-[13px]">open_in_new</span>
+              </div>
+            </a>
+
+            <!-- Person 2: Varshini B P (Second Left) -->
+            <a href="https://www.linkedin.com/in/varshini-b-p-79b901338?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="coord-hotspot coord-hotspot-2"
+               data-person="2"
+               aria-label="Varshini B P - Event Coordinator (LinkedIn Profile)"
+               title="Varshini B P • Click to open LinkedIn">
+              <div class="coord-hud-pill">
+                <svg class="linkedin-svg-icon" viewBox="0 0 24 24" width="14" height="14" fill="#38bdf8"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                <span>Varshini B P</span>
+                <span class="material-symbols-outlined text-[13px]">open_in_new</span>
+              </div>
+            </a>
+
+            <!-- Person 3: Sedhu N (Center) -->
+            <a href="https://www.linkedin.com/in/sedhu-n-01014532a?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="coord-hotspot coord-hotspot-3"
+               data-person="3"
+               aria-label="Sedhu N - Event Coordinator (LinkedIn Profile)"
+               title="Sedhu N • Click to open LinkedIn">
+              <div class="coord-hud-pill">
+                <svg class="linkedin-svg-icon" viewBox="0 0 24 24" width="14" height="14" fill="#38bdf8"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                <span>Sedhu N</span>
+                <span class="material-symbols-outlined text-[13px]">open_in_new</span>
+              </div>
+            </a>
+
+            <!-- Person 4: Sindhu Sri D (Fourth Left) -->
+            <a href="https://www.linkedin.com/in/sindhu-sri-d-31a61132a?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="coord-hotspot coord-hotspot-4"
+               data-person="4"
+               aria-label="Sindhu Sri D - Event Coordinator (LinkedIn Profile)"
+               title="Sindhu Sri D • Click to open LinkedIn">
+              <div class="coord-hud-pill">
+                <svg class="linkedin-svg-icon" viewBox="0 0 24 24" width="14" height="14" fill="#38bdf8"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                <span>Sindhu Sri D</span>
+                <span class="material-symbols-outlined text-[13px]">open_in_new</span>
+              </div>
+            </a>
+
+            <!-- Person 5: Puvisha S (Far Right) -->
+            <a href="https://www.linkedin.com/in/puvisha-s-a0336132a?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="coord-hotspot coord-hotspot-5"
+               data-person="5"
+               aria-label="Puvisha S - Event Coordinator (LinkedIn Profile)"
+               title="Puvisha S • Click to open LinkedIn">
+              <div class="coord-hud-pill">
+                <svg class="linkedin-svg-icon" viewBox="0 0 24 24" width="14" height="14" fill="#38bdf8"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                <span>Puvisha S</span>
+                <span class="material-symbols-outlined text-[13px]">open_in_new</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Access Coordinator Cards Row below photo -->
+        <div class="coordinators-grid">
+          <!-- 1. Yogasri Velayutham -->
+          <a href="https://www.linkedin.com/in/yogasri-velayutham-a0335a32a?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="coord-card"
+             data-person="1">
+            <div>
+              <div class="coord-card-name">Yogasri Velayutham</div>
+              <div class="coord-card-role">Event Coordinator</div>
+            </div>
+            <span class="coord-card-btn">
+              <svg class="linkedin-svg-icon" viewBox="0 0 24 24" width="12" height="12" fill="#38bdf8"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              <span>LinkedIn</span>
+            </span>
+          </a>
+
+          <!-- 2. Varshini B P -->
+          <a href="https://www.linkedin.com/in/varshini-b-p-79b901338?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="coord-card"
+             data-person="2">
+            <div>
+              <div class="coord-card-name">Varshini B P</div>
+              <div class="coord-card-role">Event Coordinator</div>
+            </div>
+            <span class="coord-card-btn">
+              <svg class="linkedin-svg-icon" viewBox="0 0 24 24" width="12" height="12" fill="#38bdf8"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              <span>LinkedIn</span>
+            </span>
+          </a>
+
+          <!-- 3. Sedhu N -->
+          <a href="https://www.linkedin.com/in/sedhu-n-01014532a?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="coord-card"
+             data-person="3">
+            <div>
+              <div class="coord-card-name">Sedhu N</div>
+              <div class="coord-card-role">Event Coordinator</div>
+            </div>
+            <span class="coord-card-btn">
+              <svg class="linkedin-svg-icon" viewBox="0 0 24 24" width="12" height="12" fill="#38bdf8"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              <span>LinkedIn</span>
+            </span>
+          </a>
+
+          <!-- 4. Sindhu Sri D -->
+          <a href="https://www.linkedin.com/in/sindhu-sri-d-31a61132a?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="coord-card"
+             data-person="4">
+            <div>
+              <div class="coord-card-name">Sindhu Sri D</div>
+              <div class="coord-card-role">Event Coordinator</div>
+            </div>
+            <span class="coord-card-btn">
+              <svg class="linkedin-svg-icon" viewBox="0 0 24 24" width="12" height="12" fill="#38bdf8"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              <span>LinkedIn</span>
+            </span>
+          </a>
+
+          <!-- 5. Puvisha S -->
+          <a href="https://www.linkedin.com/in/puvisha-s-a0336132a?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="coord-card"
+             data-person="5">
+            <div>
+              <div class="coord-card-name">Puvisha S</div>
+              <div class="coord-card-role">Event Coordinator</div>
+            </div>
+            <span class="coord-card-btn">
+              <svg class="linkedin-svg-icon" viewBox="0 0 24 24" width="12" height="12" fill="#38bdf8"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              <span>LinkedIn</span>
+            </span>
+          </a>
+        </div>
+      </section>
+
+      <!-- ===============================================================
+           TECHNICAL TEAM INTERACTIVE SHOWCASE
+           Interactive Group Photo: Touch/click each person to open their LinkedIn profile
+           Placed above Head of Department as requested
+           =============================================================== -->
+      <section class="event-coordinators-showcase technical-team-showcase glass-liquid">
+        <div class="coord-showcase-header">
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span class="material-symbols-outlined text-[#4ade80] text-[20px]">terminal</span>
+              <span class="mono-label" style="font-weight: 700; color: #4ade80;">CODECRAFTERS • CSE DEPT</span>
+            </div>
+            <span class="badge-pill" style="border-color: rgba(74, 222, 128, 0.4); color: #86efac;">TECHNICAL TEAM</span>
+          </div>
+          <h2 style="font-family: var(--font-display); font-size: 1.35rem; font-weight: 700; color: var(--on-surface); margin: 6px 0 2px;">
+            Technical Team
+          </h2>
+          <p style="font-size: 0.85rem; color: var(--secondary); line-height: 1.45; margin: 0;">
+            Touch or click on any person in the group photo below to view their verified LinkedIn profile.
+          </p>
+        </div>
+
+        <!-- Interactive Photo Stage with 5 Direct Click/Touch Hotspots -->
+        <div class="coordinators-stage" role="region" aria-label="Interactive Technical Team Photo">
+          <img src="assets/technical_team.jpg" alt="Neural Forge '26 Technical Team - Code Crafters Club" class="coordinators-img" />
+
+          <div class="coordinators-hotspots-layer">
+            <!-- Person 1: Rohan Kumar (Far Left) -->
+            <a href="https://www.linkedin.com/in/rohan-kumar-a8514032a?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="coord-hotspot coord-hotspot-1"
+               data-person="1"
+               aria-label="Rohan Kumar - Technical Team (LinkedIn Profile)"
+               title="Rohan Kumar • Click to open LinkedIn">
+              <div class="coord-hud-pill">
+                <svg class="linkedin-svg-icon" viewBox="0 0 24 24" width="14" height="14" fill="#38bdf8"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                <span>Rohan Kumar</span>
+                <span class="material-symbols-outlined text-[13px]">open_in_new</span>
+              </div>
+            </a>
+
+            <!-- Person 2: Jayasuriyan J S (Second Left) -->
+            <a href="https://www.linkedin.com/in/jayasuriyan-j-s-31b13932a?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="coord-hotspot coord-hotspot-2"
+               data-person="2"
+               aria-label="Jayasuriyan J S - Technical Team (LinkedIn Profile)"
+               title="Jayasuriyan J S • Click to open LinkedIn">
+              <div class="coord-hud-pill">
+                <svg class="linkedin-svg-icon" viewBox="0 0 24 24" width="14" height="14" fill="#38bdf8"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                <span>Jayasuriyan J S</span>
+                <span class="material-symbols-outlined text-[13px]">open_in_new</span>
+              </div>
+            </a>
+
+            <!-- Person 3: Pravin Raj G (Center) -->
+            <a href="https://www.linkedin.com/in/pravinrajg2906?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="coord-hotspot coord-hotspot-3"
+               data-person="3"
+               aria-label="Pravin Raj G - Technical Team (LinkedIn Profile)"
+               title="Pravin Raj G • Click to open LinkedIn">
+              <div class="coord-hud-pill">
+                <svg class="linkedin-svg-icon" viewBox="0 0 24 24" width="14" height="14" fill="#38bdf8"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                <span>Pravin Raj G</span>
+                <span class="material-symbols-outlined text-[13px]">open_in_new</span>
+              </div>
+            </a>
+
+            <!-- Person 4: Adithya Senthil (Fourth Left) -->
+            <a href="https://www.linkedin.com/in/adithya-senthil?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="coord-hotspot coord-hotspot-4"
+               data-person="4"
+               aria-label="Adithya Senthil - Technical Team (LinkedIn Profile)"
+               title="Adithya Senthil • Click to open LinkedIn">
+              <div class="coord-hud-pill">
+                <svg class="linkedin-svg-icon" viewBox="0 0 24 24" width="14" height="14" fill="#38bdf8"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                <span>Adithya Senthil</span>
+                <span class="material-symbols-outlined text-[13px]">open_in_new</span>
+              </div>
+            </a>
+
+            <!-- Person 5: Praveen Sagar (Far Right) -->
+            <a href="https://www.linkedin.com/in/praveen-sagar-21320b3b2?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="coord-hotspot coord-hotspot-5"
+               data-person="5"
+               aria-label="Praveen Sagar - Technical Team (LinkedIn Profile)"
+               title="Praveen Sagar • Click to open LinkedIn">
+              <div class="coord-hud-pill">
+                <svg class="linkedin-svg-icon" viewBox="0 0 24 24" width="14" height="14" fill="#38bdf8"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                <span>Praveen Sagar</span>
+                <span class="material-symbols-outlined text-[13px]">open_in_new</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Access Cards Row below photo -->
+        <div class="coordinators-grid">
+          <!-- 1. Rohan Kumar -->
+          <a href="https://www.linkedin.com/in/rohan-kumar-a8514032a?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="coord-card"
+             data-person="1">
+            <div>
+              <div class="coord-card-name">Rohan Kumar</div>
+              <div class="coord-card-role">Technical Team</div>
+            </div>
+            <span class="coord-card-btn">
+              <svg class="linkedin-svg-icon" viewBox="0 0 24 24" width="12" height="12" fill="#38bdf8"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              <span>LinkedIn</span>
+            </span>
+          </a>
+
+          <!-- 2. Jayasuriyan J S -->
+          <a href="https://www.linkedin.com/in/jayasuriyan-j-s-31b13932a?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="coord-card"
+             data-person="2">
+            <div>
+              <div class="coord-card-name">Jayasuriyan J S</div>
+              <div class="coord-card-role">Technical Team</div>
+            </div>
+            <span class="coord-card-btn">
+              <svg class="linkedin-svg-icon" viewBox="0 0 24 24" width="12" height="12" fill="#38bdf8"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              <span>LinkedIn</span>
+            </span>
+          </a>
+
+          <!-- 3. Pravin Raj G -->
+          <a href="https://www.linkedin.com/in/pravinrajg2906?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="coord-card"
+             data-person="3">
+            <div>
+              <div class="coord-card-name">Pravin Raj G</div>
+              <div class="coord-card-role">Technical Team</div>
+            </div>
+            <span class="coord-card-btn">
+              <svg class="linkedin-svg-icon" viewBox="0 0 24 24" width="12" height="12" fill="#38bdf8"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              <span>LinkedIn</span>
+            </span>
+          </a>
+
+          <!-- 4. Adithya Senthil -->
+          <a href="https://www.linkedin.com/in/adithya-senthil?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="coord-card"
+             data-person="4">
+            <div>
+              <div class="coord-card-name">Adithya Senthil</div>
+              <div class="coord-card-role">Technical Team</div>
+            </div>
+            <span class="coord-card-btn">
+              <svg class="linkedin-svg-icon" viewBox="0 0 24 24" width="12" height="12" fill="#38bdf8"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              <span>LinkedIn</span>
+            </span>
+          </a>
+
+          <!-- 5. Praveen Sagar -->
+          <a href="https://www.linkedin.com/in/praveen-sagar-21320b3b2?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="coord-card"
+             data-person="5">
+            <div>
+              <div class="coord-card-name">Praveen Sagar</div>
+              <div class="coord-card-role">Technical Team</div>
+            </div>
+            <span class="coord-card-btn">
+              <svg class="linkedin-svg-icon" viewBox="0 0 24 24" width="12" height="12" fill="#38bdf8"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              <span>LinkedIn</span>
+            </span>
+          </a>
+        </div>
+      </section>
+
+      <!-- Section 03: Faculty Leadership -->
+      <section style="display: flex; flex-direction: column; gap: 14px;">
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span class="material-symbols-outlined text-[#4ade80] text-[20px]">school</span>
+            <span class="mono-label" style="font-weight: 700; color: var(--secondary);">SECTION 03 • FACULTY LEADERSHIP</span>
+          </div>
+          <span class="badge-pill">DIRECTORATE</span>
+        </div>
+
+        <div class="glass-liquid" style="padding: 24px;">
+          <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
+            <img src="assets/dr_sudhakaran.jpg" alt="Dr. P. Sudhakaran - Head of Department" class="faculty-avatar square" style="width: 104px; height: 104px;">
+            <div style="flex: 1; min-width: 220px;">
+              <span class="mono-label" style="color: var(--primary-container); font-weight: 700;">HEAD OF DEPARTMENT</span>
+              <h2 style="font-family: var(--font-display); font-size: 1.45rem; font-weight: 700; color: var(--on-surface); margin: 2px 0;">
+                Dr. P. Sudhakaran
+              </h2>
+              <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--secondary); font-weight: 600;">
+                M.E., M.B.A., (Ph.D.)
+              </div>
+              <p style="font-size: 0.875rem; color: var(--on-surface-variant); margin-top: 6px; line-height: 1.4;">
+                Department of Computer Science & Engineering • AI Innovation Cell<br>
+                SRM TRP Engineering College, Tiruchirappalli
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 04: Academic Advisory Board -->
+      <section style="display: flex; flex-direction: column; gap: 14px;">
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span class="material-symbols-outlined text-[#4ade80] text-[20px]">shield</span>
+            <span class="mono-label" style="font-weight: 700; color: var(--secondary);">SECTION 04 • COMMITTEES & PROTOCOL</span>
+          </div>
+        </div>
+
+        <div class="glass-liquid" style="padding: 22px; display: flex; flex-direction: column; gap: 16px;">
+          <div>
+            <h2 style="font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: var(--on-surface);">Academic Advisory Board</h2>
+            <p style="font-size: 0.85rem; color: var(--secondary); margin-top: 2px;">
+              Overseeing jury governance, rubric calibration, ethical algorithmic oversight, and team support.
+            </p>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            <!-- Advisor 1: Mrs. Sampavi R -->
+            <div style="display: flex; align-items: center; justify-content: space-between; padding: 14px; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-lg); flex-wrap: wrap; gap: 12px; box-shadow: var(--shadow-sm);">
+              <div style="display: flex; align-items: center; gap: 14px;">
+                <img src="assets/mrs_sampavi.jpg" alt="Mrs. Sampavi R" class="faculty-avatar" style="width: 60px; height: 60px;">
+                <div>
+                  <div style="font-family: var(--font-display); font-size: 1.05rem; font-weight: 700; color: var(--on-surface);">Mrs. Sampavi R</div>
+                  <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--secondary);">M.E., (Ph.D.) • Assistant Professor</div>
+                  <a href="tel:+917940742268" class="call-btn">
+                    <span class="material-symbols-outlined text-[15px]">call</span>
+                    <span>+91 7940742268</span>
+                  </a>
+                </div>
+              </div>
+              <span class="mono-label" style="background: rgba(74, 222, 128, 0.15); border: 1px solid rgba(74, 222, 128, 0.3); padding: 4px 10px; border-radius: var(--radius-sm); color: #4ade80;">ADVISOR</span>
+            </div>
+
+            <!-- Advisor 2: Mr. Tamilkudimagan -->
+            <div style="display: flex; align-items: center; justify-content: space-between; padding: 14px; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-lg); flex-wrap: wrap; gap: 12px; box-shadow: var(--shadow-sm);">
+              <div style="display: flex; align-items: center; gap: 14px;">
+                <img src="assets/mr_tamilkudimagan.jpg" alt="Mr. Tamilkudimagan" class="faculty-avatar" style="width: 60px; height: 60px;">
+                <div>
+                  <div style="font-family: var(--font-display); font-size: 1.05rem; font-weight: 700; color: var(--on-surface);">Mr. Tamilkudimagan</div>
+                  <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--secondary);">M.E. • Assistant Professor</div>
+                  <a href="tel:+919003025825" class="call-btn">
+                    <span class="material-symbols-outlined text-[15px]">call</span>
+                    <span>+91 9003025825</span>
+                  </a>
+                </div>
+              </div>
+              <span class="mono-label" style="background: rgba(74, 222, 128, 0.15); border: 1px solid rgba(74, 222, 128, 0.3); padding: 4px 10px; border-radius: var(--radius-sm); color: #4ade80;">ADVISOR</span>
+            </div>
+
+            <!-- Advisor 3: Mrs. Devi -->
+            <div style="display: flex; align-items: center; justify-content: space-between; padding: 14px; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-lg); flex-wrap: wrap; gap: 12px; box-shadow: var(--shadow-sm);">
+              <div style="display: flex; align-items: center; gap: 14px;">
+                <img src="assets/mrs_devi.jpg" alt="Mrs. Devi" class="faculty-avatar" style="width: 60px; height: 60px;">
+                <div>
+                  <div style="font-family: var(--font-display); font-size: 1.05rem; font-weight: 700; color: var(--on-surface);">Mrs. Devi</div>
+                  <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--secondary);">M.Tech (CSE), (Ph.D.) • Assistant Professor</div>
+                  <a href="tel:+919500334806" class="call-btn">
+                    <span class="material-symbols-outlined text-[15px]">call</span>
+                    <span>+91 9500334806</span>
+                  </a>
+                </div>
+              </div>
+              <span class="mono-label" style="background: rgba(74, 222, 128, 0.15); border: 1px solid rgba(74, 222, 128, 0.3); padding: 4px 10px; border-radius: var(--radius-sm); color: #4ade80;">ADVISOR</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 05: Student Executive Leads -->
+      <section class="glass-liquid" style="padding: 22px; display: flex; flex-direction: column; gap: 14px;">
+        <div>
+          <span class="mono-label" style="color: var(--secondary); font-weight: 700;">STUDENT EXECUTIVE COMMITTEE</span>
+          <h2 style="font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: var(--on-surface); margin-top: 2px;">
+            Student Executive Leads
+          </h2>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px;">
+          <div style="padding: 14px; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-md); box-shadow: var(--shadow-sm);">
+            <div style="font-family: var(--font-display); font-weight: 700; font-size: 1rem; color: var(--on-surface);">Raja Durai.R</div>
+            <span class="mono-label" style="color: #4ade80; font-size: 0.7rem; font-weight: 700; margin-top: 4px; display: block;">
+              PRESIDENT
+            </span>
+          </div>
+
+          <div style="padding: 14px; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-md); box-shadow: var(--shadow-sm);">
+            <div style="font-family: var(--font-display); font-weight: 700; font-size: 1rem; color: var(--on-surface);">Kavisri.S</div>
+            <span class="mono-label" style="color: #4ade80; font-size: 0.7rem; font-weight: 700; margin-top: 4px; display: block;">
+              EVENT COORDINATOR
+            </span>
+          </div>
+
+          <div style="padding: 14px; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-md); box-shadow: var(--shadow-sm);">
+            <div style="font-family: var(--font-display); font-weight: 700; font-size: 1rem; color: var(--on-surface);">Muthumari.M</div>
+            <span class="mono-label" style="color: #4ade80; font-size: 0.7rem; font-weight: 700; margin-top: 4px; display: block;">
+              EVENT COORDINATOR
+            </span>
+          </div>
+
+          <div style="padding: 14px; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-md); box-shadow: var(--shadow-sm);">
+            <div style="font-family: var(--font-display); font-weight: 700; font-size: 1rem; color: var(--on-surface);">Dharsan.R</div>
+            <span class="mono-label" style="color: #4ade80; font-size: 0.7rem; font-weight: 700; margin-top: 4px; display: block;">
+              EVENT COORDINATOR
+            </span>
+          </div>
+
+          <div style="padding: 14px; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-md); box-shadow: var(--shadow-sm);">
+            <div style="font-family: var(--font-display); font-weight: 700; font-size: 1rem; color: var(--on-surface);">Rajkumar.R</div>
+            <span class="mono-label" style="color: #4ade80; font-size: 0.7rem; font-weight: 700; margin-top: 4px; display: block;">
+              EVENT ORGANISER
+            </span>
+          </div>
+
+          <div style="padding: 14px; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-md); box-shadow: var(--shadow-sm);">
+            <div style="font-family: var(--font-display); font-weight: 700; font-size: 1rem; color: var(--on-surface);">Siva Dharsan.A</div>
+            <span class="mono-label" style="color: #4ade80; font-size: 0.7rem; font-weight: 700; margin-top: 4px; display: block;">
+              EVENT ORGANISER
+            </span>
+          </div>
+
+          <div style="padding: 14px; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-md); box-shadow: var(--shadow-sm);">
+            <div style="font-family: var(--font-display); font-weight: 700; font-size: 1rem; color: var(--on-surface);">Jaranesh.R</div>
+            <span class="mono-label" style="color: #4ade80; font-size: 0.7rem; font-weight: 700; margin-top: 4px; display: block;">
+              EVENT ORGANISER
+            </span>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Persistent Site Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div style="display: flex; flex-direction: column; gap: 4px;">
+        <span class="mono-label" style="color: var(--primary-container);">INSTITUTIONAL AFFILIATION</span>
+        <h3 style="font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: var(--on-surface);">SRM TRP Engineering College</h3>
+        <p style="font-size: 0.875rem; color: var(--secondary);">Department of Computer Science & Engineering • Code Crafters Club</p>
+      </div>
+
+      <div class="dept-pill-group">
+        <span class="dept-pill">AIDS</span>
+        <span class="dept-pill">AIML</span>
+        <span class="dept-pill">CSE</span>
+        <span class="dept-pill">IT</span>
+        <span class="dept-pill">ECE</span>
+        <span class="dept-pill">MECH</span>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 4px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--secondary); border-top: 1px solid var(--border-default); padding-top: 16px;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span class="material-symbols-outlined text-[16px] text-[#4ade80]">mail</span>
+          <a href="mailto:codecrafters@srmtrp.edu.in" style="color: var(--secondary);">codecrafters@srmtrp.edu.in</a>
+        </div>
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span class="material-symbols-outlined text-[16px] text-[#4ade80]">location_on</span>
+          <span>Trichy - Chennai Highway, Irungalur, Tamil Nadu 621105</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bottom Navigation Bar -->
+  <nav class="bottom-nav">
+    <div class="bottom-nav-container">
+      <a href="index.html#home" class="bottom-nav-item" data-path="home">
+        <span class="material-symbols-outlined text-[20px]">home</span>
+        <span>Home</span>
+      </a>
+      <a href="index.html#tracks" class="bottom-nav-item" data-path="tracks">
+        <span class="material-symbols-outlined text-[20px]">hub</span>
+        <span>Tracks</span>
+      </a>
+      <a href="index.html#schedule" class="bottom-nav-item" data-path="schedule">
+        <span class="material-symbols-outlined text-[20px]">calendar_today</span>
+        <span>Schedule</span>
+      </a>
+      <a href="index.html#about" class="bottom-nav-item active" data-path="about">
+        <span class="material-symbols-outlined text-[20px]">info</span>
+        <span>About</span>
+      </a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdPUSn6Qpd585HlKsup8jDA4SXCDRuiGuTqHe-YNZMvdJEjgA/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer" class="bottom-nav-item" data-path="register">
+        <span class="material-symbols-outlined text-[20px]">how_to_reg</span>
+        <span>Register</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- ===============================================================
+       OFFICIAL POSTER LIGHTBOX MODAL (TRIGGERED BY HANGING EYE)
+       =============================================================== -->
+  <div id="poster-lightbox-modal" class="modal-overlay" onclick="if(event.target === this) window.closePosterLightbox();">
+    <div class="poster-modal-card" role="dialog" aria-label="Official Event Poster">
+      <div class="poster-modal-header">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <div style="width: 32px; height: 32px; border-radius: 50%; background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.4); display: flex; align-items: center; justify-content: center; color: #38bdf8; font-size: 18px;">
+            🧿
+          </div>
+          <div>
+            <div style="font-family: var(--font-display); font-size: 1.05rem; font-weight: 800; color: #f8fafc; letter-spacing: 0.04em;">
+              NEURAL FORGE '26 OFFICIAL POSTER
+            </div>
+            <div class="mono-label" style="font-size: 0.6875rem; color: #4ade80;">SRM TRP ENGINEERING COLLEGE • OCT 15-16, 2026</div>
+          </div>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <a href="assets/official_poster_v2.jpg" download="neural_forge_26_official_poster.jpg" class="btn-primary" style="padding: 7px 14px; font-size: 0.78rem; gap: 4px;">
+            <span class="material-symbols-outlined text-[16px]">download</span>
+            <span>Download</span>
+          </a>
+          <a href="assets/official_poster_v2.jpg" target="_blank" class="nav-cta-btn" style="padding: 7px 12px; font-size: 0.78rem; gap: 4px; background: rgba(255, 255, 255, 0.06); border-color: rgba(255, 255, 255, 0.18); color: #cbd5e1;" title="Open full resolution in new tab">
+            <span class="material-symbols-outlined text-[16px]">open_in_new</span>
+          </a>
+          <button type="button" class="track-unflip-btn" onclick="window.closePosterLightbox();" title="Close Poster">
+            <span class="material-symbols-outlined" style="font-size: 20px;">close</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="poster-modal-body">
+        <img src="assets/official_poster_v2.jpg" alt="Neural Forge '26 Hackathon Official Poster" class="poster-modal-img" />
+      </div>
+
+      <div class="poster-modal-footer">
+        <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--secondary); text-align: center;">
+          DEPARTMENT OF CSE • CODE CRAFTERS CLUB • 5TH FLOOR SEMINAR HALL • REGISTRATION DEADLINE: 02.10.2026
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Core JavaScript Engine -->
+  <script src="js/main.js"></script>
+</body>
+</html>

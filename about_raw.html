@@ -1,0 +1,318 @@
+<!DOCTYPE html><html class="light" lang="en" style=""><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"><title>About Us • Neural Forge 2026</title><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300..800;1,300..800&amp;family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&amp;family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-error": "#ffffff", "surface-container-lowest": "#ffffff", "secondary": "#565e74", "on-tertiary-fixed": "#410002", "on-tertiary-fixed-variant": "#93000b", "on-primary-fixed": "#410002", "surface-dim": "#cbdbf5", "primary-fixed-dim": "#ffb4ab", "on-surface-variant": "#5c403c", "inverse-on-surface": "#eaf1ff", "surface-variant": "#d3e4fe", "outline": "#916f6b", "on-secondary": "#ffffff", "on-secondary-fixed-variant": "#3f465c", "primary-fixed": "#ffdad6", "surface-container-low": "#eff4ff", "surface-tint": "#bf0715", "on-secondary-container": "#5c647a", "outline-variant": "#e6bdb8", "on-primary-fixed-variant": "#93000b", "on-background": "#0b1c30", "primary": "#b70011", "tertiary": "#b21618", "secondary-fixed-dim": "#bec6e0", "inverse-surface": "#213145", "error-container": "#ffdad6", "surface-container-high": "#dce9ff", "on-tertiary": "#ffffff", "on-secondary-fixed": "#131b2e", "surface-container": "#e5eeff", "tertiary-fixed": "#ffdad6", "surface-container-highest": "#d3e4fe", "primary-container": "#dc2626", "error": "#ba1a1a", "secondary-container": "#dae2fd", "on-tertiary-container": "#fff7f6", "inverse-primary": "#ffb4ab", "on-primary-container": "#fff6f5", "on-primary": "#ffffff", "tertiary-fixed-dim": "#ffb4ab", "background": "#f8f9ff", "on-error-container": "#93000a", "surface-bright": "#f8f9ff", "on-surface": "#0b1c30", "tertiary-container": "#d6332d", "surface": "#f8f9ff", "secondary-fixed": "#dae2fd" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "max-width-content": "1280px", "space-3xs": "0.125rem", "space-xs": "0.5rem", "space-sm": "0.75rem", "margin-tablet": "2rem", "margin-desktop": "3rem", "space-2xl": "3rem", "space-3xl": "4rem", "space-md": "1rem", "gutter-mobile": "1rem", "space-xl": "2rem", "gutter-desktop": "1.5rem", "space-2xs": "0.25rem", "space-lg": "1.5rem", "margin-mobile": "1rem" }, "fontFamily": { "label-regular": ["JetBrains Mono", "monospace"], "headline-sm": ["Space Grotesk", "sans-serif"], "body-md": ["Hanken Grotesk", "sans-serif"], "display-hero": ["Space Grotesk", "sans-serif"], "body-lg": ["Hanken Grotesk", "sans-serif"], "code-inline": ["JetBrains Mono", "monospace"], "headline-md": ["Space Grotesk", "sans-serif"], "display-hero-mobile": ["Space Grotesk", "sans-serif"], "label-caps": ["JetBrains Mono", "monospace"], "headline-lg": ["Space Grotesk", "sans-serif"], "body-sm": ["Hanken Grotesk", "sans-serif"], "headline-lg-mobile": ["Space Grotesk", "sans-serif"] }, "fontSize": { "label-regular": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }], "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "600" }], "body-md": ["15px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }], "display-hero": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "700" }], "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "-0.005em", "fontWeight": "400" }], "code-inline": ["13px", { "lineHeight": "18px", "letterSpacing": "-0.01em", "fontWeight": "500" }], "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "display-hero-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "label-caps": ["11px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600" }], "headline-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-sm": ["13px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }] } } } };</script><style>@layer base { html, body { width: 100vw; margin: 0; padding: 0; } body { overscroll-behavior: none; } .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); } .pt-safe { padding-top: env(safe-area-inset-top, 0px); } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style></head><body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col min-h-screen antialiased selection:bg-red-500/20">
+<!-- Running WebGL Circuit Shader Background Animation -->
+<div class="fixed inset-0 w-full h-full pointer-events-none -z-10" style="display:block;">
+<canvas class="w-full h-full block" id="shader-canvas-about" width="408" height="3796"></canvas>
+<script>
+  (function() {
+    const canvas = document.getElementById('shader-canvas-about');
+    function syncSize() {
+      const w = window.innerWidth;
+      const h = window.innerHeight;
+      if (canvas.width !== w || canvas.height !== h) {
+        canvas.width = w;
+        canvas.height = h;
+      }
+    }
+    window.addEventListener('resize', syncSize);
+    syncSize();
+    const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+    if (!gl) return;
+    const vs = 'attribute vec2 a_position; void main() { gl_Position = vec4(a_position, 0.0, 1.0); }';
+    const fs = 'precision highp float; uniform float u_time; uniform vec2 u_resolution; float lineSegment(vec2 p, vec2 a, vec2 b, float w) { vec2 pa = p - a, ba = b - a; float h = clamp(dot(pa, ba)/dot(ba, ba), 0.0, 1.0); return smoothstep(w, 0.0, length(pa - ba * h)); } void main() { vec2 uv = gl_FragCoord.xy / u_resolution.xy; vec2 aspect = vec2(u_resolution.x / u_resolution.y, 1.0); vec2 st = uv * aspect * 6.0; vec3 col = mix(vec3(0.97, 0.98, 1.0), vec3(0.93, 0.95, 0.99), uv.y); vec3 circuitRed = vec3(0.86, 0.15, 0.15); vec3 circuitBright = vec3(1.0, 0.35, 0.35); float t = u_time * 0.8; float totalLines = 0.0; float glowNodes = 0.0; for (int i = 0; i < 5; i++) { float fi = float(i); float offset = fi * 1.35; vec2 p1 = vec2(0.2 + fi * 0.1, 1.2 + offset); vec2 p2 = vec2(1.5 + fi * 0.2, 1.2 + offset); vec2 p3 = vec2(3.2 + fi * 0.3, 2.9 + offset); vec2 p4 = vec2(3.2 + fi * 0.3, 4.8 + offset); vec2 p = st; p.y += mod(t * 0.5, 4.0); vec2 st_mod = mod(p, vec2(6.0, 6.0)); totalLines += max(lineSegment(st_mod, p1, p2, 0.035), max(lineSegment(st_mod, p2, p3, 0.035), lineSegment(st_mod, p3, p4, 0.035))); float d1 = length(st_mod - p1); glowNodes += (smoothstep(0.02, 0.0, abs(d1 - 0.12)) + smoothstep(0.06, 0.0, d1) * (0.6 + 0.4 * sin(t * 3.0 + fi))); float d2 = length(st_mod - p3); glowNodes += (smoothstep(0.02, 0.0, abs(d2 - 0.12)) + smoothstep(0.06, 0.0, d2) * (0.6 + 0.4 * cos(t * 2.5 + fi))); float pulsePhase = mod(t * 1.5 + fi * 0.7, 3.0); vec2 pulsePos = pulsePhase < 1.0 ? mix(p1, p2, pulsePhase) : (pulsePhase < 2.0 ? mix(p2, p3, pulsePhase - 1.0) : mix(p3, p4, pulsePhase - 2.0)); glowNodes += smoothstep(0.18, 0.0, length(st_mod - pulsePos)) * 1.4; } col = mix(col, circuitRed, clamp(totalLines * 0.65, 0.0, 1.0)); col += circuitBright * clamp(glowNodes * 0.75, 0.0, 1.0); vec2 grid = abs(fract(st * 2.0 - 0.5) - 0.5); col -= vec3(smoothstep(0.06, 0.0, length(grid)) * 0.03); gl_FragColor = vec4(col, 1.0); }';
+    function cs(type, src) { const s = gl.createShader(type); gl.shaderSource(s, src); gl.compileShader(s); return s; }
+    const prog = gl.createProgram(); gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs)); gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs)); gl.linkProgram(prog); gl.useProgram(prog);
+    const buf = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, buf); gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+    const pos = gl.getAttribLocation(prog, 'a_position'); gl.enableVertexAttribArray(pos); gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+    const uTime = gl.getUniformLocation(prog, 'u_time'); const uRes = gl.getUniformLocation(prog, 'u_resolution');
+    function render(t) { gl.viewport(0, 0, canvas.width, canvas.height); if (uTime) gl.uniform1f(uTime, t * 0.001); if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height); gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4); requestAnimationFrame(render); }
+    requestAnimationFrame(render);
+  })();
+  </script>
+</div>
+<!-- Top Fixed Header -->
+<header class="fixed top-0 inset-x-0 z-50 backdrop-blur-xl bg-white/70 border-b border-white/60 shadow-sm px-4 py-2.5 flex items-center justify-between glass-card">
+<div class="flex items-center gap-2">
+<button aria-label="Open Navigation Drawer" class="p-2 -ml-1 text-slate-800 hover:bg-slate-900/5 rounded-lg transition-colors flex items-center justify-center" onclick="document.getElementById('mobile-drawer').classList.remove('-translate-x-full'); document.getElementById('drawer-backdrop').classList.remove('opacity-0', 'pointer-events-none');">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</button>
+<div class="flex items-center space-x-2 pl-0.5">
+<img alt="SRM TRP Engineering College" class="h-7 w-auto object-contain max-w-[130px]" src="https://lh3.googleusercontent.com/aida/AEtjO1WvV6bvBzF6RecO5K7NwDy2Mc_7DjmQW6rpYLbC9fRIVaPMddB5qx2wJZFlVUPcOG8Z3cMt3gYXFG_3sN-ZlAsUjXaiwZLiIkTJBgM9y6YALAgWUejhuvAaqp--oOaL7naysRu85Z_8YjFMtuE6wDgAcD730_zkXEa0cN1SZA_RgRiLTlcFUTe_fqOVuTS9yM9-QfNdFVprKkNVh6WpJ_olydeaXdnHCQmgpXtZM83RHoUKoEW1E2UTErbMgq6tARrP34UNSFOdXQ">
+<div class="h-4 w-px bg-slate-300"></div>
+<img alt="Code Crafters" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1W4ScVqiDA1f0B-j2cObpPP-XFb0VM8_7kO3B7UYngwVb9Ku-zmTGHdWBo3qy2RHLVs9pIb-M-_Dxl69-46mV5QtnegqdeJAWEYLr16oX4DVm1uu5XWsGu61Glolc3jrYqRFP__qw62yDcd__Q4sAMtTb3nIfkMTxKYFmKix-8j0dAiMLdtpb16nWD1jIWKOKMDGvPYziEY3tro2rAIII3NrCmJaSPh8oJYIlBupcrPysP09L_NlGu73nrtGAwlnsui9_H5CcsdPxk">
+</div>
+</div>
+<h1 class="text-slate-900 font-bold text-base tracking-tight pr-1">About Us</h1>
+</header>
+<!-- Drawer Backdrop & Mobile Drawer Navigation -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/40 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 glass-card" id="drawer-backdrop" onclick="document.getElementById('mobile-drawer').classList.add('-translate-x-full'); this.classList.add('opacity-0', 'pointer-events-none');"></div>
+<aside class="fixed top-0 left-0 bottom-0 w-4/5 max-w-xs z-50 bg-white/95 backdrop-blur-2xl shadow-[0_16px_32px_-8px_rgba(15,23,42,0.18)] border-r border-white/60 -translate-x-full transition-transform duration-300 ease-in-out flex flex-col justify-between pt-safe pb-safe glass-card" id="mobile-drawer">
+<div class="p-space-lg flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md text-primary-container font-bold tracking-tight">NEURAL FORGE</span>
+<span class="font-label-caps text-label-caps text-secondary">Intra-College Hackathon 2026</span>
+</div>
+<button class="w-10 h-10 flex items-center justify-center text-secondary rounded-lg hover:bg-surface-container" onclick="document.getElementById('mobile-drawer').classList.add('-translate-x-full'); document.getElementById('drawer-backdrop').classList.add('opacity-0', 'pointer-events-none');">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="h-px bg-slate-200/80 w-full my-space-xs"></div>
+<div class="flex flex-col gap-space-xs">
+<a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg font-headline-sm text-headline-sm text-on-surface hover:bg-slate-100 transition-colors" data-path="home" href="#" onclick="document.getElementById('mobile-drawer').classList.add('-translate-x-full'); document.getElementById('drawer-backdrop').classList.add('opacity-0', 'pointer-events-none');">
+<span class="material-symbols-outlined text-secondary">terminal</span><span class="">Home</span>
+</a>
+<a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg font-headline-sm text-headline-sm text-on-surface hover:bg-slate-100 transition-colors" data-path="tracks" href="#" onclick="document.getElementById('mobile-drawer').classList.add('-translate-x-full'); document.getElementById('drawer-backdrop').classList.add('opacity-0', 'pointer-events-none');">
+<span class="material-symbols-outlined text-secondary">hub</span><span class="">Tracks</span>
+</a>
+<a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg font-headline-sm text-headline-sm text-on-surface hover:bg-slate-100 transition-colors" data-path="schedule" href="#" onclick="document.getElementById('mobile-drawer').classList.add('-translate-x-full'); document.getElementById('drawer-backdrop').classList.add('opacity-0', 'pointer-events-none');">
+<span class="material-symbols-outlined text-secondary">calendar_today</span><span class="">Schedule</span>
+</a>
+<a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg font-headline-sm text-headline-sm text-primary-container font-semibold bg-red-50/80 transition-colors" data-path="about-us" href="#" onclick="document.getElementById('mobile-drawer').classList.add('-translate-x-full'); document.getElementById('drawer-backdrop').classList.add('opacity-0', 'pointer-events-none');">
+<span class="material-symbols-outlined text-primary-container">info</span><span class="">About Us</span>
+</a>
+</div>
+</div>
+<div class="p-space-lg bg-slate-100/80 border-t border-slate-200/60 flex flex-col gap-space-xs">
+<span class="font-label-caps text-label-caps text-secondary">ORGANIZED BY</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Code Crafters Club</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">SRM TRP Engineering College</span>
+</div>
+</aside>
+<main class="flex flex-col relative w-full pt-16 pb-safe min-h-screen">
+<div class="flex flex-col w-full">
+<!-- Hero Title -->
+<div class="px-margin-mobile pt-5 pb-5 flex flex-col gap-1.5">
+<div class="flex items-center gap-space-2xs">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-ping"></span>
+<span class="font-label-caps text-label-caps text-secondary uppercase tracking-widest font-semibold">ABOUT THE INITIATIVE</span>
+</div>
+<div class="flex flex-wrap items-baseline gap-1.5">
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface font-bold tracking-tight">About</span>
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-[#dc2626] font-extrabold tracking-tight">Neural Forge 2026</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+        The flagship 2-day, 10-hour interdisciplinary AI and physical computing crucible hosted by SRM TRP Engineering College under the stewardship of Code Crafters Club.
+      </p>
+</div>
+<!-- Section 01: Institutional Patronage -->
+<section class="px-margin-mobile pb-2">
+<div class="flex items-center justify-between mb-3 px-1">
+<div class="flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-[18px] text-primary-container">account_balance</span>
+<span class="font-label-caps text-label-caps text-secondary font-bold">SECTION 01 • INSTITUTIONAL PATRONAGE</span>
+</div>
+<span class="font-code-inline text-code-inline text-secondary bg-white/80 border border-slate-200/80 px-space-xs py-space-3xs rounded-full">AUTONOMOUS</span>
+</div>
+<div class="backdrop-blur-xl glass-card bg-white/75 border border-white/80 shadow-[0_8px_30px_rgb(0,0,0,0.04)] rounded-2xl p-5 mb-5 flex flex-col gap-4">
+<div class="bg-white/70 border border-slate-100 rounded-xl p-3 flex items-center justify-center shadow-xs">
+<img alt="SRM TRP Engineering College Insignia" class="max-h-16 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WvV6bvBzF6RecO5K7NwDy2Mc_7DjmQW6rpYLbC9fRIVaPMddB5qx2wJZFlVUPcOG8Z3cMt3gYXFG_3sN-ZlAsUjXaiwZLiIkTJBgM9y6YALAgWUejhuvAaqp--oOaL7naysRu85Z_8YjFMtuE6wDgAcD730_zkXEa0cN1SZA_RgRiLTlcFUTe_fqOVuTS9yM9-QfNdFVprKkNVh6WpJ_olydeaXdnHCQmgpXtZM83RHoUKoEW1E2UTErbMgq6tARrP34UNSFOdXQ">
+</div>
+<div class="flex flex-col gap-1.5">
+<span class="font-label-caps text-label-caps text-primary-container font-bold tracking-wider uppercase">LEGACY OF EXCELLENCE</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">SRM TRP Engineering College</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            An autonomous technical institution approved by AICTE, New Delhi, and permanently affiliated with Anna University, Chennai. SRM TRPEC leads central Tamil Nadu in transformative technical education, patent synthesis, and multi-tier incubation ecosystems.
+          </p>
+</div>
+<div class="grid grid-cols-2 gap-2.5">
+<div class="bg-white/60 border border-slate-200/60 p-3 rounded-xl flex flex-col shadow-xs">
+<span class="font-label-caps text-label-caps text-secondary font-semibold">CAMPUS JURISDICTION</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold mt-0.5">Tiruchirappalli</span>
+<span class="font-code-inline text-code-inline text-on-surface-variant text-[11px] mt-0.5">TN Highway NH-45</span>
+</div>
+<div class="bg-white/60 border border-slate-200/60 p-3 rounded-xl flex flex-col shadow-xs">
+<span class="font-label-caps text-label-caps text-secondary font-semibold">AFFILIATION MATRIX</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold mt-0.5">Anna Univ.</span>
+<span class="font-code-inline text-code-inline text-on-surface-variant text-[11px] mt-0.5">Tier-1 Accreditation</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-1.5 pt-1">
+<span class="bg-slate-100/90 text-slate-800 border border-slate-200/60 font-label-caps text-label-caps px-2.5 py-1 rounded-md font-semibold">RESEARCH INCUBATOR</span>
+<span class="bg-slate-100/90 text-slate-800 border border-slate-200/60 font-label-caps text-label-caps px-2.5 py-1 rounded-md font-semibold">IEEE STUDENT BRANCH</span>
+<span class="bg-slate-100/90 text-slate-800 border border-slate-200/60 font-label-caps text-label-caps px-2.5 py-1 rounded-md font-semibold">AICTE IDEA LAB</span>
+</div>
+</div>
+</section>
+<!-- Section 02: Host Body -->
+<section class="px-margin-mobile pb-2">
+<div class="flex items-center justify-between mb-3 px-1">
+<div class="flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-[18px] text-primary-container">groups</span>
+<span class="font-label-caps text-label-caps text-secondary font-bold">SECTION 02 • HOST BODY</span>
+</div>
+<span class="font-code-inline text-code-inline text-secondary bg-white/80 border border-slate-200/80 px-space-xs py-space-3xs rounded-full">ESTD. 2021</span>
+</div>
+<div class="backdrop-blur-xl glass-card bg-white/75 border border-white/80 shadow-[0_8px_30px_rgb(0,0,0,0.04)] rounded-2xl p-5 mb-5 flex flex-col gap-4">
+<div class="bg-white/70 border border-slate-100 rounded-xl p-3 flex items-center justify-center shadow-xs">
+<img alt="Code Crafters Club Official Insignia" class="max-h-24 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1W4ScVqiDA1f0B-j2cObpPP-XFb0VM8_7kO3B7UYngwVb9Ku-zmTGHdWBo3qy2RHLVs9pIb-M-_Dxl69-46mV5QtnegqdeJAWEYLr16oX4DVm1uu5XWsGu61Glolc3jrYqRFP__qw62yDcd__Q4sAMtTb3nIfkMTxKYFmKix-8j0dAiMLdtpb16nWD1jIWKOKMDGvPYziEY3tro2rAIII3NrCmJaSPh8oJYIlBupcrPysP09L_NlGu73nrtGAwlnsui9_H5CcsdPxk">
+</div>
+<div class="flex flex-col gap-2.5">
+<div class="flex items-center gap-space-xs">
+<span class="px-2.5 py-1 rounded-md bg-red-50 text-[#b70011] border border-red-200/70 font-label-caps text-label-caps font-bold">LEARN • LEAD • BUILD • CONNECT</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Code Crafters Club</h3>
+<div class="flex flex-col gap-2.5 text-on-surface-variant font-body-sm leading-relaxed">
+<p class="text-body-md text-on-surface font-medium leading-relaxed">We are Code Crafters, a club where creativity, technology, and learning come together.</p>
+<p class="">You don't need to be an expert in coding to join our club. Even if you don't know coding at all, that's completely okay! If you have the interest and curiosity to learn, just join us — we are ready to guide and help you grow.</p>
+<p class="">We have already successfully conducted events like <span class="font-semibold text-on-surface">Symposium</span> and <span class="font-semibold text-on-surface">Engineering Day</span>, where we had the opportunity to learn, explore, and create together.</p>
+<p class="">Currently, we are working on an exciting app inspired by the concept of <span class="font-semibold text-[#dc2626]">Duolingo</span>. In the upcoming days, we are planning to conduct a <span class="font-semibold text-on-surface">Hackathon</span> and are also preparing for our <span class="font-semibold text-on-surface">App Launch</span>.</p>
+<p class="bg-gradient-to-r from-red-50 to-red-100/50 border-l-4 border-[#dc2626] p-3 rounded-r-xl text-[#b70011] font-medium italic">
+              "You don't have to be a coder to join Code Crafters. Just bring your interest — we'll help you build the skills!"
+            </p>
+</div>
+</div>
+<div class="flex flex-col gap-2.5 pt-1">
+<span class="font-label-caps text-label-caps text-secondary font-bold uppercase tracking-wider">Club Initiatives &amp; Roadmap</span>
+<div class="grid grid-cols-1 gap-2.5">
+<div class="flex items-start gap-3 bg-white/60 border border-slate-200/60 p-3 rounded-xl shadow-xs">
+<span class="material-symbols-outlined text-[#dc2626] text-[20px] mt-0.5 flex-shrink-0">event_available</span>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface font-semibold">Proven Track Record</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Successfully conducted Symposium and Engineering Day for hands-on exploration.</span>
+</div>
+</div>
+<div class="flex items-start gap-3 bg-white/60 border border-slate-200/60 p-3 rounded-xl shadow-xs">
+<span class="material-symbols-outlined text-[#dc2626] text-[20px] mt-0.5 flex-shrink-0">smartphone</span>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface font-semibold">Duolingo-Inspired App Launch</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Actively developing a gamified tech learning platform, gearing up for official launch.</span>
+</div>
+</div>
+<div class="flex items-start gap-3 bg-white/60 border border-slate-200/60 p-3 rounded-xl shadow-xs">
+<span class="material-symbols-outlined text-[#dc2626] text-[20px] mt-0.5 flex-shrink-0">code</span>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface font-semibold">Flagship Hackathons &amp; Mentorship</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Organizing high-impact coding challenges open to all curiosity-driven learners.</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 03: Faculty Leadership -->
+<section class="px-margin-mobile pb-2">
+<div class="flex items-center justify-between mb-3 px-1">
+<div class="flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-[18px] text-primary-container">school</span>
+<span class="font-label-caps text-label-caps text-secondary font-bold">SECTION 03 • FACULTY LEADERSHIP</span>
+</div>
+<span class="font-code-inline text-code-inline text-[#b70011] bg-red-50 border border-red-200/70 px-space-xs py-space-3xs rounded-full font-bold">DIRECTORATE</span>
+</div>
+<div class="backdrop-blur-xl glass-card bg-white/75 border border-white/80 shadow-[0_8px_30px_rgb(0,0,0,0.04)] rounded-2xl p-5 mb-5 flex flex-col gap-4">
+<div class="flex items-start gap-4">
+<div class="relative w-24 h-24 rounded-xl overflow-hidden bg-surface-container flex-shrink-0 shadow-sm border border-slate-200/80">
+<img alt="Dr. P. Sudhakaran - Head of Department" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbU8a3T315CUL7P2hph-MMpUBzKSnUtV-OHotb1IC-3jqT3gsrn93ozsaJN4wHfQeyQastzJvYJkz46ceO72KAOSI2Fs8bVkR06cUfCMwGOu1sxeveCikk5-1CZmU_gCxgh31KMyd1V2UGuUsD7_p4YbJ62UvJ0agaTNZ1RVgngH0-veMIlL1-5Z1W5qpcTmyhmus-Fk14toWBT0Z9dnPsKft1K4x60XMEWidEylnIc73wqoEHIQfPug">
+
+</div>
+<div class="flex flex-col min-w-0 justify-center">
+<span class="font-label-caps text-label-caps text-primary-container font-semibold tracking-wider">HEAD OF DEPARTMENT</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold truncate">Dr. P. Sudhakaran</h3>
+<span class="font-code-inline text-code-inline text-secondary font-medium text-xs">M.E., M.B.A., (Ph.D.)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-snug line-clamp-2">Dept. of Computer Science &amp; Engineering • AI Innovation Cell</span>
+</div>
+</div>
+<!-- Advisors Grid with Call Links -->
+
+
+</div>
+</section>
+<!-- Section 04: Committees & Protocol -->
+<section class="px-margin-mobile pb-2">
+<div class="flex items-center justify-between mb-3 px-1">
+<div class="flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-[18px] text-primary-container">shield</span>
+<span class="font-label-caps text-label-caps text-secondary font-bold">SECTION 04 • COMMITTEES &amp; PROTOCOL</span>
+</div>
+</div>
+<div class="backdrop-blur-xl glass-card bg-white/75 border border-white/80 shadow-[0_8px_30px_rgb(0,0,0,0.04)] rounded-2xl p-5 mb-5 flex flex-col gap-4">
+<div class="flex flex-col gap-1">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Academic Advisory Board</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Overseeing jury governance, rubric calibration, and ethical algorithmic oversight.</p>
+</div>
+<div class="bg-white/60 border border-slate-200/60 rounded-xl p-2.5 flex flex-col gap-2 shadow-xs"><div class="flex items-center justify-between p-2.5 bg-white/80 border border-slate-100 rounded-lg gap-3"><div class="flex items-center gap-3 min-w-0"><img alt="Mrs. Sampavi R" class="w-14 h-14 rounded-full object-cover border border-slate-200 shadow-sm flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKnrPGoIyXS7t222JKn0hNr_pkbdC-BEWcmvxfP6JA3TXIUqgUGXr058ViULgk0ITO7-HFBwX9Y9aAv4m_aXbtsoylJSH-_6qHylJAYQ3PyA8xYqMOcHJAFrJDOALaiAr7qFOE9jzKHI86i7kJLfDJw7cxh_eBiYuKl9BaY7ldwKqZpvVclecqUDHrwnsBh9tE_YCsZ1WowOlxB1w2TJbbZuS5nQHkyX7z3xK4oT69JkIwDNdBbi5_CQ"><div class="flex flex-col min-w-0"><span class="font-body-md text-body-md text-on-surface font-semibold truncate">Mrs. Sampavi R</span><span class="font-code-inline text-code-inline text-secondary text-xs">M.E., (Ph.D.)</span><a class="flex items-center gap-1 text-[#dc2626] font-code-inline text-code-inline mt-1 hover:underline text-xs" href="tel:+917940742268"><span class="material-symbols-outlined text-[15px]">call</span><span class="">+91 7940742268</span></a></div></div><span class="font-label-caps text-label-caps text-slate-500 bg-slate-100 px-2 py-0.5 rounded font-semibold flex-shrink-0">ADVISOR</span></div><div class="flex items-center justify-between p-2.5 bg-white/80 border border-slate-100 rounded-lg gap-3"><div class="flex items-center gap-3 min-w-0"><img alt="Mr. Tamilkudimagan" class="w-14 h-14 rounded-full object-cover border border-slate-200 shadow-sm flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAfHSiHrN1XkL2eh1kvw1I_eFjnMGFVi2Iuv9zESFDA6c2pM-pgPWc_1-wOd076_67dGCQ3C88OKv5o1j6D58ir-dFxCR9l9FVULL75JE5nLIdjEA5xRPalJB7OYkw_lD9R0vSiUrPn6cPkpRjeFwfWb5KlIS1EIOAZllzMVK-58INqwypAvZn91gu9d2pKsE2BU25hAcy1WaTptivcMhs6A_4ypTV8ZSDjleXmh-OgccURxR9hTTv_Q"><div class="flex flex-col min-w-0"><span class="font-body-md text-body-md text-on-surface font-semibold truncate">Mr. Tamilkudimagan</span><span class="font-code-inline text-code-inline text-secondary text-xs">M.E.</span><a class="flex items-center gap-1 text-[#dc2626] font-code-inline text-code-inline mt-1 hover:underline text-xs" href="tel:+919003025825"><span class="material-symbols-outlined text-[15px]">call</span><span class="">+91 9003025825</span></a></div></div><span class="font-label-caps text-label-caps text-slate-500 bg-slate-100 px-2 py-0.5 rounded font-semibold flex-shrink-0">ADVISOR</span></div><div class="flex items-center justify-between p-2.5 bg-white/80 border border-slate-100 rounded-lg gap-3"><div class="flex items-center gap-3 min-w-0"><img alt="Mrs. Devi" class="w-14 h-14 rounded-full object-cover border border-slate-200 shadow-sm flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3d64AuUCP1uWcSlyApbcAVRdgJIodJbcQMF7B4TCILmQCD4kFtsyMrJAbjPW6DYW-BhFjlqrRXiXWYrs2C7pic1W8mRAOQSG2CQkIHdgKDNxQqtCkimi4B2mP2QZtFhf9DU0OFY6IRAy32bhdfDOeB2aUdWKHVXOqimNGWuJ_AkCHqRmiDVPZkyxJ2h1GzO4hbib4ZND0AMFqw6nDUw6_0cmRT2dlWPbPiTYS2lCGuVmS7vnRy90lVQ"><div class="flex flex-col min-w-0"><span class="font-body-md text-body-md text-on-surface font-semibold truncate">Mrs. Devi</span><span class="font-code-inline text-code-inline text-secondary text-xs">M.Tech (CSE), (Ph.D.)</span><a class="flex items-center gap-1 text-[#dc2626] font-code-inline text-code-inline mt-1 hover:underline text-xs" href="tel:+919500334806"><span class="material-symbols-outlined text-[15px]">call</span><span class="">+91 9500334806</span></a></div></div><span class="font-label-caps text-label-caps text-slate-500 bg-slate-100 px-2 py-0.5 rounded font-semibold flex-shrink-0">ADVISOR</span></div></div>
+<div class="h-px bg-slate-200/70 w-full my-1"></div>
+<div class="flex flex-col gap-2.5">
+<span class="font-label-caps text-label-caps text-secondary font-bold uppercase tracking-wider">Student Executive Leads</span>
+<div class="grid grid-cols-2 gap-2.5">
+<div class="p-3 bg-white/60 border border-slate-200/60 rounded-xl flex flex-col shadow-xs">
+<span class="font-body-md text-body-md text-on-surface font-bold">Rajadurai R</span>
+<span class="font-label-caps text-[10px] text-primary-container font-semibold tracking-tight mt-0.5">PRESIDENT • IV YEAR</span>
+</div>
+<div class="p-3 bg-white/60 border border-slate-200/60 rounded-xl flex flex-col shadow-xs">
+<span class="font-body-md text-body-md text-on-surface font-bold">Sedhu. S</span>
+<span class="font-label-caps text-[10px] text-primary-container font-semibold tracking-tight mt-0.5">VICE PRESIDENT • III YEAR</span>
+</div>
+<div class="p-3 bg-white/60 border border-slate-200/60 rounded-xl flex flex-col shadow-xs">
+<span class="font-body-md text-body-md text-on-surface font-bold">Puvisha S</span>
+<span class="font-label-caps text-[10px] text-primary-container font-semibold tracking-tight mt-0.5">TREASURER • III YEAR</span>
+</div>
+<div class="p-3 bg-white/60 border border-slate-200/60 rounded-xl flex flex-col shadow-xs"><span class="font-body-md text-body-md text-on-surface font-bold">Kavi Sri</span>
+<span class="font-label-caps text-[10px] text-primary-container font-semibold tracking-tight mt-0.5">EVENT COORDINATOR • IV YEAR</span></div>
+<div class="p-3 bg-white/60 border border-slate-200/60 rounded-xl flex flex-col col-span-2 shadow-xs"><span class="font-body-md text-body-md text-on-surface font-bold">Pravinraj.G</span>
+<span class="font-label-caps text-[10px] text-primary-container font-semibold tracking-tight mt-0.5">TECHNICAL HEAD • III YEAR</span></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 05: Liaison & Inquiries -->
+
+</div>
+<!-- Institutional Affiliation Footer -->
+<footer class="w-full mt-auto py-6 px-margin-mobile backdrop-blur-xl bg-white/80 border-t border-white/80 shadow-[0_1px_8px_rgba(0,0,0,0.04)] mb-20 flex flex-col gap-4 glass-card">
+<div class="flex flex-col gap-1">
+<span class="font-label-caps text-[10px] text-primary-container font-bold tracking-wider uppercase">INSTITUTIONAL AFFILIATION</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">SRM TRP Engineering College</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Department of Computer Science &amp; Engineering • Code Crafters</span>
+</div>
+<div class="flex flex-wrap items-center gap-1.5 pt-1">
+<span class="px-2.5 py-1 bg-white/90 border border-slate-200/70 text-slate-700 font-label-caps text-[11px] rounded-md font-semibold">AIDS</span>
+<span class="px-2.5 py-1 bg-white/90 border border-slate-200/70 text-slate-700 font-label-caps text-[11px] rounded-md font-semibold">AIML</span>
+<span class="px-2.5 py-1 bg-white/90 border border-slate-200/70 text-slate-700 font-label-caps text-[11px] rounded-md font-semibold">CSE</span>
+<span class="px-2.5 py-1 bg-white/90 border border-slate-200/70 text-slate-700 font-label-caps text-[11px] rounded-md font-semibold">IT</span>
+<span class="px-2.5 py-1 bg-white/90 border border-slate-200/70 text-slate-700 font-label-caps text-[11px] rounded-md font-semibold">ECE</span>
+<span class="px-2.5 py-1 bg-white/90 border border-slate-200/70 text-slate-700 font-label-caps text-[11px] rounded-md font-semibold">MECH</span>
+</div>
+<div class="flex flex-col gap-1.5 font-label-regular text-xs text-secondary pt-1 border-t border-slate-200/50">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[15px] text-[#dc2626]">mail</span>
+<span class="">codecrafters@srmtrp.edu.in</span>
+</span>
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[15px] text-[#dc2626]">location_on</span>
+<span class="">Trichy - Chennai Highway, Irungalur, TN</span>
+</span>
+</div>
+</footer>
+</main>
+<!-- Frosted Glass Bottom Navigation Bar (4 tabs, About Us Active) -->
+<nav class="fixed bottom-0 w-full z-50 pb-safe backdrop-blur-2xl bg-white/85 border-t border-white/70 shadow-[0_-4px_20px_rgba(0,0,0,0.06)] glass-card">
+<div class="flex justify-around items-center h-16 px-space-xs">
+<a class="flex flex-col items-center justify-center gap-1 min-w-[44px] min-h-[44px] px-2 text-slate-500 hover:text-slate-900 transition-colors" data-path="home" href="#">
+<span class="material-symbols-outlined text-[22px]">home</span>
+<span class="font-label-caps text-[10px]">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center gap-1 min-w-[44px] min-h-[44px] px-2 text-slate-500 hover:text-slate-900 transition-colors" data-path="tracks" href="#">
+<span class="material-symbols-outlined text-[22px]">hub</span>
+<span class="font-label-caps text-[10px]">Tracks</span>
+</a>
+<a class="flex flex-col items-center justify-center gap-1 min-w-[44px] min-h-[44px] px-2 text-slate-500 hover:text-slate-900 transition-colors" data-path="schedule" href="#">
+<span class="material-symbols-outlined text-[22px]">calendar_today</span>
+<span class="font-label-caps text-[10px]">Schedule</span>
+</a>
+<a aria-current="page" class="flex flex-col items-center justify-center gap-1 min-w-[44px] min-h-[44px] px-2 text-[#dc2626] font-bold transition-colors" data-path="about-us" href="#">
+<span class="material-symbols-outlined text-[22px]">info</span>
+<span class="font-label-caps text-[10px] font-bold">About Us</span>
+</a>
+</div>
+</nav>
+
+
+
+
+
+
+
+
+
+
+</body></html>

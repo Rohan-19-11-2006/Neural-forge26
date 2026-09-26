@@ -1,0 +1,9 @@
+*_raw.html
+serve.js
+test_*.js
+verify_*.js
+check_*.js
+update_*.js
+*.log
+.netlify
+.git

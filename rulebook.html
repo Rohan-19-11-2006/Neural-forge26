@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Official Rulebook // Neural Forge 2026 | SRM TRP Engineering College</title>
+  <meta name="description" content="Official Competition Rulebook & Guidelines for Neural Forge 2026 Intra-College Hackathon at SRM TRP Engineering College.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300..800&family=JetBrains+Mono:wght@400..700&family=Orbitron:wght@600..900&family=Space+Grotesk:wght@400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .rulebook-doc-container {
+      max-width: 920px;
+      margin: 40px auto 80px;
+      padding: 0 20px;
+      position: relative;
+      z-index: 1;
+    }
+    .rulebook-paper {
+      background: rgba(8, 18, 12, 0.92);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1.5px solid rgba(74, 222, 128, 0.35);
+      border-radius: var(--radius-xl);
+      padding: clamp(24px, 5vw, 52px);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9), 0 0 35px rgba(74, 222, 128, 0.12);
+      color: #e2e8f0;
+      line-height: 1.7;
+    }
+    .rulebook-paper h1 {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.25;
+      margin-bottom: 12px;
+    }
+    .rulebook-paper h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.25rem, 2.2vw, 1.6rem);
+      font-weight: 700;
+      color: #4ade80;
+      margin-top: 36px;
+      margin-bottom: 14px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(74, 222, 128, 0.25);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .rulebook-paper h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #f8fafc;
+      margin-top: 20px;
+      margin-bottom: 8px;
+    }
+    .rulebook-paper p {
+      margin-bottom: 14px;
+      color: #cbd5e1;
+      font-size: 0.98rem;
+    }
+    .rulebook-card-box {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(74, 222, 128, 0.2);
+      border-radius: var(--radius-md);
+      padding: 18px 20px;
+      margin: 14px 0;
+    }
+    .rulebook-sticky-bar {
+      position: sticky;
+      top: 80px;
+      z-index: 50;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      background: rgba(3, 7, 4, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(74, 222, 128, 0.3);
+      border-radius: var(--radius-lg);
+      padding: 12px 20px;
+      margin-bottom: 24px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Ambient Cosmic Moving Background with Moving Rocks & Thunderstorm Lightning -->
+  <div class="shader-background">
+    <div class="moving-bg-layer"></div>
+    <div class="thunderstorm-bloom-layer"></div>
+    <div class="sheet-lightning-overlay"></div>
+    <canvas id="cosmic-fx-canvas" class="cosmic-fx-canvas"></canvas>
+    <div class="ambient-dust-container"></div>
+  </div>
+
+  <!-- Hanging Evil Eye Amulet Talisman (Top-Left) -->
+  <div class="hanging-eye-rig" id="hanging-eye-charm" role="button" tabindex="0" aria-label="Open Official Poster" onclick="window.openPosterLightbox();" onkeydown="if(event.key==='Enter'||event.key===' ')window.openPosterLightbox();" title="🧿 Click to view Official Poster">
+    <div class="eye-mount-stick" onclick="window.openPosterLightbox();" style="cursor: pointer;">
+      <svg width="90" height="38" viewBox="0 0 90 38" fill="none" xmlns="http://www.w3.org/2000/svg" class="stick-svg">
+        <defs>
+          <linearGradient id="stickWoodGrad" x1="0" y1="0" x2="82" y2="18" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#3d1e06" />
+            <stop offset="25%" stop-color="#78350f" />
+            <stop offset="55%" stop-color="#b45309" />
+            <stop offset="85%" stop-color="#d97706" />
+            <stop offset="100%" stop-color="#92400e" />
+          </linearGradient>
+          <filter id="stickShadowFilter" x="-4" y="-4" width="100" height="46" filterUnits="userSpaceOnUse">
+            <feDropShadow dx="1" dy="3" stdDeviation="3" flood-color="#000" flood-opacity="0.85"/>
+          </filter>
+        </defs>
+        <path d="M-4 -4 L-2 12 L70 16 Q76 16 78 13 Q80 10 73 8 L-2 -4 Z" fill="url(#stickWoodGrad)" filter="url(#stickShadowFilter)" />
+        <line x1="22" y1="0" x2="24" y2="13" stroke="#451a03" stroke-width="1.8" stroke-linecap="round" opacity="0.8"/>
+        <line x1="48" y1="4" x2="50" y2="15" stroke="#451a03" stroke-width="1.8" stroke-linecap="round" opacity="0.8"/>
+      </svg>
+    </div>
+    <div class="eye-cord-wrapper" onclick="window.openPosterLightbox();" style="cursor: pointer;">
+      <svg width="18" height="65" viewBox="0 0 18 65" fill="none" class="cord-svg">
+        <line x1="9" y1="0" x2="9" y2="65" stroke="#78350f" stroke-width="3" stroke-linecap="round"/>
+        <line x1="9" y1="0" x2="9" y2="65" stroke="#d97706" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="3 3"/>
+      </svg>
+      <div class="eye-talisman-charm" onclick="window.openPosterLightbox();">
+        <div class="eye-glass-disc">
+          <img src="assets/evil_eye_amulet.jpg" alt="Evil Eye Amulet" class="eye-disc-img">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Top Global Header -->
+  <header class="top-nav-header">
+    <div class="nav-container">
+      <div class="nav-brand-group">
+        <a href="index.html" class="brand-link" aria-label="Neural Forge 2026 Home">
+          <div class="brand-logo-frame">
+            <img src="assets/srm_trp_logo.png" alt="SRM TRP Logo" class="brand-logo" onerror="this.style.display='none'">
+          </div>
+          <div class="brand-text">
+            <span class="brand-title">NEURAL FORGE '26</span>
+            <span class="brand-subtitle">SRM TRP ENGG COLLEGE</span>
+          </div>
+        </a>
+      </div>
+
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link" data-path="home"><span>Home</span></a>
+        <a href="about.html" class="nav-link" data-path="about"><span>About</span></a>
+        <a href="tracks.html" class="nav-link" data-path="tracks"><span>Tracks</span></a>
+        <a href="schedule.html" class="nav-link" data-path="schedule"><span>Schedule</span></a>
+      </nav>
+
+      <div class="nav-action-group">
+        <a href="assets/AI_Hackathon_2026_Rulebook.docx" download="AI_Hackathon_2026_Rulebook.docx" class="nav-cta-btn" style="gap: 6px;">
+          <span class="material-symbols-outlined text-[18px]">download</span>
+          <span>Download .docx</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Document Container -->
+  <main class="rulebook-doc-container">
+    
+    <!-- Action Bar -->
+    <div class="rulebook-sticky-bar">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <a href="tracks.html" class="nav-link" style="padding: 6px 12px; display: inline-flex; align-items: center; gap: 6px; font-weight: 700; color: #4ade80;">
+          <span class="material-symbols-outlined text-[18px]">arrow_back</span>
+          <span>Back to Tracks</span>
+        </a>
+        <span style="color: rgba(255,255,255,0.2);">|</span>
+        <span class="mono-label" style="color: #86efac; font-size: 0.75rem;">OFFICIAL WORD DOCUMENT (.DOCX)</span>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <a href="assets/AI_Hackathon_2026_Rulebook.docx" download="AI_Hackathon_2026_Rulebook.docx" class="btn-primary" style="padding: 8px 18px; font-size: 0.875rem;">
+          <span class="material-symbols-outlined text-[18px]">download</span>
+          <span>Download Rulebook (.docx)</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- The Paper Document -->
+    <article class="rulebook-paper">
+      
+      <!-- Document Header -->
+      <div style="text-align: center; margin-bottom: 36px; padding-bottom: 24px; border-bottom: 1.5px solid rgba(74, 222, 128, 0.3);">
+        <div class="badge-pill" style="margin-bottom: 12px; display: inline-flex;">
+          <span class="pulse-dot" style="background: #4ade80;"></span>
+          <span>SRM TRP ENGINEERING COLLEGE • DEPT OF CSE</span>
+        </div>
+        <h1>NEURAL FORGE 2026</h1>
+        <p style="font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: #4ade80; margin-bottom: 6px;">
+          Official Intra-College AI &amp; Autonomous Systems Hackathon Rulebook
+        </p>
+        <div class="mono-label" style="font-size: 0.8rem; color: #94a3b8;">
+          Organized by Code Crafters Club • October 15–16, 2026
+        </div>
+      </div>
+
+      <!-- Section 1: Overview -->
+      <h2>
+        <span class="material-symbols-outlined">info</span>
+        <span>1. Event Overview &amp; Eligibility</span>
+      </h2>
+      <p>
+        <strong>Neural Forge 2026</strong> is the premier 2-day continuous AI build sprint organized by the Code Crafters Club, Department of Computer Science &amp; Engineering, SRM TRP Engineering College, Tiruchirappalli.
+      </p>
+      <div class="rulebook-card-box">
+        <ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px;">
+          <li><strong>Venue:</strong> 5th Floor Seminar Hall, SRM TRP Engineering College</li>
+          <li><strong>Dates:</strong> October 15 &amp; 16, 2026 (2-Day Continuous Sprint)</li>
+          <li><strong>Team Size:</strong> 3 to 4 Members per team</li>
+          <li><strong>Eligibility:</strong> Open to 1st, 2nd, and 3rd-year engineering students across all departments</li>
+          <li><strong>Registration Fee:</strong> ₹150 per shortlisted team (payable after Round 0 idea clearance)</li>
+        </ul>
+      </div>
+
+      <!-- Section 2: Four Competition Rounds -->
+      <h2>
+        <span class="material-symbols-outlined">timer</span>
+        <span>2. Four Competition Rounds</span>
+      </h2>
+      
+      <div class="rulebook-card-box" style="border-left: 4px solid #4ade80;">
+        <h3 style="color: #4ade80; margin-top: 0;">ROUND 0: Idea Submission &amp; Initial Screening (Pre-Hackathon)</h3>
+        <p>Teams submit a structured 1–2 page PDF or Google Form proposal with problem statement, proposed architecture, target track, and intended NVIDIA models. Top submissions are shortlisted to participate in the on-site hackathon.</p>
+      </div>
+
+      <div class="rulebook-card-box" style="border-left: 4px solid #38bdf8;">
+        <h3 style="color: #38bdf8; margin-top: 0;">ROUND 1: Rapid Prototype Development (Day 1)</h3>
+        <p>Teams build the core working MVP. Mentors review progress and architecture at designated checkpoints. At the end of Day 1 (by 9:00 PM), each team submits their progress milestone report.</p>
+      </div>
+
+      <div class="rulebook-card-box" style="border-left: 4px solid #fbbf24;">
+        <h3 style="color: #fbbf24; margin-top: 0;">ROUND 2: Surprise Engineering Challenge (Day 2 Morning)</h3>
+        <p>A surprise technical requirement is unveiled simultaneously to all teams (e.g., multilingual voice interface, offline resilience, real-time safety guardrails, or telemetry integration). Teams have 1 hour to adapt their codebase.</p>
+      </div>
+
+      <div class="rulebook-card-box" style="border-left: 4px solid #c084fc;">
+        <h3 style="color: #c084fc; margin-top: 0;">ROUND 3: Final Live Demo &amp; Technical Q&amp;A</h3>
+        <p>A 3-minute live demonstration before the jury panel followed by a 5-minute technical Q&amp;A on architecture, model latency, error recovery, and engineering depth.</p>
+      </div>
+
+      <!-- Section 3: Technical Requirement -->
+      <h2>
+        <span class="material-symbols-outlined">smart_toy</span>
+        <span>3. Mandatory NVIDIA AI + API Integration</span>
+      </h2>
+      <p>
+        Every team must integrate at least one NVIDIA AI model (such as <strong>Nemotron, Cosmos, GR00T, or Sonic</strong>) via the NVIDIA API into their live demo solution.
+      </p>
+      <div class="rulebook-card-box">
+        <p style="margin: 0; color: #86efac; font-weight: 600;">
+          💡 <strong>Polyglot Freedom:</strong> Python is NOT mandatory. Teams are free to use JavaScript, TypeScript, React, Python, C++, Go, Flutter, or any stack of choice.
+        </p>
+      </div>
+
+      <!-- Section 4: Judging Criteria -->
+      <h2>
+        <span class="material-symbols-outlined">gavel</span>
+        <span>4. Official Judging Rubric (100% Total)</span>
+      </h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-top: 14px;">
+        <div class="rulebook-card-box">
+          <div style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 800; color: #4ade80;">25%</div>
+          <div style="font-weight: 700; color: #ffffff; margin: 4px 0;">Technical Execution</div>
+          <p style="font-size: 0.85rem; color: #94a3b8; margin: 0;">Code quality, model integration depth, and architectural resilience.</p>
+        </div>
+        <div class="rulebook-card-box">
+          <div style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 800; color: #38bdf8;">25%</div>
+          <div style="font-weight: 700; color: #ffffff; margin: 4px 0;">Design &amp; Usability</div>
+          <p style="font-size: 0.85rem; color: #94a3b8; margin: 0;">UI responsiveness, user workflow, and polish of the live interface.</p>
+        </div>
+        <div class="rulebook-card-box">
+          <div style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 800; color: #fbbf24;">25%</div>
+          <div style="font-weight: 700; color: #ffffff; margin: 4px 0;">Potential Impact</div>
+          <p style="font-size: 0.85rem; color: #94a3b8; margin: 0;">Real-world relevance, scalability, and problem-solution fit.</p>
+        </div>
+        <div class="rulebook-card-box">
+          <div style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 800; color: #c084fc;">25%</div>
+          <div style="font-weight: 700; color: #ffffff; margin: 4px 0;">Quality of Idea</div>
+          <p style="font-size: 0.85rem; color: #94a3b8; margin: 0;">Creativity, novelty, and technical ambition of the project concept.</p>
+        </div>
+      </div>
+
+      <!-- Section 5: Code of Conduct -->
+      <h2>
+        <span class="material-symbols-outlined">verified_user</span>
+        <span>5. Code of Conduct &amp; Ethics</span>
+      </h2>
+      <p>
+        All participants must adhere to strict academic and technical integrity standards:
+      </p>
+      <div class="rulebook-card-box">
+        <ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px;">
+          <li>Original code developed during the hackathon hours. Pre-existing libraries and open-source models are permitted.</li>
+          <li>All repositories must include an open-source license (MIT, Apache 2.0, or MPL 2.0).</li>
+          <li>Plagiarism, fabricated demonstrations, or interference with other teams results in immediate disqualification.</li>
+          <li>Hardware projects must operate safely within seminar hall guidelines.</li>
+        </ul>
+      </div>
+
+      <!-- Bottom Actions -->
+      <div style="margin-top: 40px; padding-top: 24px; border-top: 1.5px solid rgba(74, 222, 128, 0.3); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px;">
+        <a href="tracks.html" class="btn-secondary" style="padding: 10px 20px;">
+          <span class="material-symbols-outlined text-[18px]">arrow_back</span>
+          <span>Back to Tracks</span>
+        </a>
+        <a href="assets/AI_Hackathon_2026_Rulebook.docx" download="AI_Hackathon_2026_Rulebook.docx" class="btn-primary" style="padding: 10px 24px;">
+          <span class="material-symbols-outlined text-[20px]">download</span>
+          <span>Download Original .docx</span>
+        </a>
+      </div>
+
+    </article>
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="cyber-footer">
+    <div class="container footer-content" style="text-align: center; padding: 24px 0;">
+      <p style="color: #94a3b8; font-size: 0.85rem;">
+        Neural Forge '26 • Department of Computer Science &amp; Engineering • SRM TRP Engineering College
+      </p>
+    </div>
+  </footer>
+
+  <!-- Lightbox Modal for Evil Eye Charm -->
+  <div id="poster-lightbox-modal" class="modal-overlay" onclick="if(event.target === this) window.closePosterLightbox();">
+    <div class="poster-modal-card" role="dialog" aria-label="Official Event Poster">
+      <div class="poster-modal-header">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <span style="font-size: 20px;">🧿</span>
+          <div>
+            <div style="font-family: var(--font-display); font-size: 1.05rem; font-weight: 800; color: #f8fafc;">
+              NEURAL FORGE '26
+            </div>
+            <div class="mono-label" style="font-size: 0.7rem; color: #86efac;">OFFICIAL EVENT POSTER</div>
+          </div>
+        </div>
+        <button type="button" class="track-unflip-btn" onclick="window.closePosterLightbox();" title="Close Poster">
+          <span class="material-symbols-outlined" style="font-size: 20px;">close</span>
+        </button>
+      </div>
+      <div class="poster-modal-body">
+        <img src="assets/official_poster_v2.jpg" alt="Neural Forge 2026 Official Event Poster" class="poster-lightbox-image">
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

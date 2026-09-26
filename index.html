@@ -1,0 +1,2065 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Neural Forge 2026 | SRM TRP Engineering College</title>
+  <meta name="description" content="Official website for Neural Forge 2026 - Flagship Intra-College AI & Autonomous Systems Hackathon organized by Code Crafters Club, Department of CSE, SRM TRP Engineering College.">
+  <link rel="canonical" href="https://neuralforge26.com">
+
+  <!-- Open Graph / Facebook / WhatsApp -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://neuralforge26.com/">
+  <meta property="og:title" content="Neural Forge '26 | SRM TRP Engineering College">
+  <meta property="og:description" content="Two-day AI engineering hackathon organized by Code Crafters Club at SRM TRP Engineering College. October 15 & 16, 2026.">
+  <meta property="og:image" content="https://neuralforge26.com/assets/poster.jpg">
+
+  <!-- Twitter / X -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://neuralforge26.com/">
+  <meta property="twitter:title" content="Neural Forge '26 | SRM TRP Engineering College">
+  <meta property="twitter:description" content="Two-day AI engineering hackathon organized by Code Crafters Club at SRM TRP Engineering College. October 15 & 16, 2026.">
+  <meta property="twitter:image" content="https://neuralforge26.com/assets/poster.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300..800;1,300..800&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Orbitron:wght@400..900&family=Space+Grotesk:wght@300..700&family=Pirata+One&family=New+Rocker&family=Grenze+Gotisch:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- The Chosen Background in Living Moving Form with Moving Rocks & Thunderstorm Lightning -->
+  <div class="shader-background">
+    <div class="moving-bg-layer"></div>
+    <div class="thunderstorm-bloom-layer"></div>
+    <div class="sheet-lightning-overlay"></div>
+    <canvas id="cosmic-fx-canvas" class="cosmic-fx-canvas"></canvas>
+    <div class="ambient-dust-container"></div>
+  </div>
+
+  <!-- Hanging Evil Eye Amulet Talisman (Top-Left Corner) - Click to Open Official Poster -->
+  <div class="hanging-eye-rig" id="hanging-eye-charm" role="button" tabindex="0" aria-label="Open Official Poster" onclick="window.openPosterLightbox();" onkeydown="if(event.key==='Enter'||event.key===' ')window.openPosterLightbox();" title="🧿 Click to view Official Poster">
+    <!-- Mounting Stick attached to top-left corner -->
+    <div class="eye-mount-stick" onclick="window.openPosterLightbox();" style="cursor: pointer;">
+      <svg width="90" height="38" viewBox="0 0 90 38" fill="none" xmlns="http://www.w3.org/2000/svg" class="stick-svg">
+        <defs>
+          <linearGradient id="stickWoodGrad" x1="0" y1="0" x2="82" y2="18" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#3d1e06" />
+            <stop offset="25%" stop-color="#78350f" />
+            <stop offset="55%" stop-color="#b45309" />
+            <stop offset="85%" stop-color="#d97706" />
+            <stop offset="100%" stop-color="#92400e" />
+          </linearGradient>
+          <linearGradient id="knotGrad" x1="64" y1="6" x2="74" y2="18" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#fde68a" />
+            <stop offset="50%" stop-color="#d97706" />
+            <stop offset="100%" stop-color="#78350f" />
+          </linearGradient>
+          <filter id="stickShadowFilter" x="-4" y="-4" width="100" height="46" filterUnits="userSpaceOnUse">
+            <feDropShadow dx="1" dy="3" stdDeviation="3" flood-color="#000" flood-opacity="0.85"/>
+          </filter>
+        </defs>
+        <!-- The Wood/Bamboo Stick with carved taper -->
+        <path d="M-4 -4 L-2 12 L70 16 Q76 16 78 13 Q80 10 73 8 L-2 -4 Z" fill="url(#stickWoodGrad)" filter="url(#stickShadowFilter)" />
+        <!-- Wood Joint Rings -->
+        <line x1="22" y1="0" x2="24" y2="13" stroke="#451a03" stroke-width="1.8" stroke-linecap="round" opacity="0.8"/>
+        <line x1="24" y1="0" x2="26" y2="13" stroke="#fef08a" stroke-width="1" stroke-linecap="round" opacity="0.45"/>
+        <line x1="48" y1="4" x2="50" y2="15" stroke="#451a03" stroke-width="1.8" stroke-linecap="round" opacity="0.8"/>
+        <line x1="50" y1="4" x2="52" y2="15" stroke="#fef08a" stroke-width="1" stroke-linecap="round" opacity="0.45"/>
+        <!-- Tied rope knot at tip -->
+        <rect x="63" y="8" width="9" height="9" rx="2" fill="url(#knotGrad)" stroke="#451a03" stroke-width="0.8" />
+        <line x1="64" y1="9" x2="70" y2="15" stroke="#78350f" stroke-width="1" />
+        <line x1="68" y1="9" x2="72" y2="14" stroke="#fde68a" stroke-width="0.9" />
+        <!-- Metal hook eyelet -->
+        <circle cx="67.5" cy="18.5" r="2.5" fill="none" stroke="#fbbf24" stroke-width="1.2" />
+      </svg>
+    </div>
+
+    <!-- Swaying Pendulum (Cord + Eye Charm + Tassel) -->
+    <div class="eye-sway-assembly" onclick="window.openPosterLightbox();" style="cursor: pointer;">
+      <!-- Braided hanging thread -->
+      <div class="eye-thread"></div>
+      
+      <!-- Brass Jump Ring -->
+      <div class="eye-hook-ring"></div>
+
+      <!-- Evil Eye Glass Amulet Disc -->
+      <div class="eye-charm-disc" onclick="window.openPosterLightbox();" style="cursor: pointer;">
+        <img src="assets/evil_eye_amulet.jpg" alt="Evil Eye Talisman" class="eye-img" />
+        <div class="eye-glass-reflection"></div>
+        <div class="eye-energy-pulse"></div>
+      </div>
+
+      <!-- Hanging Lower Tassel & Beads -->
+      <div class="eye-tassel-wrap">
+        <div class="eye-gold-bead"></div>
+        <div class="eye-tassel-fringes"></div>
+      </div>
+
+      <!-- Interactive Tooltip -->
+      <div class="eye-badge-tooltip">
+        <span class="pulse-dot" style="width: 5px; height: 5px; background: #38bdf8;"></span>
+        <span>Click for Poster</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Top Sticky Navigation Bar -->
+  <header class="site-header">
+    <div class="header-container">
+      <div class="header-brand">
+        <button id="menu-btn" class="menu-toggle-btn" aria-label="Open Navigation Menu">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+        <div class="logo-group">
+          <a href="index.html" class="flex items-center gap-2">
+            <img src="assets/srm_trp_logo.png" alt="SRM TRP Engineering College Logo" class="logo-srm">
+          </a>
+          <div class="logo-divider"></div>
+          <a href="index.html" class="flex items-center gap-2">
+            <img src="assets/code_crafters_logo.png" alt="Code Crafters Club Logo" class="logo-ccc">
+          </a>
+        </div>
+        <div class="brand-text-block">
+          <span class="brand-title">NEURAL FORGE</span>
+          <span class="brand-sub">SRM TRPEC • 2026</span>
+        </div>
+      </div>
+
+      <!-- Desktop Links -->
+      <nav class="desktop-nav">
+        <a href="#home" class="nav-link active" data-path="home">
+          <span class="material-symbols-outlined text-[18px]">home</span>
+          <span>Home</span>
+        </a>
+        <a href="#tracks" class="nav-link" data-path="tracks">
+          <span class="material-symbols-outlined text-[18px]">hub</span>
+          <span>Tracks</span>
+        </a>
+        <a href="#schedule" class="nav-link" data-path="schedule">
+          <span class="material-symbols-outlined text-[18px]">calendar_today</span>
+          <span>Schedule</span>
+        </a>
+        <a href="#about" class="nav-link" data-path="about">
+          <span class="material-symbols-outlined text-[18px]">info</span>
+          <span>About Us</span>
+        </a>
+        <a href="#faq" class="nav-link" data-path="faq">
+          <span class="material-symbols-outlined text-[18px]">help</span>
+          <span>FAQ</span>
+        </a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdPUSn6Qpd585HlKsup8jDA4SXCDRuiGuTqHe-YNZMvdJEjgA/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer" class="nav-cta-btn" data-path="register">
+          <span class="material-symbols-outlined text-[18px]">how_to_reg</span>
+          <span>Register</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Backdrop & Side Navigation Panel -->
+  <div id="drawer-backdrop" class="drawer-backdrop"></div>
+  <aside id="mobile-drawer" class="mobile-drawer">
+    <div>
+      <div class="drawer-header">
+        <div>
+          <div class="brand-title">NEURAL FORGE</div>
+          <div class="mono-label" style="font-size: 0.65rem; color: var(--secondary);">Intra-College Hackathon 2026</div>
+        </div>
+        <button id="drawer-close-btn" class="menu-toggle-btn" aria-label="Close Navigation Menu">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+
+      <div class="drawer-links">
+        <a href="#home" class="drawer-link active" data-path="home">
+          <span class="material-symbols-outlined text-[#4ade80]">home</span>
+          <span>Home</span>
+        </a>
+        <a href="#tracks" class="drawer-link" data-path="tracks">
+          <span class="material-symbols-outlined text-[#565e74]">hub</span>
+          <span>Tracks</span>
+        </a>
+        <a href="#schedule" class="drawer-link" data-path="schedule">
+          <span class="material-symbols-outlined text-[#565e74]">calendar_today</span>
+          <span>Schedule</span>
+        </a>
+        <a href="#about" class="drawer-link" data-path="about">
+          <span class="material-symbols-outlined text-[#565e74]">info</span>
+          <span>About Us</span>
+        </a>
+        <a href="#faq" class="drawer-link" data-path="faq">
+          <span class="material-symbols-outlined text-[#565e74]">help</span>
+          <span>FAQ</span>
+        </a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdPUSn6Qpd585HlKsup8jDA4SXCDRuiGuTqHe-YNZMvdJEjgA/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer" class="drawer-link" data-path="register" style="color: var(--primary-container); font-weight: 700;">
+          <span class="material-symbols-outlined text-[#4ade80]">how_to_reg</span>
+          <span>Register (Google Form)</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="drawer-footer">
+      <div class="mono-label">ORGANIZED BY</div>
+      <div style="font-family: var(--font-display); font-weight: 700; font-size: 0.95rem; margin-top: 2px;">Code Crafters Club</div>
+      <div style="font-size: 0.75rem; color: var(--secondary); margin-top: 2px;">SRM TRP Engineering College</div>
+    </div>
+  </aside>
+
+  <!-- Main Viewport Content -->
+  <main class="main-content">
+    <div style="display: flex; flex-direction: column; gap: 32px;">
+
+      <!-- Hero Core Section -->
+      <section id="home" class="portal-section" style="display: flex; flex-direction: column; gap: 20px; text-align: center; padding-top: 10px;">
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 14px;">
+          <!-- Poster Tagline Badge -->
+          <div class="badge-pill" style="border-color: rgba(74, 222, 128, 0.4); background: rgba(74, 222, 128, 0.1); color: #86efac; letter-spacing: 0.2em;">
+            <span class="pulse-dot" style="background: #4ade80; box-shadow: 0 0 10px #4ade80;"></span>
+            <span>BUILD &gt; DEBUG &gt; CONQUER</span>
+          </div>
+
+          <!-- Master Gothic Title (Applied Font Style from Concept Art) -->
+          <div class="hero-gothic-title-wrapper">
+            <h1 class="hero-gothic-title">NEURAL FORGE '26</h1>
+          </div>
+
+          <!-- Cyber Hackathon Bracket Badge -->
+          <div style="display: inline-flex; align-items: center; gap: 10px; padding: 6px 24px; border: 1.5px solid #4ade80; border-radius: 9999px; background: rgba(6, 15, 9, 0.85); box-shadow: 0 0 24px rgba(74, 222, 128, 0.35); font-family: 'Orbitron', monospace; font-size: clamp(0.95rem, 2vw, 1.35rem); font-weight: 800; letter-spacing: 0.35em; color: #86efac; text-transform: uppercase;">
+            &lt; HACKATHON &gt;
+          </div>
+
+          <!-- Official Motto -->
+          <div style="display: flex; align-items: center; gap: 10px; font-family: 'Orbitron', monospace; font-size: clamp(0.75rem, 1.4vw, 0.95rem); letter-spacing: 0.25em; color: #fbbf24; text-transform: uppercase; margin-top: 2px;">
+            <span>🐾</span>
+            <span style="font-weight: 700;">SMALL STEPS | BIG REVOLUTIONS</span>
+            <span>🐾</span>
+          </div>
+        </div>
+
+        <p class="glass-liquid" style="max-width: 740px; margin: 0 auto; color: var(--secondary); line-height: 1.6; padding: 16px 24px; text-align: center; font-size: 1rem; border-color: rgba(74, 222, 128, 0.2);">
+          Organized by <strong style="color: #4ade80;">Code Crafters Club</strong>. A 2-day engineering challenge on <strong style="color: #cbd5e1;">October 15 & 16, 2026</strong> at the 5th Floor Seminar Hall, SRM TRP Engineering College.
+        </p>
+
+        <!-- Countdown & Action Buttons -->
+        <div style="display: flex; flex-direction: column; gap: 18px; max-width: 860px; margin: 0 auto; width: 100%;">
+          <!-- Sprint Countdown Card in Liquid Glass (Flagship Size) -->
+          <div class="glass-liquid countdown-card" id="sprint-countdown-card">
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <span class="material-symbols-outlined text-[24px] text-[#4ade80]">timer</span>
+                <span class="mono-label" style="color: #86efac; font-weight: 800; font-size: 0.85rem; letter-spacing: 0.16em;">SPRINT COUNTDOWN // KICKOFF</span>
+              </div>
+              <div style="display: inline-flex; align-items: center; gap: 8px; padding: 5px 14px; background: rgba(74, 222, 128, 0.16); border: 1.5px solid rgba(74, 222, 128, 0.45); border-radius: 9999px; color: #4ade80; font-family: var(--font-mono); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em;">
+                <span class="pulse-dot" style="width: 7px; height: 7px; background: #4ade80; box-shadow: 0 0 10px #4ade80;"></span>
+                <span>OCT 15, 2026 • 09:00 AM</span>
+              </div>
+            </div>
+
+            <div class="countdown-grid">
+              <div class="countdown-tile">
+                <span class="countdown-val highlight" id="cd-days">25</span>
+                <span class="countdown-unit">DAYS</span>
+              </div>
+              <div class="countdown-tile">
+                <span class="countdown-val" id="cd-hours">17</span>
+                <span class="countdown-unit">HOURS</span>
+              </div>
+              <div class="countdown-tile">
+                <span class="countdown-val" id="cd-mins">52</span>
+                <span class="countdown-unit">MIN</span>
+              </div>
+              <div class="countdown-tile">
+                <span class="countdown-val highlight" id="cd-secs">15</span>
+                <span class="countdown-unit">SEC</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Direct CTA Buttons -->
+          <div style="display: grid; grid-template-columns: 1fr; gap: 10px;">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdPUSn6Qpd585HlKsup8jDA4SXCDRuiGuTqHe-YNZMvdJEjgA/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer" class="btn-primary" style="width: 100%; font-size: 1.05rem; padding: 15px;">
+              <span class="material-symbols-outlined text-[20px]">how_to_reg</span>
+              <span>Register Now for Sprint</span>
+            </a>
+            <a href="#tracks" class="btn-secondary" style="width: 100%; font-size: 1.05rem; padding: 15px;">
+              <span class="material-symbols-outlined text-[20px] text-[#4ade80]">explore</span>
+              <span>Explore 4 AI Tracks</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 02: About Neural Forge 2026 -->
+      <section style="display: flex; flex-direction: column; gap: 24px; align-items: center;">
+        
+        <!-- Centered Section Header -->
+        <div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px; max-width: 800px; width: 100%;">
+          <div style="display: flex; align-items: center; gap: 8px; justify-content: center; flex-wrap: wrap;">
+            <span class="badge-pill">SECTION 02 // ARCHITECTURAL IDENTITY</span>
+            <span class="mono-label" style="background: rgba(74, 222, 128, 0.12); color: #4ade80; border: 1px solid rgba(74, 222, 128, 0.3); padding: 3px 10px; border-radius: 4px;">
+              TECHNICAL IDENTITY &amp; OVERVIEW
+            </span>
+          </div>
+          <h2 class="section-title" style="text-align: center; margin: 0; font-size: clamp(1.85rem, 3.2vw, 2.5rem);">About Neural Forge 2026</h2>
+          <p style="font-size: 1rem; color: #cbd5e1; line-height: 1.6; margin: 0; text-align: center;">
+            The engineered fusion of cutting-edge cognitive neural inference and raw engineering craftsmanship.
+          </p>
+        </div>
+
+        <!-- Why This Name Works Card (Centered Architecture) -->
+        <div class="glass-liquid" style="padding: 28px; display: flex; flex-direction: column; gap: 20px; max-width: 960px; width: 100%; border-color: rgba(74, 222, 128, 0.25);">
+          <div style="display: flex; align-items: center; justify-content: center; gap: 10px; text-align: center;">
+            <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(74, 222, 128, 0.15); display: flex; align-items: center; justify-content: center; color: #4ade80; border: 1px solid rgba(74, 222, 128, 0.35);">
+              <span class="material-symbols-outlined text-[22px]">lightbulb</span>
+            </div>
+            <h3 style="font-family: var(--font-display); font-size: 1.35rem; font-weight: 700; color: var(--on-surface); margin: 0;">
+              Why this name works:
+            </h3>
+          </div>
+
+          <!-- Name Breakdown Points: Side-by-Side Dual Pillars -->
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px;">
+            <!-- Neural Pillar -->
+            <div style="display: flex; align-items: flex-start; gap: 14px; padding: 18px 20px; background: rgba(74, 222, 128, 0.07); border-radius: var(--radius-md); border: 1px solid rgba(74, 222, 128, 0.25);">
+              <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(74, 222, 128, 0.2); display: flex; align-items: center; justify-content: center; color: #4ade80; flex-shrink: 0; margin-top: 2px;">
+                <span class="material-symbols-outlined text-[20px]">neurology</span>
+              </div>
+              <div>
+                <div style="font-family: var(--font-display); font-weight: 700; font-size: 1.15rem; color: #4ade80;">• Neural</div>
+                <p style="font-size: 0.9rem; color: var(--secondary); margin-top: 4px; line-height: 1.55;">
+                  <span style="color: var(--on-surface); font-weight: 600;">→ AI / intelligent systems</span>. Emphasizing autonomous cognitive loops, multi-modal LLM reasoning, neural inference, and algorithmic intelligence.
+                </p>
+              </div>
+            </div>
+
+            <!-- Forge Pillar -->
+            <div style="display: flex; align-items: flex-start; gap: 14px; padding: 18px 20px; background: rgba(251, 191, 36, 0.07); border-radius: var(--radius-md); border: 1px solid rgba(251, 191, 36, 0.25);">
+              <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(251, 191, 36, 0.2); display: flex; align-items: center; justify-content: center; color: #fbbf24; flex-shrink: 0; margin-top: 2px;">
+                <span class="material-symbols-outlined text-[20px]">precision_manufacturing</span>
+              </div>
+              <div>
+                <div style="font-family: var(--font-display); font-weight: 700; font-size: 1.15rem; color: #fbbf24;">• Forge</div>
+                <p style="font-size: 0.9rem; color: var(--secondary); margin-top: 4px; line-height: 1.55;">
+                  <span style="color: var(--on-surface); font-weight: 600;">→ building and engineering</span>. Crafting, tempering, and fabricating robust, real-world hardware and software architectures from raw ideas.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Technical Challenge Callout Quote -->
+          <div style="padding: 16px 22px; background: rgba(255, 255, 255, 0.03); border-radius: var(--radius-md); border-left: 3px solid #4ade80; border-right: 3px solid #fbbf24; border-top: 1px solid rgba(255, 255, 255, 0.06); border-bottom: 1px solid rgba(255, 255, 255, 0.06); text-align: center;">
+            <p style="font-size: 0.925rem; color: #cbd5e1; font-style: italic; line-height: 1.6; margin: 0;">
+              "Sounds more like a technical challenge than a regular hackathon. Easy to use for branding, posters, certificates and future editions."
+            </p>
+          </div>
+        </div>
+
+        <!-- 1. Event Overview Master Card -->
+        <div class="glass-liquid" style="padding: 24px; display: flex; flex-direction: column; gap: 18px; max-width: 960px; width: 100%;">
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; border-bottom: 1px solid var(--border-subtle); padding-bottom: 12px;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <div style="width: 36px; height: 36px; border-radius: var(--radius-md); background: rgba(74, 222, 128, 0.15); color: #4ade80; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(74, 222, 128, 0.35);">
+                <span class="material-symbols-outlined text-[20px]">assignment</span>
+              </div>
+              <h3 style="font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: var(--on-surface);">1. Event Overview</h3>
+            </div>
+            <span class="mono-label" style="color: var(--secondary); font-size: 0.75rem;">OFFICIAL SPRINT BRIEFING</span>
+          </div>
+
+          <!-- Event Description -->
+          <p style="font-size: 0.95rem; color: var(--on-surface-variant); line-height: 1.65; max-width: 960px;">
+            <strong style="color: #4ade80;">Neural Forge 2026</strong> is a <strong style="color: var(--on-surface);">2-day, 10-hour AI engineering challenge</strong> organized by <strong style="color: var(--on-surface);">Code Crafters Club</strong>. Teams identify real-world problems and build functional AI-powered solutions across <span style="color: #4ade80; font-weight: 600;">AI Agents</span>, <span style="color: #a3e635; font-weight: 600;">Generative AI</span>, <span style="color: #4ade80; font-weight: 600;">intelligent applications</span>, and <span style="color: #fbbf24; font-weight: 600;">Physical AI</span>. Format includes idea screening, rapid development, mentor checkpoints, a surprise technical challenge, and live demo with technical evaluation.
+          </p>
+
+          <!-- Format Workflow Timeline Grid -->
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 10px; margin-top: 4px;">
+            <div style="padding: 12px; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-md);">
+              <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 4px;">
+                <span class="material-symbols-outlined text-[18px] text-[#4ade80]">filter_alt</span>
+                <span class="mono-label" style="font-size: 0.65rem; color: #4ade80;">STAGE 01</span>
+              </div>
+              <div style="font-family: var(--font-display); font-weight: 700; font-size: 0.875rem; color: var(--on-surface);">Idea Screening</div>
+              <p style="font-size: 0.75rem; color: var(--secondary); margin-top: 2px;">Architectural problem validation</p>
+            </div>
+
+            <div style="padding: 12px; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-md);">
+              <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 4px;">
+                <span class="material-symbols-outlined text-[18px] text-[#4ade80]">bolt</span>
+                <span class="mono-label" style="font-size: 0.65rem; color: #4ade80;">STAGE 02</span>
+              </div>
+              <div style="font-family: var(--font-display); font-weight: 700; font-size: 0.875rem; color: var(--on-surface);">Rapid Development</div>
+              <p style="font-size: 0.75rem; color: var(--secondary); margin-top: 2px;">10-hour intensive build loop</p>
+            </div>
+
+            <div style="padding: 12px; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-md);">
+              <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 4px;">
+                <span class="material-symbols-outlined text-[18px] text-[#fbbf24]">support_agent</span>
+                <span class="mono-label" style="font-size: 0.65rem; color: #fbbf24;">STAGE 03</span>
+              </div>
+              <div style="font-family: var(--font-display); font-weight: 700; font-size: 0.875rem; color: var(--on-surface);">Mentor Checkpoints</div>
+              <p style="font-size: 0.75rem; color: var(--secondary); margin-top: 2px;">Technical guidance & reviews</p>
+            </div>
+
+            <div style="padding: 12px; background: rgba(245, 158, 11, 0.08); border: 1px solid rgba(245, 158, 11, 0.3); border-radius: var(--radius-md);">
+              <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 4px;">
+                <span class="material-symbols-outlined text-[18px] text-[#fbbf24]">psychology_alt</span>
+                <span class="mono-label" style="font-size: 0.65rem; color: #fbbf24;">STAGE 04</span>
+              </div>
+              <div style="font-family: var(--font-display); font-weight: 700; font-size: 0.875rem; color: #fbbf24;">Surprise Tech Challenge</div>
+              <p style="font-size: 0.75rem; color: var(--secondary); margin-top: 2px;">Dynamic twist specification</p>
+            </div>
+
+            <div style="padding: 12px; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-md);">
+              <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 4px;">
+                <span class="material-symbols-outlined text-[18px] text-[#4ade80]">verified</span>
+                <span class="mono-label" style="font-size: 0.65rem; color: #4ade80;">STAGE 05</span>
+              </div>
+              <div style="font-family: var(--font-display); font-weight: 700; font-size: 0.875rem; color: var(--on-surface);">Live Technical Demo</div>
+              <p style="font-size: 0.75rem; color: var(--secondary); margin-top: 2px;">Jury defense & code audit</p>
+            </div>
+          </div>
+
+          <!-- Technology Focus Domains Pills -->
+          <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap; padding-top: 6px; border-top: 1px solid var(--border-subtle);">
+            <span class="mono-label" style="font-size: 0.7rem; color: var(--secondary);">CORE SOLUTION DOMAINS:</span>
+            <span class="dept-pill" style="color: #4ade80; border-color: rgba(74, 222, 128, 0.35);">AI Agents</span>
+            <span class="dept-pill" style="color: #a3e635; border-color: rgba(192, 132, 252, 0.35);">Generative AI</span>
+            <span class="dept-pill" style="color: #4ade80; border-color: rgba(74, 222, 128, 0.35);">Intelligent Applications</span>
+            <span class="dept-pill" style="color: #fbbf24; border-color: rgba(244, 114, 182, 0.35);">Physical AI</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 03: Event Details (Everything You Need to Know from Poster) -->
+      <section class="event-details-container">
+        <!-- Event Details Pill Badge -->
+        <div class="event-details-pill-badge">
+          <span style="font-size: 1.05rem;">📋</span>
+          <span class="badge-text">OFFICIAL EVENT BRIEF</span>
+        </div>
+
+        <!-- Everything You Need to Know Heading -->
+        <h2 class="event-details-title">Everything You Need to Know</h2>
+
+        <!-- 4 Cyber Event Detail Cards Grid -->
+        <div class="event-details-grid">
+          <!-- Card 1: Venue -->
+          <div class="event-detail-card">
+            <div class="event-detail-img-frame venue-frame">
+              <img src="assets/icon_venue.jpg" alt="Venue - 5th Floor Seminar Hall, SRM TRP" class="event-detail-img" loading="lazy" />
+            </div>
+            <span class="event-detail-label">VENUE</span>
+            <div class="event-detail-val" style="color: #cbd5e1; font-size: clamp(1.05rem, 1.8vw, 1.25rem);">5th floor seminar hall ,SRM TRP</div>
+            <span class="event-detail-sub">Department of CSE, SRM TRP</span>
+          </div>
+
+          <!-- Card 2: Date -->
+          <div class="event-detail-card">
+            <div class="event-detail-img-frame date-frame">
+              <img src="assets/icon_date.jpg" alt="Date - Oct 15-16, 2026" class="event-detail-img" loading="lazy" />
+            </div>
+            <span class="event-detail-label">DATE</span>
+            <div class="event-detail-val" style="color: #fbbf24; font-size: clamp(1.1rem, 2vw, 1.3rem);">oct 15-16, 2026</div>
+            <span class="event-detail-sub">2 Days • Continuous Build Sprint</span>
+          </div>
+
+          <!-- Card 3: Team Size -->
+          <div class="event-detail-card">
+            <div class="event-detail-img-frame team-frame">
+              <img src="assets/icon_teamsize.jpg" alt="Team Size - 3 to 4 Members" class="event-detail-img" loading="lazy" />
+            </div>
+            <span class="event-detail-label">TEAM SIZE</span>
+            <div class="event-detail-val" style="color: #a3e635; font-size: clamp(1.1rem, 2vw, 1.3rem);">3 to 4 Members</div>
+            <span class="event-detail-sub">Eligible: 1st, 2nd &amp; 3rd Years</span>
+          </div>
+
+          <!-- Card 4: Registration Fee -->
+          <div class="event-detail-card">
+            <div class="event-detail-img-frame fee-frame">
+              <img src="assets/icon_regfee.jpg" alt="Registration Fee - ₹150 for Shortlisted Teams" class="event-detail-img" loading="lazy" />
+            </div>
+            <span class="event-detail-label">REGISTRATION FEE</span>
+            <div class="event-detail-val" style="color: #86efac; font-size: clamp(1.25rem, 2.2vw, 1.5rem); font-weight: 900;">₹150</div>
+            <span class="event-detail-sub">For Shortlisted Teams</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===============================================================
+           SECTION: 4 SPECIALIZED TRACKS (3D CLICK-TO-FLIP ARCHITECTURE)
+           =============================================================== -->
+      <section id="tracks" class="portal-section" style="display: flex; flex-direction: column; gap: 20px;">
+        <!-- Header Banner -->
+        <div class="glass-liquid" style="padding: 24px; position: relative; overflow: hidden;">
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <span class="badge-pill">TRK-SPEC-2026</span>
+                <span class="dept-dot red"></span>
+                <span class="mono-label">ARCHITECTURAL DOMAINS</span>
+              </div>
+              <span class="mono-label" style="background: rgba(74, 222, 128, 0.16); padding: 3px 8px; border-radius: 4px; color: var(--primary); border: 1px solid rgba(74, 222, 128, 0.35);">
+                NO FIXED PROBLEM STATEMENTS
+              </span>
+            </div>
+
+            <h2 class="hero-heading" style="font-size: 2.25rem; margin-top: 4px;">4 Specialized Tracks</h2>
+            <p style="font-size: 1rem; color: var(--secondary); max-width: 720px; line-height: 1.5;">
+              Frontier AI tracks engineered without rigid constraints — build genuine applications, autonomous agents, and embodied hardware systems. Click any card to flip.
+            </p>
+          </div>
+        </div>
+
+        <!-- Tracks Search & Filter Toolbar -->
+        <div class="tracks-header-toolbar glass-liquid">
+          <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+            <div style="display: flex; align-items: center; gap: 6px;">
+              <span class="material-symbols-outlined text-[18px] text-[#38bdf8]">filter_list</span>
+              <span class="mono-label" style="color: var(--on-surface); font-weight: 700;">Category:</span>
+            </div>
+            <div class="tab-btn-group">
+              <button class="tab-btn active" data-filter="all">ALL (4)</button>
+              <button class="tab-btn" data-filter="software">SOFTWARE</button>
+              <button class="tab-btn" data-filter="hybrid">HYBRID</button>
+              <button class="tab-btn" data-filter="hardware">HARDWARE</button>
+            </div>
+          </div>
+
+          <div class="tracks-search-wrapper">
+            <span class="material-symbols-outlined search-icon">search</span>
+            <input 
+              type="text" 
+              id="track-search-input" 
+              class="tracks-search-input" 
+              placeholder="Search tech tracks (e.g. agentic, nemotron, privacy)..." 
+              aria-label="Search tech tracks"
+              autocomplete="off"
+            />
+          </div>
+        </div>
+
+        <!-- Tracks 3D Flip Grid (4 Official Tracks) -->
+        <div class="tracks-flip-grid" id="tracks-flip-container">
+
+          <!-- TRACK 01: Coding & Agentic Engineering -->
+          <div class="track-flip-card" data-category="software" data-title="Coding & Agentic Engineering" data-tags="#CODEGEN-AGENTIC Token Factory Sandbox autonomous tools testing debugging" tabindex="0" role="button" aria-label="Flip card for Track 01: Coding & Agentic Engineering">
+            <div class="track-flip-inner">
+              <!-- FRONT FACE -->
+              <div class="track-card-face track-card-front">
+                <div class="track-front-top">
+                  <span class="badge-pill">TRACK 01</span>
+                  <span class="mono-label" style="color: #38bdf8; font-weight: 700;">#CODEGEN-AGENTIC</span>
+                </div>
+
+                <div class="track-front-body">
+                  <div class="track-icon-frame icon-software">
+                    <span class="material-symbols-outlined" style="font-size: 38px;">terminal</span>
+                  </div>
+                  <h3 class="track-front-title">Coding &amp; Agentic Engineering</h3>
+                  <span class="track-category-badge badge-software">Software</span>
+                </div>
+
+                <div class="click-to-flip-bar">
+                  <span class="material-symbols-outlined flip-icon">sync</span>
+                  <span>CLICK TO FLIP</span>
+                </div>
+              </div>
+
+              <!-- BACK FACE -->
+              <div class="track-card-face track-card-back">
+                <div>
+                  <div class="track-back-header">
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                      <span class="badge-pill">TRACK 01</span>
+                      <span class="mono-label" style="color: #38bdf8; font-weight: 700;">#CODEGEN-AGENTIC</span>
+                    </div>
+                    <button class="track-unflip-btn" type="button" title="Flip Back" onclick="event.stopPropagation(); window.toggleTrackCard(this.closest('.track-flip-card'));">
+                      <span class="material-symbols-outlined" style="font-size: 18px;">close</span>
+                    </button>
+                  </div>
+
+                  <h4 class="track-back-title">Coding &amp; Agentic Engineering</h4>
+
+                  <p class="track-back-desc">
+                    This track is about building coding agents and developer tools — AI systems that can write, run, and test code on their own. Projects run inside Token Factory Sandboxes, giving agents a safe environment to execute and iterate on code. Think autonomous coding assistants, automated testing agents, or tools that help developers debug and ship faster.
+                  </p>
+                </div>
+
+                <div class="track-back-footer" style="justify-content: center;">
+                  <div class="click-to-flip-bar" style="padding: 6px 16px; font-size: 0.72rem;">
+                    <span class="material-symbols-outlined flip-icon" style="font-size: 14px;">sync</span>
+                    <span>CLICK TO FLIP BACK</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- TRACK 02: Best Apps & Agents -->
+          <div class="track-flip-card" data-category="software" data-title="Best Apps & Agents" data-tags="#FRONTIER-NEMOTRON Nemotron Nebius Token Factory Ultra Nano Super reasoning copilot workflow" tabindex="0" role="button" aria-label="Flip card for Track 02: Best Apps & Agents">
+            <div class="track-flip-inner">
+              <!-- FRONT FACE -->
+              <div class="track-card-face track-card-front">
+                <div class="track-front-top">
+                  <span class="badge-pill">TRACK 02</span>
+                  <span class="mono-label" style="color: #4ade80; font-weight: 700;">#FRONTIER-NEMOTRON</span>
+                </div>
+
+                <div class="track-front-body">
+                  <div class="track-icon-frame icon-agents">
+                    <span class="material-symbols-outlined" style="font-size: 38px;">hub</span>
+                  </div>
+                  <h3 class="track-front-title">Best Apps &amp; Agents</h3>
+                  <span class="track-category-badge badge-software">Software</span>
+                </div>
+
+                <div class="click-to-flip-bar">
+                  <span class="material-symbols-outlined flip-icon">sync</span>
+                  <span>CLICK TO FLIP</span>
+                </div>
+              </div>
+
+              <!-- BACK FACE -->
+              <div class="track-card-face track-card-back">
+                <div>
+                  <div class="track-back-header">
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                      <span class="badge-pill">TRACK 02</span>
+                      <span class="mono-label" style="color: #4ade80; font-weight: 700;">#FRONTIER-NEMOTRON</span>
+                    </div>
+                    <button class="track-unflip-btn" type="button" title="Flip Back" onclick="event.stopPropagation(); window.toggleTrackCard(this.closest('.track-flip-card'));">
+                      <span class="material-symbols-outlined" style="font-size: 18px;">close</span>
+                    </button>
+                  </div>
+
+                  <h4 class="track-back-title">Best Apps &amp; Agents</h4>
+
+                  <p class="track-back-desc">
+                    An open track for building any app or agent people would genuinely use — from a productivity tool or AI copilot to a workflow that runs itself end-to-end. Solutions are powered by Nemotron models on Nebius through Token Factory: reach for Nemotron 3 Ultra when the task needs serious reasoning, and use Nano or Super for fast, everyday calls so the app stays responsive without burning credits.
+                  </p>
+                </div>
+
+                <div class="track-back-footer" style="justify-content: center;">
+                  <div class="click-to-flip-bar" style="padding: 6px 16px; font-size: 0.72rem;">
+                    <span class="material-symbols-outlined flip-icon" style="font-size: 14px;">sync</span>
+                    <span>CLICK TO FLIP BACK</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- TRACK 03: Personal AI -->
+          <div class="track-flip-card" data-category="hybrid" data-title="Personal AI" data-tags="#SOVEREIGN-PRIVACY sovereign private persistent memory NemoClaw OpenShell offline assistant" tabindex="0" role="button" aria-label="Flip card for Track 03: Personal AI">
+            <div class="track-flip-inner">
+              <!-- FRONT FACE -->
+              <div class="track-card-face track-card-front">
+                <div class="track-front-top">
+                  <span class="badge-pill">TRACK 03</span>
+                  <span class="mono-label" style="color: #c084fc; font-weight: 700;">#SOVEREIGN-PRIVACY</span>
+                </div>
+
+                <div class="track-front-body">
+                  <div class="track-icon-frame icon-hybrid">
+                    <span class="material-symbols-outlined" style="font-size: 38px;">lock</span>
+                  </div>
+                  <h3 class="track-front-title">Personal AI</h3>
+                  <span class="track-category-badge badge-hybrid">Hybrid</span>
+                </div>
+
+                <div class="click-to-flip-bar">
+                  <span class="material-symbols-outlined flip-icon">sync</span>
+                  <span>CLICK TO FLIP</span>
+                </div>
+              </div>
+
+              <!-- BACK FACE -->
+              <div class="track-card-face track-card-back">
+                <div>
+                  <div class="track-back-header">
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                      <span class="badge-pill">TRACK 03</span>
+                      <span class="mono-label" style="color: #c084fc; font-weight: 700;">#SOVEREIGN-PRIVACY</span>
+                    </div>
+                    <button class="track-unflip-btn" type="button" title="Flip Back" onclick="event.stopPropagation(); window.toggleTrackCard(this.closest('.track-flip-card'));">
+                      <span class="material-symbols-outlined" style="font-size: 18px;">close</span>
+                    </button>
+                  </div>
+
+                  <h4 class="track-back-title">Personal AI</h4>
+
+                  <p class="track-back-desc">
+                    This track focuses on building an always-on, private personal assistant that keeps the user's data under their own control. It should have persistent memory, reusable skills, access to tools and information the user chooses, and the ability to carry out tasks across daily workflows using NVIDIA open-source models, NemoClaw, and OpenShell.
+                  </p>
+                </div>
+
+                <div class="track-back-footer" style="justify-content: center;">
+                  <div class="click-to-flip-bar" style="padding: 6px 16px; font-size: 0.72rem;">
+                    <span class="material-symbols-outlined flip-icon" style="font-size: 14px;">sync</span>
+                    <span>CLICK TO FLIP BACK</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- TRACK 04: Physical AI -->
+          <div class="track-flip-card" data-category="hardware" data-title="Physical AI" data-tags="#EMBODIED-ROBOTICS embodied edge robotics IoT devices GROOT Cosmos Sonic hardware" tabindex="0" role="button" aria-label="Flip card for Track 04: Physical AI">
+            <div class="track-flip-inner">
+              <!-- FRONT FACE -->
+              <div class="track-card-face track-card-front">
+                <div class="track-front-top">
+                  <span class="badge-pill">TRACK 04</span>
+                  <span class="mono-label" style="color: #fbbf24; font-weight: 700;">#EMBODIED-ROBOTICS</span>
+                </div>
+
+                <div class="track-front-body">
+                  <div class="track-icon-frame icon-hardware">
+                    <span class="material-symbols-outlined" style="font-size: 38px;">precision_manufacturing</span>
+                  </div>
+                  <h3 class="track-front-title">Physical AI</h3>
+                  <span class="track-category-badge badge-hardware">Hardware</span>
+                </div>
+
+                <div class="click-to-flip-bar">
+                  <span class="material-symbols-outlined flip-icon">sync</span>
+                  <span>CLICK TO FLIP</span>
+                </div>
+              </div>
+
+              <!-- BACK FACE -->
+              <div class="track-card-face track-card-back">
+                <div>
+                  <div class="track-back-header">
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                      <span class="badge-pill">TRACK 04</span>
+                      <span class="mono-label" style="color: #fbbf24; font-weight: 700;">#EMBODIED-ROBOTICS</span>
+                    </div>
+                    <button class="track-unflip-btn" type="button" title="Flip Back" onclick="event.stopPropagation(); window.toggleTrackCard(this.closest('.track-flip-card'));">
+                      <span class="material-symbols-outlined" style="font-size: 18px;">close</span>
+                    </button>
+                  </div>
+
+                  <h4 class="track-back-title">Physical AI</h4>
+
+                  <p class="track-back-desc">
+                    This track is for embodied and edge AI — agents that sense and act in the real world, such as robotics, IoT devices, and on-device intelligence. Solutions are powered by Nemotron, GROOT, Cosmos, and Sonic models, coordinated through an agent runtime. Live demos or recorded physical hardware runs receive high jury evaluation.
+                  </p>
+                </div>
+
+                <div class="track-back-footer" style="justify-content: center;">
+                  <div class="click-to-flip-bar" style="padding: 6px 16px; font-size: 0.72rem;">
+                    <span class="material-symbols-outlined flip-icon" style="font-size: 14px;">sync</span>
+                    <span>CLICK TO FLIP BACK</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- No Results Feedback for Search -->
+          <div id="tracks-no-results" class="tracks-no-results">
+            <span class="material-symbols-outlined" style="font-size: 40px; color: #64748b; margin-bottom: 8px;">search_off</span>
+            <p style="color: #cbd5e1; font-weight: 700; margin-bottom: 4px;">No matching tracks found</p>
+            <p style="color: #94a3b8; font-size: 0.8125rem;">Try adjusting your query or click "ALL (4)" to view all official hackathon tracks.</p>
+          </div>
+
+        </div>
+
+        <!-- ===============================================================
+             OFFICIAL HACKATHON RULEBOOK (DOWNLOAD ONLY)
+             =============================================================== -->
+        <a href="assets/AI_Hackathon_2026_Rulebook.docx" download="AI_Hackathon_2026_Rulebook.docx" class="rulebook-touch-trigger" id="hackathon-rulebook" title="Download Official Hackathon Rulebook (.docx)">
+          <div class="rulebook-touch-content">
+            <div class="rulebook-touch-left">
+              <div class="rulebook-touch-icon-box">
+                <span class="material-symbols-outlined rulebook-main-icon">download</span>
+              </div>
+              <div class="rulebook-touch-info">
+                <div class="rulebook-touch-badge">
+                  <span class="pulse-dot" style="width: 7px; height: 7px; background: #4ade80; box-shadow: 0 0 10px #4ade80;"></span>
+                  <span>OFFICIAL HACKATHON DIRECTIVE</span>
+                </div>
+                <h3 class="rulebook-touch-title">Official Hackathon Rulebook</h3>
+              </div>
+            </div>
+            <div class="rulebook-touch-btn">
+              <span class="material-symbols-outlined" style="font-size: 20px;">download</span>
+              <span>Download Rulebook (.docx)</span>
+              <span class="material-symbols-outlined touch-chevron">arrow_downward</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- ===============================================================
+             TECHNICAL APPROACH: NVIDIA AI + API — MANDATORY
+             =============================================================== -->
+        <div class="tech-approach-container" id="technical-approach">
+          
+          <!-- Master Banner -->
+          <div class="tech-approach-banner">
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+              <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
+                <div class="nvidia-pill">
+                  <span class="pulse-dot" style="width: 7px; height: 7px; background: #76b900; box-shadow: 0 0 10px #76b900;"></span>
+                  <span>🤖 NVIDIA AI + API — MANDATORY</span>
+                </div>
+                <span class="mono-label" style="background: rgba(118, 185, 0, 0.12); color: #a3e635; border: 1px solid rgba(118, 185, 0, 0.35); padding: 3px 10px; border-radius: 4px;">
+                  CORE EVALUATION REQUIREMENT
+                </span>
+              </div>
+
+              <h3 style="font-family: var(--font-display); font-size: clamp(1.35rem, 2.4vw, 1.85rem); font-weight: 800; color: var(--on-surface);">
+                Technical Approach: 🤖 NVIDIA AI + API — Mandatory
+              </h3>
+
+              <p style="font-size: 1rem; color: #cbd5e1; line-height: 1.6; max-width: 860px;">
+                Teams must integrate at least one NVIDIA AI model through the NVIDIA API into their solution and demonstrate the AI feature during the final demo.
+              </p>
+            </div>
+          </div>
+
+          <!-- Section: How to use it -->
+          <div class="glass-liquid" style="padding: 24px; display: flex; flex-direction: column; gap: 16px;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span class="material-symbols-outlined text-[#4ade80] text-[22px]">integration_instructions</span>
+              <h4 style="font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; color: var(--on-surface);">How to use it:</h4>
+            </div>
+
+            <div class="tech-steps-grid">
+              <!-- Step 1 -->
+              <div class="tech-step-card">
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                  <span class="tech-step-badge">01</span>
+                  <span class="material-symbols-outlined text-[#4ade80] text-[20px]">key</span>
+                </div>
+                <div class="tech-step-title">Create Account &amp; Key</div>
+                <p class="tech-step-desc">Create an NVIDIA account and generate an API key.</p>
+              </div>
+
+              <!-- Step 2 -->
+              <div class="tech-step-card">
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                  <span class="tech-step-badge">02</span>
+                  <span class="material-symbols-outlined text-[#4ade80] text-[20px]">neurology</span>
+                </div>
+                <div class="tech-step-title">Select NVIDIA Model</div>
+                <p class="tech-step-desc">Select a suitable NVIDIA model, such as Nemotron.</p>
+              </div>
+
+              <!-- Step 3 -->
+              <div class="tech-step-card">
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                  <span class="tech-step-badge">03</span>
+                  <span class="material-symbols-outlined text-[#4ade80] text-[20px]">api</span>
+                </div>
+                <div class="tech-step-title">Connect API</div>
+                <p class="tech-step-desc">Connect the model to your application using the NVIDIA API.</p>
+              </div>
+
+              <!-- Step 4 -->
+              <div class="tech-step-card">
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                  <span class="tech-step-badge">04</span>
+                  <span class="material-symbols-outlined text-[#4ade80] text-[20px]">smart_toy</span>
+                </div>
+                <div class="tech-step-title">Incorporate Response</div>
+                <p class="tech-step-desc">Use the AI response as part of your solution.</p>
+              </div>
+
+              <!-- Step 5 -->
+              <div class="tech-step-card">
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                  <span class="tech-step-badge">05</span>
+                  <span class="material-symbols-outlined text-[#fbbf24] text-[20px]">verified</span>
+                </div>
+                <div class="tech-step-title">Demonstrate Feature</div>
+                <p class="tech-step-desc">Demonstrate the working NVIDIA AI feature during the final demo.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section: Track-wise Guidance -->
+          <div class="glass-liquid" style="padding: 24px; display: flex; flex-direction: column; gap: 16px;">
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <span class="material-symbols-outlined text-[#4ade80] text-[22px]">route</span>
+                <h4 style="font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; color: var(--on-surface);">Track-wise</h4>
+              </div>
+              <span class="mono-label" style="color: var(--secondary);">NVIDIA API + AI MODELS</span>
+            </div>
+
+            <div class="tech-tracks-grid">
+              <!-- Track 1 Item -->
+              <div class="tech-track-item" style="border-left-color: #38bdf8;">
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                  <span class="badge-pill">TRACK 01</span>
+                  <span class="mono-label" style="color: #38bdf8; font-weight: 700;">#CODEGEN-AGENTIC</span>
+                </div>
+                <div style="font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; color: #f8fafc; margin-top: 2px;">
+                  Coding &amp; Agent Engineering:
+                </div>
+                <p style="font-size: 0.875rem; color: #cbd5e1; line-height: 1.55;">
+                  Use the NVIDIA API + AI models to build coding assistants, debugging tools, testing tools, or developer agents.
+                </p>
+              </div>
+
+              <!-- Track 2 Item -->
+              <div class="tech-track-item" style="border-left-color: #4ade80;">
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                  <span class="badge-pill">TRACK 02</span>
+                  <span class="mono-label" style="color: #4ade80; font-weight: 700;">#FRONTIER-NEMOTRON</span>
+                </div>
+                <div style="font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; color: #f8fafc; margin-top: 2px;">
+                  Best Apps &amp; Agents:
+                </div>
+                <p style="font-size: 0.875rem; color: #cbd5e1; line-height: 1.55;">
+                  Use the NVIDIA API + AI models to add intelligent features, reasoning, automation, or AI-agent capabilities.
+                </p>
+              </div>
+
+              <!-- Track 3 Item -->
+              <div class="tech-track-item" style="border-left-color: #c084fc;">
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                  <span class="badge-pill">TRACK 03</span>
+                  <span class="mono-label" style="color: #c084fc; font-weight: 700;">#SOVEREIGN-PRIVACY</span>
+                </div>
+                <div style="font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; color: #f8fafc; margin-top: 2px;">
+                  Personal AI:
+                </div>
+                <p style="font-size: 0.875rem; color: #cbd5e1; line-height: 1.55;">
+                  Use an NVIDIA open-source model/API to build a personal assistant with memory, tools, and task automation.
+                </p>
+              </div>
+
+              <!-- Track 4 Item -->
+              <div class="tech-track-item" style="border-left-color: #fbbf24;">
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                  <span class="badge-pill">TRACK 04</span>
+                  <span class="mono-label" style="color: #fbbf24; font-weight: 700;">#EMBODIED-ROBOTICS</span>
+                </div>
+                <div style="font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; color: #f8fafc; margin-top: 2px;">
+                  Physical AI:
+                </div>
+                <p style="font-size: 0.875rem; color: #cbd5e1; line-height: 1.55;">
+                  Use NVIDIA AI models/API with sensors, robots, or IoT devices to create systems that sense, understand, and act.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section: Important Notice -->
+          <div class="tech-important-box">
+            <div style="width: 44px; height: 44px; border-radius: var(--radius-md); background: rgba(251, 191, 36, 0.18); border: 1px solid rgba(251, 191, 36, 0.45); color: #fbbf24; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+              <span style="font-size: 22px;">📌</span>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 8px; flex: 1;">
+              <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 6px;">
+                <h4 style="font-family: var(--font-display); font-size: 1.1rem; font-weight: 800; color: #fef08a;">
+                  Important
+                </h4>
+                <span class="mono-label" style="background: rgba(251, 191, 36, 0.16); color: #fbbf24; padding: 2px 8px; border-radius: 4px; border: 1px solid rgba(251, 191, 36, 0.35);">
+                  PYTHON IS NOT MANDATORY
+                </span>
+              </div>
+
+              <p style="font-size: 0.95rem; color: #cbd5e1; line-height: 1.6;">
+                <strong style="color: #f8fafc;">NVIDIA AI integration is mandatory.</strong> The API/model can be integrated using <strong style="color: #86efac;">Python, JavaScript/React, Node.js, mobile technologies</strong>, or other suitable technologies. <span style="color: #fbbf24; font-weight: 700;">Python is NOT mandatory.</span>
+              </p>
+
+              <!-- Supported Tech Stack Badges -->
+              <div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin-top: 4px;">
+                <span class="dept-pill" style="color: #4ade80; border-color: rgba(74, 222, 128, 0.35);">Python</span>
+                <span class="dept-pill" style="color: #38bdf8; border-color: rgba(56, 189, 248, 0.35);">JavaScript / React</span>
+                <span class="dept-pill" style="color: #4ade80; border-color: rgba(74, 222, 128, 0.35);">Node.js</span>
+                <span class="dept-pill" style="color: #c084fc; border-color: rgba(192, 132, 252, 0.35);">Mobile (Flutter / React Native / Native)</span>
+                <span class="dept-pill" style="color: #fbbf24; border-color: rgba(251, 191, 36, 0.35);">C++ / Embedded / IoT</span>
+                <span class="dept-pill" style="color: #f8fafc; border-color: rgba(255, 255, 255, 0.25);">Any Modern Tech Stack</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ===============================================================
+           SECTION: EVENT SCHEDULE & 2-DAY TIMELINE
+           =============================================================== -->
+      <section id="schedule" class="portal-section" style="display: flex; flex-direction: column; gap: 20px;">
+        <!-- Cyber Timeline Component -->
+        <div class="cyber-timeline-section" id="timeline-section" style="margin-top: 0;">
+          <div class="cyber-timeline-header">
+            <span class="timeline-eyebrow">CHRONO-PROTOCOL // OFFICIAL TIMELINE</span>
+            <h3 class="timeline-main-title">EVENT TIMELINE</h3>
+          </div>
+
+          <!-- Filter Tabs -->
+          <div class="timeline-filter-tabs">
+            <button class="timeline-tab-btn active" data-filter="all" onclick="filterTimeline('all')">ALL CHECKPOINTS</button>
+            <button class="timeline-tab-btn" data-filter="1" onclick="filterTimeline('1')">DAY 1 (OCT 15)</button>
+            <button class="timeline-tab-btn" data-filter="2" onclick="filterTimeline('2')">DAY 2 (OCT 16)</button>
+          </div>
+
+          <div class="cyber-timeline-wrapper">
+            <!-- Central Glowing Spine -->
+            <div class="cyber-spine-line"></div>
+
+            <!-- ════ DAY 1 DIVIDER ════ -->
+            <div class="timeline-day-divider" data-day="1">
+              <span class="day-divider-pill">DAY 1 // OCTOBER 15, 2026 • 7H RUN</span>
+            </div>
+
+            <!-- Day 1 - Node 1: Left Card, Right Time -->
+            <div class="cyber-timeline-row left-card-row" data-day="1">
+              <div class="timeline-card-col">
+                <div class="cyber-card">
+                  <div class="cyber-card-badge badge-active">CHECKPOINT 01</div>
+                  <div class="cyber-card-header">
+                    <div class="cyber-card-icon-box">
+                      <span class="material-symbols-outlined">campaign</span>
+                    </div>
+                    <h4 class="cyber-card-title">1. INAUGURATION &amp; DIRECTIVE</h4>
+                  </div>
+                  <p class="cyber-card-desc">Official keynote, welcome address, jury briefings, and hackathon problem statement release.</p>
+                </div>
+              </div>
+
+              <div class="timeline-center-node">
+                <div class="node-stem"></div>
+                <div class="node-orb"></div>
+              </div>
+
+              <div class="timeline-date-col align-left">
+                <div class="giant-date-num">09:00</div>
+                <div class="giant-date-sub">AM • OCT 15</div>
+              </div>
+            </div>
+
+            <!-- Day 1 - Node 2: Left Time, Right Card -->
+            <div class="cyber-timeline-row right-card-row" data-day="1">
+              <div class="timeline-date-col align-right">
+                <div class="giant-date-num">11:00</div>
+                <div class="giant-date-sub">AM • OCT 15</div>
+              </div>
+
+              <div class="timeline-center-node">
+                <div class="node-stem"></div>
+                <div class="node-orb"></div>
+              </div>
+
+              <div class="timeline-card-col">
+                <div class="cyber-card">
+                  <div class="cyber-card-badge badge-standby">CHECKPOINT 02</div>
+                  <div class="cyber-card-header">
+                    <div class="cyber-card-icon-box">
+                      <span class="material-symbols-outlined">meeting_room</span>
+                    </div>
+                    <h4 class="cyber-card-title">2. VENUE ALLOCATION</h4>
+                  </div>
+                  <p class="cyber-card-desc">Lab seat allocation, server/network access handover, and system environment setup.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Day 1 - Node 3: Left Card, Right Time -->
+            <div class="cyber-timeline-row left-card-row" data-day="1">
+              <div class="timeline-card-col">
+                <div class="cyber-card">
+                  <div class="cyber-card-badge badge-completed">SPRINT PHASE</div>
+                  <div class="cyber-card-header">
+                    <div class="cyber-card-icon-box">
+                      <span class="material-symbols-outlined">terminal</span>
+                    </div>
+                    <h4 class="cyber-card-title">3. ROUND 1: MVP DEVELOPMENT</h4>
+                  </div>
+                  <p class="cyber-card-desc">Sprint kick-off, architecture lock, continuous prototype build &amp; mentor checkpoint review.</p>
+                </div>
+              </div>
+
+              <div class="timeline-center-node">
+                <div class="node-stem"></div>
+                <div class="node-orb"></div>
+              </div>
+
+              <div class="timeline-date-col align-left">
+                <div class="giant-date-num">11:30</div>
+                <div class="giant-date-sub">AM • OCT 15</div>
+              </div>
+            </div>
+
+            <!-- ════ DAY 2 DIVIDER ════ -->
+            <div class="timeline-day-divider" data-day="2">
+              <span class="day-divider-pill">DAY 2 // OCTOBER 16, 2026 • 6.5H TOTAL</span>
+            </div>
+
+            <!-- Day 2 - Node 4: Left Time, Right Card -->
+            <div class="cyber-timeline-row right-card-row" data-day="2">
+              <div class="timeline-date-col align-right">
+                <div class="giant-date-num">09:00</div>
+                <div class="giant-date-sub">AM • OCT 16</div>
+              </div>
+
+              <div class="timeline-center-node">
+                <div class="node-stem"></div>
+                <div class="node-orb"></div>
+              </div>
+
+              <div class="timeline-card-col">
+                <div class="cyber-card">
+                  <div class="cyber-card-badge badge-active">CHECKPOINT 03</div>
+                  <div class="cyber-card-header">
+                    <div class="cyber-card-icon-box">
+                      <span class="material-symbols-outlined">psychology_alt</span>
+                    </div>
+                    <h4 class="cyber-card-title">1. SURPRISE CHALLENGE</h4>
+                  </div>
+                  <p class="cyber-card-desc">Dynamic pivot constraint vector introduced to evaluate engineering agility and AI adaptability.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Day 2 - Node 5: Left Card, Right Time -->
+            <div class="cyber-timeline-row left-card-row" data-day="2">
+              <div class="timeline-card-col">
+                <div class="cyber-card">
+                  <div class="cyber-card-badge badge-standby">DEFENSE PHASE</div>
+                  <div class="cyber-card-header">
+                    <div class="cyber-card-icon-box">
+                      <span class="material-symbols-outlined">verified</span>
+                    </div>
+                    <h4 class="cyber-card-title">2. JURY ROUND EVALUATION</h4>
+                  </div>
+                  <p class="cyber-card-desc">Live presentation, codebase walk-through, architecture stress defense &amp; technical scoring.</p>
+                </div>
+              </div>
+
+              <div class="timeline-center-node">
+                <div class="node-stem"></div>
+                <div class="node-orb"></div>
+              </div>
+
+              <div class="timeline-date-col align-left">
+                <div class="giant-date-num">01:00</div>
+                <div class="giant-date-sub">PM • OCT 16</div>
+              </div>
+            </div>
+
+            <!-- Day 2 - Node 6: Left Time, Right Card (Grand Finale) -->
+            <div class="cyber-timeline-row right-card-row" data-day="2">
+              <div class="timeline-date-col align-right">
+                <div class="giant-date-num gold-date">03:30</div>
+                <div class="giant-date-sub">PM • OCT 16</div>
+              </div>
+
+              <div class="timeline-center-node">
+                <div class="node-stem stem-gold"></div>
+                <div class="node-orb orb-gold"></div>
+              </div>
+
+              <div class="timeline-card-col">
+                <div class="cyber-card card-finale-glow">
+                  <div class="cyber-card-badge badge-finale">GRAND FINALE</div>
+                  <div class="cyber-card-header">
+                    <div class="cyber-card-icon-box">
+                      <span class="material-symbols-outlined">emoji_events</span>
+                    </div>
+                    <h4 class="cyber-card-title gold-title">3. PRIZE DISTRIBUTION &amp; VALEDICTORY</h4>
+                  </div>
+                  <p class="cyber-card-desc">Announcement of winners across all 4 tracks, token awards ceremony, and photo session.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===============================================================
+           SECTION: ABOUT US & LEADERSHIP
+           =============================================================== -->
+      <section id="about" class="portal-section" style="display: flex; flex-direction: column; gap: 20px;">
+        <!-- Banner -->
+        <div class="glass-liquid" style="padding: 24px;">
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span class="badge-pill">ORG-PROFILE-2026</span>
+              <span class="mono-label">INSTITUTIONAL HUB</span>
+            </div>
+            <h2 class="hero-heading" style="font-size: 2.25rem;">About Us</h2>
+            <p style="font-size: 0.95rem; color: var(--secondary); line-height: 1.5; max-width: 720px;">
+              Department of Computer Science &amp; Engineering, SRM TRP Engineering College. Spearheading technological excellence and student-driven AI innovation.
+            </p>
+          </div>
+        </div>
+
+        <!-- ===============================================================
+             EVENT COORDINATORS INTERACTIVE TEAM SHOWCASE
+             Interactive Group Photo: Touch/click each person to open their LinkedIn profile
+             Placed above Head of Department as requested
+             =============================================================== -->
+        <div class="event-coordinators-showcase glass-liquid">
+          <div class="coord-showcase-header">
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <span class="material-symbols-outlined text-[#4ade80] text-[20px]">groups</span>
+                <span class="mono-label" style="font-weight: 700; color: #4ade80;">CODECRAFTERS • CSE DEPT</span>
+              </div>
+              <span class="badge-pill" style="border-color: rgba(74, 222, 128, 0.4); color: #86efac;">5 EVENT COORDINATORS</span>
+            </div>
+            <h3 style="font-family: var(--font-display); font-size: 1.35rem; font-weight: 700; color: var(--on-surface); margin: 6px 0 2px;">
+              Event Coordinators
+            </h3>
+            <p style="font-size: 0.85rem; color: var(--secondary); line-height: 1.45; margin: 0;">
+              Touch or click on any person in the group photo below to view their verified LinkedIn profile.
+            </p>
+          </div>
+
+          <!-- Interactive Photo Stage with 5 Direct Click/Touch Hotspots -->
+          <div class="coordinators-stage" role="region" aria-label="Interactive Event Coordinators Photo">
+            <img src="assets/event_coordinators_team.jpg" alt="Neural Forge '26 Event Coordinators - Code Crafters Club" class="coordinators-img" />
+
+            <div class="coordinators-hotspots-layer">
+              <!-- Person 1: Yogasri Velayutham (Far Left) -->
+              <a href="https://www.linkedin.com/in/yogasri-velayutham-a0335a32a?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 class="coord-hotspot coord-hotspot-1"
+                 data-person="1"
+                 aria-label="Yogasri Velayutham - Event Coordinator (LinkedIn Profile)"
+                 title="Yogasri Velayutham • Click to open LinkedIn">
+                <div class="coord-hud-pill">
+                  <svg class="linkedin-svg-icon" viewBox="0 0 24 24" width="14" height="14" fill="#38bdf8"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                  <span>Yogasri Velayutham</span>
+                  <span class="material-symbols-outlined text-[13px]">open_in_new</span>
+                </div>
+              </a>
+
+              <!-- Person 2: Varshini B P (Second Left) -->
+              <a href="https://www.linkedin.com/in/varshini-b-p-79b901338?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 class="coord-hotspot coord-hotspot-2"
+                 data-person="2"
+                 aria-label="Varshini B P - Event Coordinator (LinkedIn Profile)"
+                 title="Varshini B P • Click to open LinkedIn">
+                <div class="coord-hud-pill">
+                  <svg class="linkedin-svg-icon" viewBox="0 0 24 24" width="14" height="14" fill="#38bdf8"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                  <span>Varshini B P</span>
+                  <span class="material-symbols-outlined text-[13px]">open_in_new</span>
+                </div>
+              </a>
+
+              <!-- Person 3: Sedhu N (Center) -->
+              <a href="https://www.linkedin.com/in/sedhu-n-01014532a?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 class="coord-hotspot coord-hotspot-3"
+                 data-person="3"
+                 aria-label="Sedhu N - Event Coordinator (LinkedIn Profile)"
+                 title="Sedhu N • Click to open LinkedIn">
+                <div class="coord-hud-pill">
+                  <svg class="linkedin-svg-icon" viewBox="0 0 24 24" width="14" height="14" fill="#38bdf8"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                  <span>Sedhu N</span>
+                  <span class="material-symbols-outlined text-[13px]">open_in_new</span>
+                </div>
+              </a>
+
+              <!-- Person 4: Sindhu Sri D (Fourth Left) -->
+              <a href="https://www.linkedin.com/in/sindhu-sri-d-31a61132a?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 class="coord-hotspot coord-hotspot-4"
+                 data-person="4"
+                 aria-label="Sindhu Sri D - Event Coordinator (LinkedIn Profile)"
+                 title="Sindhu Sri D • Click to open LinkedIn">
+                <div class="coord-hud-pill">
+                  <svg class="linkedin-svg-icon" viewBox="0 0 24 24" width="14" height="14" fill="#38bdf8"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                  <span>Sindhu Sri D</span>
+                  <span class="material-symbols-outlined text-[13px]">open_in_new</span>
+                </div>
+              </a>
+
+              <!-- Person 5: Puvisha S (Far Right) -->
+              <a href="https://www.linkedin.com/in/puvisha-s-a0336132a?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 class="coord-hotspot coord-hotspot-5"
+                 data-person="5"
+                 aria-label="Puvisha S - Event Coordinator (LinkedIn Profile)"
+                 title="Puvisha S • Click to open LinkedIn">
+                <div class="coord-hud-pill">
+                  <svg class="linkedin-svg-icon" viewBox="0 0 24 24" width="14" height="14" fill="#38bdf8"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                  <span>Puvisha S</span>
+                  <span class="material-symbols-outlined text-[13px]">open_in_new</span>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Access Coordinator Cards Row below photo -->
+          <div class="coordinators-grid">
+            <!-- 1. Yogasri Velayutham -->
+            <a href="https://www.linkedin.com/in/yogasri-velayutham-a0335a32a?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="coord-card"
+               data-person="1">
+              <div>
+                <div class="coord-card-name">Yogasri Velayutham</div>
+                <div class="coord-card-role">Event Coordinator</div>
+              </div>
+              <span class="coord-card-btn">
+                <svg class="linkedin-svg-icon" viewBox="0 0 24 24" width="12" height="12" fill="#38bdf8"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                <span>LinkedIn</span>
+              </span>
+            </a>
+
+            <!-- 2. Varshini B P -->
+            <a href="https://www.linkedin.com/in/varshini-b-p-79b901338?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="coord-card"
+               data-person="2">
+              <div>
+                <div class="coord-card-name">Varshini B P</div>
+                <div class="coord-card-role">Event Coordinator</div>
+              </div>
+              <span class="coord-card-btn">
+                <svg class="linkedin-svg-icon" viewBox="0 0 24 24" width="12" height="12" fill="#38bdf8"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                <span>LinkedIn</span>
+              </span>
+            </a>
+
+            <!-- 3. Sedhu N -->
+            <a href="https://www.linkedin.com/in/sedhu-n-01014532a?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="coord-card"
+               data-person="3">
+              <div>
+                <div class="coord-card-name">Sedhu N</div>
+                <div class="coord-card-role">Event Coordinator</div>
+              </div>
+              <span class="coord-card-btn">
+                <svg class="linkedin-svg-icon" viewBox="0 0 24 24" width="12" height="12" fill="#38bdf8"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                <span>LinkedIn</span>
+              </span>
+            </a>
+
+            <!-- 4. Sindhu Sri D -->
+            <a href="https://www.linkedin.com/in/sindhu-sri-d-31a61132a?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="coord-card"
+               data-person="4">
+              <div>
+                <div class="coord-card-name">Sindhu Sri D</div>
+                <div class="coord-card-role">Event Coordinator</div>
+              </div>
+              <span class="coord-card-btn">
+                <svg class="linkedin-svg-icon" viewBox="0 0 24 24" width="12" height="12" fill="#38bdf8"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                <span>LinkedIn</span>
+              </span>
+            </a>
+
+            <!-- 5. Puvisha S -->
+            <a href="https://www.linkedin.com/in/puvisha-s-a0336132a?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="coord-card"
+               data-person="5">
+              <div>
+                <div class="coord-card-name">Puvisha S</div>
+                <div class="coord-card-role">Event Coordinator</div>
+              </div>
+              <span class="coord-card-btn">
+                <svg class="linkedin-svg-icon" viewBox="0 0 24 24" width="12" height="12" fill="#38bdf8"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                <span>LinkedIn</span>
+              </span>
+            </a>
+          </div>
+        </div>
+
+        <!-- ===============================================================
+             TECHNICAL TEAM INTERACTIVE SHOWCASE
+             Interactive Group Photo: Touch/click each person to open their LinkedIn profile
+             Placed above Head of Department as requested
+             =============================================================== -->
+        <div class="event-coordinators-showcase technical-team-showcase glass-liquid">
+          <div class="coord-showcase-header">
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <span class="material-symbols-outlined text-[#4ade80] text-[20px]">terminal</span>
+                <span class="mono-label" style="font-weight: 700; color: #4ade80;">CODECRAFTERS • CSE DEPT</span>
+              </div>
+              <span class="badge-pill" style="border-color: rgba(74, 222, 128, 0.4); color: #86efac;">TECHNICAL TEAM</span>
+            </div>
+            <h3 style="font-family: var(--font-display); font-size: 1.35rem; font-weight: 700; color: var(--on-surface); margin: 6px 0 2px;">
+              Technical Team
+            </h3>
+            <p style="font-size: 0.85rem; color: var(--secondary); line-height: 1.45; margin: 0;">
+              Touch or click on any person in the group photo below to view their verified LinkedIn profile.
+            </p>
+          </div>
+
+          <!-- Interactive Photo Stage with 5 Direct Click/Touch Hotspots -->
+          <div class="coordinators-stage" role="region" aria-label="Interactive Technical Team Photo">
+            <img src="assets/technical_team.jpg" alt="Neural Forge '26 Technical Team - Code Crafters Club" class="coordinators-img" />
+
+            <div class="coordinators-hotspots-layer">
+              <!-- Person 1: Rohan Kumar (Far Left) -->
+              <a href="https://www.linkedin.com/in/rohan-kumar-a8514032a?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 class="coord-hotspot coord-hotspot-1"
+                 data-person="1"
+                 aria-label="Rohan Kumar - Technical Team (LinkedIn Profile)"
+                 title="Rohan Kumar • Click to open LinkedIn">
+                <div class="coord-hud-pill">
+                  <svg class="linkedin-svg-icon" viewBox="0 0 24 24" width="14" height="14" fill="#38bdf8"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                  <span>Rohan Kumar</span>
+                  <span class="material-symbols-outlined text-[13px]">open_in_new</span>
+                </div>
+              </a>
+
+              <!-- Person 2: Jayasuriyan J S (Second Left) -->
+              <a href="https://www.linkedin.com/in/jayasuriyan-j-s-31b13932a?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 class="coord-hotspot coord-hotspot-2"
+                 data-person="2"
+                 aria-label="Jayasuriyan J S - Technical Team (LinkedIn Profile)"
+                 title="Jayasuriyan J S • Click to open LinkedIn">
+                <div class="coord-hud-pill">
+                  <svg class="linkedin-svg-icon" viewBox="0 0 24 24" width="14" height="14" fill="#38bdf8"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                  <span>Jayasuriyan J S</span>
+                  <span class="material-symbols-outlined text-[13px]">open_in_new</span>
+                </div>
+              </a>
+
+              <!-- Person 3: Pravin Raj G (Center) -->
+              <a href="https://www.linkedin.com/in/pravinrajg2906?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 class="coord-hotspot coord-hotspot-3"
+                 data-person="3"
+                 aria-label="Pravin Raj G - Technical Team (LinkedIn Profile)"
+                 title="Pravin Raj G • Click to open LinkedIn">
+                <div class="coord-hud-pill">
+                  <svg class="linkedin-svg-icon" viewBox="0 0 24 24" width="14" height="14" fill="#38bdf8"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                  <span>Pravin Raj G</span>
+                  <span class="material-symbols-outlined text-[13px]">open_in_new</span>
+                </div>
+              </a>
+
+              <!-- Person 4: Adithya Senthil (Fourth Left) -->
+              <a href="https://www.linkedin.com/in/adithya-senthil?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 class="coord-hotspot coord-hotspot-4"
+                 data-person="4"
+                 aria-label="Adithya Senthil - Technical Team (LinkedIn Profile)"
+                 title="Adithya Senthil • Click to open LinkedIn">
+                <div class="coord-hud-pill">
+                  <svg class="linkedin-svg-icon" viewBox="0 0 24 24" width="14" height="14" fill="#38bdf8"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                  <span>Adithya Senthil</span>
+                  <span class="material-symbols-outlined text-[13px]">open_in_new</span>
+                </div>
+              </a>
+
+              <!-- Person 5: Praveen Sagar (Far Right) -->
+              <a href="https://www.linkedin.com/in/praveen-sagar-21320b3b2?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 class="coord-hotspot coord-hotspot-5"
+                 data-person="5"
+                 aria-label="Praveen Sagar - Technical Team (LinkedIn Profile)"
+                 title="Praveen Sagar • Click to open LinkedIn">
+                <div class="coord-hud-pill">
+                  <svg class="linkedin-svg-icon" viewBox="0 0 24 24" width="14" height="14" fill="#38bdf8"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                  <span>Praveen Sagar</span>
+                  <span class="material-symbols-outlined text-[13px]">open_in_new</span>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Access Cards Row below photo -->
+          <div class="coordinators-grid">
+            <!-- 1. Rohan Kumar -->
+            <a href="https://www.linkedin.com/in/rohan-kumar-a8514032a?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="coord-card"
+               data-person="1">
+              <div>
+                <div class="coord-card-name">Rohan Kumar</div>
+                <div class="coord-card-role">Technical Team</div>
+              </div>
+              <span class="coord-card-btn">
+                <svg class="linkedin-svg-icon" viewBox="0 0 24 24" width="12" height="12" fill="#38bdf8"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                <span>LinkedIn</span>
+              </span>
+            </a>
+
+            <!-- 2. Jayasuriyan J S -->
+            <a href="https://www.linkedin.com/in/jayasuriyan-j-s-31b13932a?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="coord-card"
+               data-person="2">
+              <div>
+                <div class="coord-card-name">Jayasuriyan J S</div>
+                <div class="coord-card-role">Technical Team</div>
+              </div>
+              <span class="coord-card-btn">
+                <svg class="linkedin-svg-icon" viewBox="0 0 24 24" width="12" height="12" fill="#38bdf8"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                <span>LinkedIn</span>
+              </span>
+            </a>
+
+            <!-- 3. Pravin Raj G -->
+            <a href="https://www.linkedin.com/in/pravinrajg2906?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="coord-card"
+               data-person="3">
+              <div>
+                <div class="coord-card-name">Pravin Raj G</div>
+                <div class="coord-card-role">Technical Team</div>
+              </div>
+              <span class="coord-card-btn">
+                <svg class="linkedin-svg-icon" viewBox="0 0 24 24" width="12" height="12" fill="#38bdf8"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                <span>LinkedIn</span>
+              </span>
+            </a>
+
+            <!-- 4. Adithya Senthil -->
+            <a href="https://www.linkedin.com/in/adithya-senthil?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="coord-card"
+               data-person="4">
+              <div>
+                <div class="coord-card-name">Adithya Senthil</div>
+                <div class="coord-card-role">Technical Team</div>
+              </div>
+              <span class="coord-card-btn">
+                <svg class="linkedin-svg-icon" viewBox="0 0 24 24" width="12" height="12" fill="#38bdf8"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                <span>LinkedIn</span>
+              </span>
+            </a>
+
+            <!-- 5. Praveen Sagar -->
+            <a href="https://www.linkedin.com/in/praveen-sagar-21320b3b2?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="coord-card"
+               data-person="5">
+              <div>
+                <div class="coord-card-name">Praveen Sagar</div>
+                <div class="coord-card-role">Technical Team</div>
+              </div>
+              <span class="coord-card-btn">
+                <svg class="linkedin-svg-icon" viewBox="0 0 24 24" width="12" height="12" fill="#38bdf8"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                <span>LinkedIn</span>
+              </span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Faculty Leadership: Dr. P. Sudhakaran -->
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <div style="display: flex; align-items: center; justify-content: space-between;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span class="material-symbols-outlined text-[#4ade80] text-[20px]">school</span>
+              <span class="mono-label" style="font-weight: 700; color: var(--secondary);">FACULTY LEADERSHIP</span>
+            </div>
+            <span class="badge-pill">DIRECTORATE</span>
+          </div>
+
+          <div class="glass-liquid" style="padding: 24px;">
+            <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
+              <img src="assets/dr_sudhakaran.jpg" alt="Dr. P. Sudhakaran - Head of Department" class="faculty-avatar square" style="width: 104px; height: 104px;">
+              <div style="flex: 1; min-width: 220px;">
+                <span class="mono-label" style="color: var(--primary-container); font-weight: 700;">HEAD OF DEPARTMENT</span>
+                <h3 style="font-family: var(--font-display); font-size: 1.45rem; font-weight: 700; color: var(--on-surface); margin: 2px 0;">
+                  Dr. P. Sudhakaran
+                </h3>
+                <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--secondary); font-weight: 600;">
+                  M.E., M.B.A., (Ph.D.)
+                </div>
+                <p style="font-size: 0.875rem; color: var(--on-surface-variant); margin-top: 6px; line-height: 1.4;">
+                  Department of Computer Science &amp; Engineering • AI Innovation Cell<br>
+                  SRM TRP Engineering College, Tiruchirappalli
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Academic Advisory Board -->
+        <div class="glass-liquid" style="padding: 22px; display: flex; flex-direction: column; gap: 16px;">
+          <div>
+            <span class="mono-label" style="color: var(--secondary); font-weight: 700; display: block; margin-bottom: 4px;">COMMITTEES &amp; PROTOCOL</span>
+            <h3 style="font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: var(--on-surface);">Academic Advisory Board</h3>
+            <p style="font-size: 0.85rem; color: var(--secondary); margin-top: 2px;">
+              Overseeing governance, rubric calibration, ethical algorithmic oversight, and team support.
+            </p>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            <!-- Advisor 1: Mrs. Sampavi R -->
+            <div style="display: flex; align-items: center; justify-content: space-between; padding: 14px; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-lg); flex-wrap: wrap; gap: 12px; box-shadow: var(--shadow-sm);">
+              <div style="display: flex; align-items: center; gap: 14px;">
+                <img src="assets/mrs_sampavi.jpg" alt="Mrs. Sampavi R" class="faculty-avatar" style="width: 60px; height: 60px;">
+                <div>
+                  <div style="font-family: var(--font-display); font-size: 1.05rem; font-weight: 700; color: var(--on-surface);">Mrs. Sampavi R</div>
+                  <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--secondary);">M.E., (Ph.D.) • Assistant Professor</div>
+                  <a href="tel:+917940742268" class="call-btn">
+                    <span class="material-symbols-outlined text-[15px]">call</span>
+                    <span>+91 7940742268</span>
+                  </a>
+                </div>
+              </div>
+              <span class="mono-label" style="background: rgba(74, 222, 128, 0.15); border: 1px solid rgba(74, 222, 128, 0.3); padding: 4px 10px; border-radius: var(--radius-sm); color: #4ade80;">ADVISOR</span>
+            </div>
+
+            <!-- Advisor 2: Mr. Tamilkudimagan -->
+            <div style="display: flex; align-items: center; justify-content: space-between; padding: 14px; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-lg); flex-wrap: wrap; gap: 12px; box-shadow: var(--shadow-sm);">
+              <div style="display: flex; align-items: center; gap: 14px;">
+                <img src="assets/mr_tamilkudimagan.jpg" alt="Mr. Tamilkudimagan" class="faculty-avatar" style="width: 60px; height: 60px;">
+                <div>
+                  <div style="font-family: var(--font-display); font-size: 1.05rem; font-weight: 700; color: var(--on-surface);">Mr. Tamilkudimagan</div>
+                  <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--secondary);">M.E. • Assistant Professor</div>
+                  <a href="tel:+919003025825" class="call-btn">
+                    <span class="material-symbols-outlined text-[15px]">call</span>
+                    <span>+91 9003025825</span>
+                  </a>
+                </div>
+              </div>
+              <span class="mono-label" style="background: rgba(74, 222, 128, 0.15); border: 1px solid rgba(74, 222, 128, 0.3); padding: 4px 10px; border-radius: var(--radius-sm); color: #4ade80;">ADVISOR</span>
+            </div>
+
+            <!-- Advisor 3: Mrs. Devi -->
+            <div style="display: flex; align-items: center; justify-content: space-between; padding: 14px; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-lg); flex-wrap: wrap; gap: 12px; box-shadow: var(--shadow-sm);">
+              <div style="display: flex; align-items: center; gap: 14px;">
+                <img src="assets/mrs_devi.jpg" alt="Mrs. Devi" class="faculty-avatar" style="width: 60px; height: 60px;">
+                <div>
+                  <div style="font-family: var(--font-display); font-size: 1.05rem; font-weight: 700; color: var(--on-surface);">Mrs. Devi</div>
+                  <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--secondary);">M.Tech (CSE), (Ph.D.) • Assistant Professor</div>
+                  <a href="tel:+919500334806" class="call-btn">
+                    <span class="material-symbols-outlined text-[15px]">call</span>
+                    <span>+91 9500334806</span>
+                  </a>
+                </div>
+              </div>
+              <span class="mono-label" style="background: rgba(74, 222, 128, 0.15); border: 1px solid rgba(74, 222, 128, 0.3); padding: 4px 10px; border-radius: var(--radius-sm); color: #4ade80;">ADVISOR</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student Executive Committee -->
+        <div class="glass-liquid" style="padding: 22px; display: flex; flex-direction: column; gap: 14px;">
+          <div>
+            <span class="mono-label" style="color: var(--secondary); font-weight: 700;">STUDENT EXECUTIVE COMMITTEE</span>
+            <h3 style="font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: var(--on-surface); margin-top: 2px;">
+              Student Executive Leads
+            </h3>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px;">
+            <div style="padding: 14px; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-md); box-shadow: var(--shadow-sm);">
+              <div style="font-family: var(--font-display); font-weight: 700; font-size: 1rem; color: var(--on-surface);">Raja Durai.R</div>
+              <span class="mono-label" style="color: #4ade80; font-size: 0.7rem; font-weight: 700; margin-top: 4px; display: block;">
+                PRESIDENT
+              </span>
+            </div>
+
+            <div style="padding: 14px; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-md); box-shadow: var(--shadow-sm);">
+              <div style="font-family: var(--font-display); font-weight: 700; font-size: 1rem; color: var(--on-surface);">Kavisri.S</div>
+              <span class="mono-label" style="color: #4ade80; font-size: 0.7rem; font-weight: 700; margin-top: 4px; display: block;">
+                EVENT COORDINATOR
+              </span>
+            </div>
+
+            <div style="padding: 14px; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-md); box-shadow: var(--shadow-sm);">
+              <div style="font-family: var(--font-display); font-weight: 700; font-size: 1rem; color: var(--on-surface);">Muthumari.M</div>
+              <span class="mono-label" style="color: #4ade80; font-size: 0.7rem; font-weight: 700; margin-top: 4px; display: block;">
+                EVENT COORDINATOR
+              </span>
+            </div>
+
+            <div style="padding: 14px; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-md); box-shadow: var(--shadow-sm);">
+              <div style="font-family: var(--font-display); font-weight: 700; font-size: 1rem; color: var(--on-surface);">Dharsan.R</div>
+              <span class="mono-label" style="color: #4ade80; font-size: 0.7rem; font-weight: 700; margin-top: 4px; display: block;">
+                EVENT COORDINATOR
+              </span>
+            </div>
+
+            <div style="padding: 14px; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-md); box-shadow: var(--shadow-sm);">
+              <div style="font-family: var(--font-display); font-weight: 700; font-size: 1rem; color: var(--on-surface);">Rajkumar.R</div>
+              <span class="mono-label" style="color: #4ade80; font-size: 0.7rem; font-weight: 700; margin-top: 4px; display: block;">
+                EVENT ORGANISER
+              </span>
+            </div>
+
+            <div style="padding: 14px; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-md); box-shadow: var(--shadow-sm);">
+              <div style="font-family: var(--font-display); font-weight: 700; font-size: 1rem; color: var(--on-surface);">Siva Dharsan.A</div>
+              <span class="mono-label" style="color: #4ade80; font-size: 0.7rem; font-weight: 700; margin-top: 4px; display: block;">
+                EVENT ORGANISER
+              </span>
+            </div>
+
+            <div style="padding: 14px; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-md); box-shadow: var(--shadow-sm);">
+              <div style="font-family: var(--font-display); font-weight: 700; font-size: 1rem; color: var(--on-surface);">Jaranesh.R</div>
+              <span class="mono-label" style="color: #4ade80; font-size: 0.7rem; font-weight: 700; margin-top: 4px; display: block;">
+                EVENT ORGANISER
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+      <!-- ===================================================================
+           FREQUENTLY ASKED QUESTIONS (FAQ) SECTION
+           Styled identically to reference image in Emerald Cyber Aesthetic
+           =================================================================== -->
+      <section id="faq" class="faq-section" aria-labelledby="faq-main-heading">
+        <!-- Header Pill Badge & Headings -->
+        <div class="faq-header-block">
+          <div class="faq-pill-badge">
+            <span class="faq-pill-icon">?</span>
+            <span class="badge-text">FREQUENTLY ASKED QUESTIONS</span>
+          </div>
+
+          <h2 id="faq-main-heading" class="faq-title">
+            EVERYTHING YOU NEED TO KNOW ABOUT <span class="title-highlight">NEURAL FORGE ’26</span>
+          </h2>
+
+          <p class="faq-subtitle">
+            Verified answers about the Flagship Intra-College AI & Autonomous Systems Hackathon at SRM TRP Engineering College.
+          </p>
+        </div>
+
+        <!-- Accordion Cards Container -->
+        <div class="faq-accordion-container" role="region" aria-label="FAQ Accordion">
+
+          <!-- 01. What is Neural Forge ’26? -->
+          <div class="faq-card" data-faq-id="1">
+            <button type="button" class="faq-question-btn" aria-expanded="false" aria-controls="faq-ans-1" id="faq-q-1">
+              <span class="faq-question-text"><span class="faq-num">01.</span> What is Neural Forge ’26?</span>
+              <span class="faq-chevron-icon" aria-hidden="true">
+                <span class="material-symbols-outlined">expand_more</span>
+              </span>
+            </button>
+            <div id="faq-ans-1" class="faq-answer-wrapper" role="region" aria-labelledby="faq-q-1">
+              <div class="faq-answer-inner">
+                <div class="faq-answer-content">
+                  <p>Neural Forge ’26 is a two-day intra-college AI engineering hackathon organized by the Code Crafters Club at SRM TRP Engineering College. Participants will identify real-world problems and develop innovative AI-powered solutions.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 02. Who can participate, and how many members can be in a team? -->
+          <div class="faq-card" data-faq-id="2">
+            <button type="button" class="faq-question-btn" aria-expanded="false" aria-controls="faq-ans-2" id="faq-q-2">
+              <span class="faq-question-text"><span class="faq-num">02.</span> Who can participate, and how many members can be in a team?</span>
+              <span class="faq-chevron-icon" aria-hidden="true">
+                <span class="material-symbols-outlined">expand_more</span>
+              </span>
+            </button>
+            <div id="faq-ans-2" class="faq-answer-wrapper" role="region" aria-labelledby="faq-q-2">
+              <div class="faq-answer-inner">
+                <div class="faq-answer-content">
+                  <p>The hackathon is open to 1st, 2nd, and 3rd-year students of SRM TRP Engineering College. Each team must consist of 2 to 4 members.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 03. What are the available hackathon tracks? -->
+          <div class="faq-card" data-faq-id="3">
+            <button type="button" class="faq-question-btn" aria-expanded="false" aria-controls="faq-ans-3" id="faq-q-3">
+              <span class="faq-question-text"><span class="faq-num">03.</span> What are the available hackathon tracks?</span>
+              <span class="faq-chevron-icon" aria-hidden="true">
+                <span class="material-symbols-outlined">expand_more</span>
+              </span>
+            </button>
+            <div id="faq-ans-3" class="faq-answer-wrapper" role="region" aria-labelledby="faq-q-3">
+              <div class="faq-answer-inner">
+                <div class="faq-answer-content">
+                  <p>Participants can choose from four tracks: Coding & Agentic Engineering, Best Apps & Agents, Personal AI, and Physical AI.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 04. What technologies are required? -->
+          <div class="faq-card" data-faq-id="4">
+            <button type="button" class="faq-question-btn" aria-expanded="false" aria-controls="faq-ans-4" id="faq-q-4">
+              <span class="faq-question-text"><span class="faq-num">04.</span> What technologies are required?</span>
+              <span class="faq-chevron-icon" aria-hidden="true">
+                <span class="material-symbols-outlined">expand_more</span>
+              </span>
+            </button>
+            <div id="faq-ans-4" class="faq-answer-wrapper" role="region" aria-labelledby="faq-q-4">
+              <div class="faq-answer-inner">
+                <div class="faq-answer-content">
+                  <p>Every project must meaningfully use Nebius Token Factory or Nebius AI Cloud and at least one NVIDIA open-source AI model.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 05. Is a working demo required? -->
+          <div class="faq-card" data-faq-id="5">
+            <button type="button" class="faq-question-btn" aria-expanded="false" aria-controls="faq-ans-5" id="faq-q-5">
+              <span class="faq-question-text"><span class="faq-num">05.</span> Is a working demo required?</span>
+              <span class="faq-chevron-icon" aria-hidden="true">
+                <span class="material-symbols-outlined">expand_more</span>
+              </span>
+            </button>
+            <div id="faq-ans-5" class="faq-answer-wrapper" role="region" aria-labelledby="faq-q-5">
+              <div class="faq-answer-inner">
+                <div class="faq-answer-content">
+                  <p>Yes. Teams must provide a working demo URL so judges can evaluate their project. Physical AI projects are exempt from the demo URL requirement.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 06. What is required for the final submission? -->
+          <div class="faq-card" data-faq-id="6">
+            <button type="button" class="faq-question-btn" aria-expanded="false" aria-controls="faq-ans-6" id="faq-q-6">
+              <span class="faq-question-text"><span class="faq-num">06.</span> What is required for the final submission?</span>
+              <span class="faq-chevron-icon" aria-hidden="true">
+                <span class="material-symbols-outlined">expand_more</span>
+              </span>
+            </button>
+            <div id="faq-ans-6" class="faq-answer-wrapper" role="region" aria-labelledby="faq-q-6">
+              <div class="faq-answer-inner">
+                <div class="faq-answer-content">
+                  <p>Teams must submit a working AI project, project description, demo link, public source-code repository, and a public YouTube demo video of 3 minutes or less. The README must include setup, usage, technologies, and Nebius + NVIDIA integration. All required Devpost fields must be completed before the deadline.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 07. What is the registration fee? -->
+          <div class="faq-card" data-faq-id="7">
+            <button type="button" class="faq-question-btn" aria-expanded="false" aria-controls="faq-ans-7" id="faq-q-7">
+              <span class="faq-question-text"><span class="faq-num">07.</span> What is the registration fee?</span>
+              <span class="faq-chevron-icon" aria-hidden="true">
+                <span class="material-symbols-outlined">expand_more</span>
+              </span>
+            </button>
+            <div id="faq-ans-7" class="faq-answer-wrapper" role="region" aria-labelledby="faq-q-7">
+              <div class="faq-answer-inner">
+                <div class="faq-answer-content">
+                  <p>Teams that are shortlisted for the hackathon will be required to pay a registration fee of ₹100 per team.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 08. How will the projects be evaluated? -->
+          <div class="faq-card" data-faq-id="8">
+            <button type="button" class="faq-question-btn" aria-expanded="false" aria-controls="faq-ans-8" id="faq-q-8">
+              <span class="faq-question-text"><span class="faq-num">08.</span> How will the projects be evaluated?</span>
+              <span class="faq-chevron-icon" aria-hidden="true">
+                <span class="material-symbols-outlined">expand_more</span>
+              </span>
+            </button>
+            <div id="faq-ans-8" class="faq-answer-wrapper" role="region" aria-labelledby="faq-q-8">
+              <div class="faq-answer-inner">
+                <div class="faq-answer-content">
+                  <p>Projects will be evaluated based on Technological Implementation, Design & UX, Potential Impact, and Quality of Idea, with 25% weightage for each category.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Persistent Site Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div style="display: flex; flex-direction: column; gap: 4px;">
+        <span class="mono-label" style="color: var(--primary-container);">INSTITUTIONAL AFFILIATION</span>
+        <h3 style="font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: var(--on-surface);">SRM TRP Engineering College</h3>
+        <p style="font-size: 0.875rem; color: var(--secondary);">Department of Computer Science & Engineering • Code Crafters Club</p>
+      </div>
+
+      <div class="dept-pill-group">
+        <span class="dept-pill">AIDS</span>
+        <span class="dept-pill">AIML</span>
+        <span class="dept-pill">CSE</span>
+        <span class="dept-pill">IT</span>
+        <span class="dept-pill">ECE</span>
+        <span class="dept-pill">MECH</span>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 4px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--secondary); border-top: 1px solid var(--border-default); padding-top: 16px;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span class="material-symbols-outlined text-[16px] text-[#4ade80]">mail</span>
+          <a href="mailto:codecrafters@srmtrp.edu.in" style="color: var(--secondary); text-decoration: none;">codecrafters@srmtrp.edu.in</a>
+        </div>
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span class="material-symbols-outlined text-[16px] text-[#4ade80]">location_on</span>
+          <span>Trichy - Chennai Highway, Irungalur, Tamil Nadu 621105</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Persistent Bottom Navigation Bar (Mobile Devices) -->
+  <nav class="bottom-nav">
+    <div class="bottom-nav-container">
+      <a href="#home" class="bottom-nav-item active" data-path="home">
+        <span class="material-symbols-outlined text-[20px]">home</span>
+        <span>Home</span>
+      </a>
+      <a href="#tracks" class="bottom-nav-item" data-path="tracks">
+        <span class="material-symbols-outlined text-[20px]">hub</span>
+        <span>Tracks</span>
+      </a>
+      <a href="#schedule" class="bottom-nav-item" data-path="schedule">
+        <span class="material-symbols-outlined text-[20px]">calendar_today</span>
+        <span>Schedule</span>
+      </a>
+      <a href="#about" class="bottom-nav-item" data-path="about">
+        <span class="material-symbols-outlined text-[20px]">info</span>
+        <span>About</span>
+      </a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdPUSn6Qpd585HlKsup8jDA4SXCDRuiGuTqHe-YNZMvdJEjgA/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer" class="bottom-nav-item" data-path="register">
+        <span class="material-symbols-outlined text-[20px]">how_to_reg</span>
+        <span>Register</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- ===============================================================
+       IN-PORTAL RULEBOOK DOCUMENT VIEWER MODAL
+       =============================================================== -->
+  <!-- ===============================================================
+       OFFICIAL RULEBOOK MODAL (OPEN & DOWNLOAD ONLY)
+       =============================================================== -->
+  <div id="rulebook-modal" class="modal-overlay" onclick="if(event.target === this) window.closeRulebookModal();">
+    <div class="rulebook-action-modal-card" role="dialog" aria-label="Official Hackathon Rulebook">
+      
+      <!-- Modal Header -->
+      <div class="rulebook-action-modal-header">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <div class="rulebook-doc-badge-icon">
+            <span class="material-symbols-outlined text-[24px]">menu_book</span>
+          </div>
+          <div>
+            <h3 style="font-family: var(--font-display); font-size: 1.25rem; font-weight: 800; color: #f8fafc; margin: 0;">
+              Official Hackathon Rulebook
+            </h3>
+            <div class="mono-label" style="font-size: 0.72rem; color: #86efac; margin-top: 2px;">
+              NEURAL FORGE 2026 • AI_Hackathon_2026_Rulebook.docx
+            </div>
+          </div>
+        </div>
+        <button type="button" class="track-unflip-btn" onclick="window.closeRulebookModal();" title="Close Rulebook">
+          <span class="material-symbols-outlined" style="font-size: 20px;">close</span>
+        </button>
+      </div>
+
+      <!-- Clean Action Body -->
+      <div class="rulebook-action-modal-body">
+        <p style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.5; margin: 0;">
+          Access the complete official competition guidelines, competition rounds, NVIDIA stack criteria, and hackathon rules.
+        </p>
+
+        <!-- Big Two Buttons: Open & Download -->
+        <div class="rulebook-big-actions-grid">
+          <!-- Open Document -->
+          <a href="rulebook.html" target="_blank" class="rulebook-action-tile primary-tile" id="btn-open-rulebook-doc-home">
+            <div class="action-tile-icon-box">
+              <span class="material-symbols-outlined action-tile-icon">menu_book</span>
+            </div>
+            <div class="action-tile-details">
+              <span class="action-tile-title">Open Rulebook</span>
+              <span class="action-tile-desc">View official document in browser</span>
+            </div>
+            <span class="material-symbols-outlined action-tile-arrow">open_in_new</span>
+          </a>
+
+          <!-- Download Document -->
+          <a href="assets/AI_Hackathon_2026_Rulebook.docx" download="AI_Hackathon_2026_Rulebook.docx" class="rulebook-action-tile secondary-tile" id="btn-download-rulebook-doc-home">
+            <div class="action-tile-icon-box">
+              <span class="material-symbols-outlined action-tile-icon">download</span>
+            </div>
+            <div class="action-tile-details">
+              <span class="action-tile-title">Download Rulebook</span>
+              <span class="action-tile-desc">Save original (.docx) file</span>
+            </div>
+            <span class="material-symbols-outlined action-tile-arrow">arrow_downward</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===============================================================
+       OFFICIAL POSTER LIGHTBOX MODAL (TRIGGERED BY HANGING EYE)
+       =============================================================== -->
+  <div id="poster-lightbox-modal" class="modal-overlay" onclick="if(event.target === this) window.closePosterLightbox();">
+    <div class="poster-modal-card" role="dialog" aria-label="Official Event Poster">
+      
+      <!-- Modal Header -->
+      <div class="poster-modal-header">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <div style="width: 32px; height: 32px; border-radius: 50%; background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.4); display: flex; align-items: center; justify-content: center; color: #38bdf8; font-size: 18px;">
+            🧿
+          </div>
+          <div>
+            <div style="font-family: var(--font-display); font-size: 1.05rem; font-weight: 800; color: #f8fafc; letter-spacing: 0.04em;">
+              NEURAL FORGE '26 OFFICIAL POSTER
+            </div>
+            <div class="mono-label" style="font-size: 0.6875rem; color: #4ade80;">SRM TRP ENGINEERING COLLEGE • OCT 15-16, 2026</div>
+          </div>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <a href="assets/official_poster_v2.jpg" download="neural_forge_26_official_poster.jpg" class="btn-primary" style="padding: 7px 14px; font-size: 0.78rem; gap: 4px;">
+            <span class="material-symbols-outlined text-[16px]">download</span>
+            <span>Download</span>
+          </a>
+          <a href="assets/official_poster_v2.jpg" target="_blank" class="nav-cta-btn" style="padding: 7px 12px; font-size: 0.78rem; gap: 4px; background: rgba(255, 255, 255, 0.06); border-color: rgba(255, 255, 255, 0.18); color: #cbd5e1;" title="Open full resolution in new tab">
+            <span class="material-symbols-outlined text-[16px]">open_in_new</span>
+          </a>
+          <button type="button" class="track-unflip-btn" onclick="window.closePosterLightbox();" title="Close Poster">
+            <span class="material-symbols-outlined" style="font-size: 20px;">close</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Modal Body (The Poster) -->
+      <div class="poster-modal-body">
+        <img src="assets/official_poster_v2.jpg" alt="Neural Forge '26 Hackathon Official Poster" class="poster-modal-img" />
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="poster-modal-footer">
+        <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--secondary); text-align: center;">
+          DEPARTMENT OF CSE • CODE CRAFTERS CLUB • 5TH FLOOR SEMINAR HALL • REGISTRATION DEADLINE: 02.10.2026
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Core JavaScript Engine -->
+  <script src="js/main.js"></script>
+</body>
+</html>

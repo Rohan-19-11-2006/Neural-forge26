@@ -1,0 +1,344 @@
+<!DOCTYPE html><html class="light" lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"><title>Neural Forge 2026 - Tracks</title><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300..800;1,300..800&amp;family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&amp;family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-error": "#ffffff", "surface-container-lowest": "#ffffff", "secondary": "#565e74", "on-tertiary-fixed": "#410002", "on-tertiary-fixed-variant": "#93000b", "on-primary-fixed": "#410002", "surface-dim": "#cbdbf5", "primary-fixed-dim": "#ffb4ab", "on-surface-variant": "#5c403c", "inverse-on-surface": "#eaf1ff", "surface-variant": "#d3e4fe", "outline": "#916f6b", "on-secondary": "#ffffff", "on-secondary-fixed-variant": "#3f465c", "primary-fixed": "#ffdad6", "surface-container-low": "#eff4ff", "surface-tint": "#bf0715", "on-secondary-container": "#5c647a", "outline-variant": "#e6bdb8", "on-primary-fixed-variant": "#93000b", "on-background": "#0b1c30", "primary": "#b70011", "tertiary": "#b21618", "secondary-fixed-dim": "#bec6e0", "inverse-surface": "#213145", "error-container": "#ffdad6", "surface-container-high": "#dce9ff", "on-tertiary": "#ffffff", "on-secondary-fixed": "#131b2e", "surface-container": "#e5eeff", "tertiary-fixed": "#ffdad6", "surface-container-highest": "#d3e4fe", "primary-container": "#dc2626", "error": "#ba1a1a", "secondary-container": "#dae2fd", "on-tertiary-container": "#fff7f6", "inverse-primary": "#ffb4ab", "on-primary-container": "#fff6f5", "on-primary": "#ffffff", "tertiary-fixed-dim": "#ffb4ab", "background": "#f8f9ff", "on-error-container": "#93000a", "surface-bright": "#f8f9ff", "on-surface": "#0b1c30", "tertiary-container": "#d6332d", "surface": "#f8f9ff", "secondary-fixed": "#dae2fd" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "max-width-content": "1280px", "space-3xs": "0.125rem", "space-xs": "0.5rem", "space-sm": "0.75rem", "margin-tablet": "2rem", "margin-desktop": "3rem", "space-2xl": "3rem", "space-3xl": "4rem", "space-md": "1rem", "gutter-mobile": "1rem", "space-xl": "2rem", "gutter-desktop": "1.5rem", "space-2xs": "0.25rem", "space-lg": "1.5rem", "margin-mobile": "1rem" }, "fontFamily": { "label-regular": ["JetBrains Mono", "monospace"], "headline-sm": ["Space Grotesk", "sans-serif"], "body-md": ["Hanken Grotesk", "sans-serif"], "display-hero": ["Space Grotesk", "sans-serif"], "body-lg": ["Hanken Grotesk", "sans-serif"], "code-inline": ["JetBrains Mono", "monospace"], "headline-md": ["Space Grotesk", "sans-serif"], "display-hero-mobile": ["Space Grotesk", "sans-serif"], "label-caps": ["JetBrains Mono", "monospace"], "headline-lg": ["Space Grotesk", "sans-serif"], "body-sm": ["Hanken Grotesk", "sans-serif"], "headline-lg-mobile": ["Space Grotesk", "sans-serif"] }, "fontSize": { "label-regular": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }], "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "600" }], "body-md": ["15px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }], "display-hero": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "700" }], "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "-0.005em", "fontWeight": "400" }], "code-inline": ["13px", { "lineHeight": "18px", "letterSpacing": "-0.01em", "fontWeight": "500" }], "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "display-hero-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "label-caps": ["11px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600" }], "headline-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-sm": ["13px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }] } } } };</script><style>@layer base { html, body { width: 100vw; margin: 0; padding: 0; } body { overscroll-behavior: none; } .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); } .pt-safe { padding-top: env(safe-area-inset-top, 0px); } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style></head><body class="bg-[#f8f9ff] font-body-md text-body-md text-on-surface flex flex-col min-h-screen antialiased relative selection:bg-primary selection:text-white">
+<!-- Fixed Background WebGL Circuit Shader -->
+<div class="fixed inset-0 w-full h-full pointer-events-none -z-10" style="display:block;">
+<canvas class="w-full h-full block" id="shader-canvas-tracks"></canvas>
+<script>
+  (function() {
+    const canvas = document.getElementById('shader-canvas-tracks');
+    function syncSize() {
+      const w = window.innerWidth;
+      const h = window.innerHeight;
+      if (canvas.width !== w || canvas.height !== h) {
+        canvas.width = w;
+        canvas.height = h;
+      }
+    }
+    window.addEventListener('resize', syncSize);
+    syncSize();
+    const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+    if (!gl) return;
+    const vs = 'attribute vec2 a_position; void main() { gl_Position = vec4(a_position, 0.0, 1.0); }';
+    const fs = 'precision highp float; uniform float u_time; uniform vec2 u_resolution; float lineSegment(vec2 p, vec2 a, vec2 b, float w) { vec2 pa = p - a, ba = b - a; float h = clamp(dot(pa, ba)/dot(ba, ba), 0.0, 1.0); return smoothstep(w, 0.0, length(pa - ba * h)); } void main() { vec2 uv = gl_FragCoord.xy / u_resolution.xy; vec2 aspect = vec2(u_resolution.x / u_resolution.y, 1.0); vec2 st = uv * aspect * 6.0; vec3 col = mix(vec3(0.97, 0.98, 1.0), vec3(0.93, 0.95, 0.99), uv.y); vec3 circuitRed = vec3(0.86, 0.15, 0.15); vec3 circuitBright = vec3(1.0, 0.35, 0.35); float t = u_time * 0.8; float totalLines = 0.0; float glowNodes = 0.0; for (int i = 0; i < 5; i++) { float fi = float(i); float offset = fi * 1.35; vec2 p1 = vec2(0.2 + fi * 0.1, 1.2 + offset); vec2 p2 = vec2(1.5 + fi * 0.2, 1.2 + offset); vec2 p3 = vec2(3.2 + fi * 0.3, 2.9 + offset); vec2 p4 = vec2(3.2 + fi * 0.3, 4.8 + offset); vec2 p = st; p.y += mod(t * 0.5, 4.0); vec2 st_mod = mod(p, vec2(6.0, 6.0)); totalLines += max(lineSegment(st_mod, p1, p2, 0.035), max(lineSegment(st_mod, p2, p3, 0.035), lineSegment(st_mod, p3, p4, 0.035))); float d1 = length(st_mod - p1); glowNodes += (smoothstep(0.02, 0.0, abs(d1 - 0.12)) + smoothstep(0.06, 0.0, d1) * (0.6 + 0.4 * sin(t * 3.0 + fi))); float d2 = length(st_mod - p3); glowNodes += (smoothstep(0.02, 0.0, abs(d2 - 0.12)) + smoothstep(0.06, 0.0, d2) * (0.6 + 0.4 * cos(t * 2.5 + fi))); float pulsePhase = mod(t * 1.5 + fi * 0.7, 3.0); vec2 pulsePos = pulsePhase < 1.0 ? mix(p1, p2, pulsePhase) : (pulsePhase < 2.0 ? mix(p2, p3, pulsePhase - 1.0) : mix(p3, p4, pulsePhase - 2.0)); glowNodes += smoothstep(0.18, 0.0, length(st_mod - pulsePos)) * 1.4; } col = mix(col, circuitRed, clamp(totalLines * 0.65, 0.0, 1.0)); col += circuitBright * clamp(glowNodes * 0.75, 0.0, 1.0); vec2 grid = abs(fract(st * 2.0 - 0.5) - 0.5); col -= vec3(smoothstep(0.06, 0.0, length(grid)) * 0.03); gl_FragColor = vec4(col, 1.0); }';
+    function cs(type, src) { const s = gl.createShader(type); gl.shaderSource(s, src); gl.compileShader(s); return s; }
+    const prog = gl.createProgram(); gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs)); gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs)); gl.linkProgram(prog); gl.useProgram(prog);
+    const buf = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, buf); gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+    const pos = gl.getAttribLocation(prog, 'a_position'); gl.enableVertexAttribArray(pos); gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+    const uTime = gl.getUniformLocation(prog, 'u_time'); const uRes = gl.getUniformLocation(prog, 'u_resolution');
+    function render(t) { gl.viewport(0, 0, canvas.width, canvas.height); if (uTime) gl.uniform1f(uTime, t * 0.001); if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height); gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4); requestAnimationFrame(render); }
+    requestAnimationFrame(render);
+  })();
+  </script>
+</div>
+<!-- Header -->
+<header class="backdrop-blur-xl bg-white/70 border-b border-white/60 shadow-sm px-4 py-3 flex items-center justify-between sticky top-0 z-40 glass-card">
+<div class="flex items-center">
+<button aria-label="Open Navigation Drawer" class="p-2 -ml-2 text-on-surface hover:bg-surface-container-low rounded-lg transition-colors" id="menu-btn" onclick="document.getElementById('mobile-drawer').classList.remove('-translate-x-full'); document.getElementById('drawer-backdrop').classList.remove('opacity-0', 'pointer-events-none');">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</button>
+<div class="flex items-center space-x-2 pl-1">
+<img alt="SRM TRP Engineering College" class="h-7 w-auto object-contain max-w-[140px]" src="https://lh3.googleusercontent.com/aida/AEtjO1WvV6bvBzF6RecO5K7NwDy2Mc_7DjmQW6rpYLbC9fRIVaPMddB5qx2wJZFlVUPcOG8Z3cMt3gYXFG_3sN-ZlAsUjXaiwZLiIkTJBgM9y6YALAgWUejhuvAaqp--oOaL7naysRu85Z_8YjFMtuE6wDgAcD730_zkXEa0cN1SZA_RgRiLTlcFUTe_fqOVuTS9yM9-QfNdFVprKkNVh6WpJ_olydeaXdnHCQmgpXtZM83RHoUKoEW1E2UTErbMgq6tARrP34UNSFOdXQ">
+<div class="h-4 w-px bg-slate-300"></div>
+<img alt="Code Crafters" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1W4ScVqiDA1f0B-j2cObpPP-XFb0VM8_7kO3B7UYngwVb9Ku-zmTGHdWBo3qy2RHLVs9pIb-M-_Dxl69-46mV5QtnegqdeJAWEYLr16oX4DVm1uu5XWsGu61Glolc3jrYqRFP__qw62yDcd__Q4sAMtTb3nIfkMTxKYFmKix-8j0dAiMLdtpb16nWD1jIWKOKMDGvPYziEY3tro2rAIII3NrCmJaSPh8oJYIlBupcrPysP09L_NlGu73nrtGAwlnsui9_H5CcsdPxk">
+</div>
+</div>
+<h1 class="text-slate-900 font-bold text-base tracking-tight">Tracks</h1>
+</header>
+<!-- Drawer Backdrop & Drawer -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/40 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 glass-card" id="drawer-backdrop" onclick="document.getElementById('mobile-drawer').classList.add('-translate-x-full'); this.classList.add('opacity-0', 'pointer-events-none');"></div>
+<aside class="fixed top-0 left-0 bottom-0 w-4/5 max-w-xs z-50 bg-white/95 backdrop-blur-xl shadow-2xl -translate-x-full transition-transform duration-300 ease-in-out flex flex-col justify-between pt-safe pb-safe glass-card" id="mobile-drawer">
+<div class="p-space-lg flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md text-primary-container font-bold">NEURAL FORGE</span>
+<span class="font-label-caps text-label-caps text-secondary">Intra-College Hackathon 2026</span>
+</div>
+<button class="w-11 h-11 flex items-center justify-center text-secondary rounded-lg hover:bg-surface-container" onclick="document.getElementById('mobile-drawer').classList.add('-translate-x-full'); document.getElementById('drawer-backdrop').classList.add('opacity-0', 'pointer-events-none');">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="h-px bg-surface-container w-full my-space-xs"></div>
+<div class="flex flex-col gap-space-xs">
+<a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded font-headline-sm text-headline-sm text-on-surface hover:bg-surface-container-low transition-colors" data-path="home" href="#" onclick="document.getElementById('mobile-drawer').classList.add('-translate-x-full'); document.getElementById('drawer-backdrop').classList.add('opacity-0', 'pointer-events-none');">
+<span class="material-symbols-outlined text-primary">terminal</span>
+<span>Home</span>
+</a>
+<a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded font-headline-sm text-headline-sm text-on-surface hover:bg-surface-container-low transition-colors" data-path="tracks" href="#" onclick="document.getElementById('mobile-drawer').classList.add('-translate-x-full'); document.getElementById('drawer-backdrop').classList.add('opacity-0', 'pointer-events-none');">
+<span class="material-symbols-outlined text-primary-container">hub</span>
+<span>Tracks</span>
+</a>
+<a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded font-headline-sm text-headline-sm text-on-surface hover:bg-surface-container-low transition-colors" data-path="schedule" href="#" onclick="document.getElementById('mobile-drawer').classList.add('-translate-x-full'); document.getElementById('drawer-backdrop').classList.add('opacity-0', 'pointer-events-none');">
+<span class="material-symbols-outlined text-secondary">calendar_today</span>
+<span>Schedule</span>
+</a>
+<a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded font-headline-sm text-headline-sm text-on-surface hover:bg-surface-container-low transition-colors" data-path="about-us" href="#" onclick="document.getElementById('mobile-drawer').classList.add('-translate-x-full'); document.getElementById('drawer-backdrop').classList.add('opacity-0', 'pointer-events-none');">
+<span class="material-symbols-outlined text-secondary">info</span>
+<span>About Us</span>
+</a>
+</div>
+</div>
+<div class="p-space-lg bg-surface-container-low/80 flex flex-col gap-space-xs">
+<span class="font-label-caps text-label-caps text-secondary">ORGANIZED BY</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Code Crafters Club</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">SRM TRP Engineering College</span>
+</div>
+</aside>
+<main class="flex flex-col relative w-full pb-safe min-h-screen z-10">
+<div class="flex flex-col w-full">
+<!-- Header Banner -->
+<div class="relative w-full overflow-hidden backdrop-blur-xl bg-white/70 border-b border-white/60 px-margin-mobile pt-space-lg pb-space-xl glass-card">
+<div class="absolute -right-16 -top-16 w-64 h-64 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute left-1/3 bottom-0 w-80 h-32 bg-surface-container-high/40 rounded-full blur-2xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="px-space-xs py-space-3xs bg-primary-fixed text-on-primary-fixed-variant rounded font-label-caps text-label-caps uppercase font-semibold">TRK-SPEC-2026</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+<span class="font-label-regular text-label-regular text-secondary">ARCHITECTURAL DOMAINS</span>
+</div>
+<img alt="Code Crafters Logo" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1W4ScVqiDA1f0B-j2cObpPP-XFb0VM8_7kO3B7UYngwVb9Ku-zmTGHdWBo3qy2RHLVs9pIb-M-_Dxl69-46mV5QtnegqdeJAWEYLr16oX4DVm1uu5XWsGu61Glolc3jrYqRFP__qw62yDcd__Q4sAMtTb3nIfkMTxKYFmKix-8j0dAiMLdtpb16nWD1jIWKOKMDGvPYziEY3tro2rAIII3NrCmJaSPh8oJYIlBupcrPysP09L_NlGu73nrtGAwlnsui9_H5CcsdPxk">
+</div>
+<div class="mt-space-2xs flex flex-col gap-space-3xs">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface font-bold">Tracks</h1>
+<p class="font-body-md text-body-md text-secondary leading-relaxed">
+            Frontier AI Tracks Without Traditional Problem Statements — Pure Innovation &amp; Architecture.
+          </p>
+</div>
+</div>
+</div>
+<!-- Active Filter -->
+<div class="w-full px-margin-mobile py-space-md flex items-center justify-between backdrop-blur-xl bg-white/60 border-b border-white/50 glass-card">
+<div class="flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-secondary text-[16px]">tune</span>
+<span class="font-label-caps text-label-caps text-secondary uppercase font-semibold">Active Domain Filter:</span>
+</div>
+<div class="flex items-center gap-space-2xs overflow-x-auto">
+<button class="track-tab px-space-xs py-space-3xs rounded-lg font-label-caps text-label-caps shadow-sm bg-primary-container text-white active-tab transition-all" data-filter="all">ALL (4)</button>
+<button class="track-tab px-space-xs py-space-3xs backdrop-blur-md bg-white/80 border border-white/80 rounded-lg font-label-caps text-label-caps hover:bg-white text-on-surface transition-all glass-card" data-filter="software">SW / AGENTIC</button>
+<button class="track-tab px-space-xs py-space-3xs backdrop-blur-md bg-white/80 border border-white/80 rounded-lg font-label-caps text-label-caps hover:bg-white text-on-surface transition-all glass-card" data-filter="edge">EDGE / EMBODIED</button>
+</div>
+</div>
+<!-- Track Cards -->
+<div class="w-full px-margin-mobile py-space-lg flex flex-col">
+<!-- TRACK 01 -->
+<div class="track-card backdrop-blur-xl bg-white/70 border border-white/80 border-l-4 border-l-red-600 shadow-[0_8px_30px_rgb(0,0,0,0.04)] rounded-2xl p-5 mb-5 relative overflow-hidden flex flex-col gap-space-sm glass-card" data-category="software" style="display: flex;">
+<div class="flex items-start justify-between gap-space-xs">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-2xs mb-space-3xs">
+<span class="px-space-xs py-space-3xs bg-primary-fixed text-primary rounded font-label-caps text-label-caps uppercase font-bold">TRACK 01</span>
+<span class="font-label-regular text-label-regular text-secondary">#CODEGEN-AGENTIC</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface font-semibold">Coding &amp; Agentic Engineering</h2>
+</div>
+<div class="w-10 h-10 rounded-lg bg-red-50 border border-red-100 flex items-center justify-center text-primary-container flex-shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[24px]">terminal</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">This track is about building coding agents and developer tools — AI systems that can write, run, and test code on their own. Projects run inside Token Factory Sandboxes, giving agents a safe environment to execute and iterate on code. Think autonomous coding assistants, automated testing agents, or tools that help developers debug and ship faster.</p>
+<div class="flex flex-wrap items-center justify-between pt-space-xs gap-space-xs backdrop-blur-md bg-white/80 border border-white/90 rounded-xl p-space-xs glass-card">
+<div class="flex items-center gap-space-2xs">
+<span class="px-space-xs py-space-3xs bg-surface-container/70 text-on-surface rounded font-label-caps text-label-caps font-semibold">CSE</span>
+<span class="px-space-xs py-space-3xs bg-surface-container/70 text-on-surface rounded font-label-caps text-label-caps font-semibold">IT</span>
+<span class="px-space-xs py-space-3xs bg-surface-container/70 text-on-surface rounded font-label-caps text-label-caps font-semibold">AIDS</span>
+</div>
+<button class="px-space-sm py-space-2xs bg-primary-container text-white rounded-lg font-headline-sm text-headline-sm flex items-center gap-space-3xs hover:bg-red-700 transition-colors shadow-sm" onclick="toggleTrackSpec('trk-1')">
+<span class="font-label-caps text-label-caps uppercase font-bold tracking-wider">Specs</span>
+<span class="material-symbols-outlined text-[16px]" id="icon-trk-1">expand_more</span>
+</button>
+</div>
+<div class="flex-col gap-space-xs pt-space-xs hidden" id="trk-1">
+<div class="p-space-sm backdrop-blur-md bg-red-50/70 border border-red-100/80 rounded-xl flex flex-col gap-space-2xs glass-card">
+<span class="font-label-caps text-label-caps text-primary-container font-semibold">DEPARTMENT SPECIALIZATION ADVISORY</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              CSE &amp; IT participants are expected to demonstrate sandboxed AST mutation security and reproducible deterministic tests on synthetic commits.
+            </p>
+</div>
+</div>
+</div>
+<!-- TRACK 02 -->
+<div class="track-card backdrop-blur-xl bg-white/70 border border-white/80 border-l-4 border-l-red-600 shadow-[0_8px_30px_rgb(0,0,0,0.04)] rounded-2xl p-5 mb-5 relative overflow-hidden flex flex-col gap-space-sm glass-card" data-category="software" style="display: flex;">
+<div class="flex items-start justify-between gap-space-xs">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-2xs mb-space-3xs">
+<span class="px-space-xs py-space-3xs bg-primary-fixed text-primary rounded font-label-caps text-label-caps uppercase font-bold">TRACK 02</span>
+<span class="font-label-regular text-label-regular text-secondary">#FRONTIER-NEMOTRON</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface font-semibold">Best Apps &amp; Agents</h2>
+</div>
+<div class="w-10 h-10 rounded-lg bg-red-50 border border-red-100 flex items-center justify-center text-primary-container flex-shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[24px]">hub</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">An open track for building any app or agent people would genuinely use — from a productivity tool or AI copilot to a workflow that runs itself end-to-end. Solutions are powered by Nemotron models on Nebius through Token Factory: reach for Nemotron 3 Ultra when the task needs serious reasoning, and use Nano or Super for fast, everyday calls so the app stays responsive without burning through credits. Deploying via Nebius Server less Endpoints, or using Nebius Server less Jobs for background/async work, is encouraged but not required.</p>
+<div class="flex flex-wrap items-center justify-between pt-space-xs gap-space-xs backdrop-blur-md bg-white/80 border border-white/90 rounded-xl p-space-xs glass-card">
+<div class="flex items-center gap-space-2xs">
+<span class="px-space-xs py-space-3xs bg-surface-container/70 text-on-surface rounded font-label-caps text-label-caps font-semibold">AIML</span>
+<span class="px-space-xs py-space-3xs bg-surface-container/70 text-on-surface rounded font-label-caps text-label-caps font-semibold">AIDS</span>
+<span class="px-space-xs py-space-3xs bg-surface-container/70 text-on-surface rounded font-label-caps text-label-caps font-semibold">CSE</span>
+</div>
+<button class="px-space-sm py-space-2xs bg-primary-container text-white rounded-lg font-headline-sm text-headline-sm flex items-center gap-space-3xs hover:bg-red-700 transition-colors shadow-sm" onclick="toggleTrackSpec('trk-2')">
+<span class="font-label-caps text-label-caps uppercase font-bold tracking-wider">Specs</span>
+<span class="material-symbols-outlined text-[16px]" id="icon-trk-2">expand_more</span>
+</button>
+</div>
+<div class="hidden flex-col gap-space-xs pt-space-xs" id="trk-2">
+<div class="p-space-sm backdrop-blur-md bg-red-50/70 border border-red-100/80 rounded-xl flex flex-col gap-space-2xs glass-card">
+<span class="font-label-caps text-label-caps text-primary-container font-semibold">DEPARTMENT SPECIALIZATION ADVISORY</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              AIML and AIDS candidates must detail latency trade-offs, token-budget dynamics, and zero-data retention proof across Nebius cluster nodes.
+            </p>
+</div>
+</div>
+</div>
+<!-- TRACK 03 -->
+<div class="track-card backdrop-blur-xl bg-white/70 border border-white/80 border-l-4 border-l-red-600 shadow-[0_8px_30px_rgb(0,0,0,0.04)] rounded-2xl p-5 mb-5 relative overflow-hidden flex flex-col gap-space-sm glass-card" data-category="edge" style="display: flex;">
+<div class="flex items-start justify-between gap-space-xs">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-2xs mb-space-3xs">
+<span class="px-space-xs py-space-3xs bg-primary-fixed text-primary rounded font-label-caps text-label-caps uppercase font-bold">TRACK 03</span>
+<span class="font-label-regular text-label-regular text-secondary">#SOVEREIGN-PRIVACY</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface font-semibold">Personal AI</h2>
+</div>
+<div class="w-10 h-10 rounded-lg bg-red-50 border border-red-100 flex items-center justify-center text-primary-container flex-shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[24px]">lock</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">This track focuses on building an always-on, private personal assistant that keeps the user's data under their own control. It should have persistent memory, reusable skills, access to tools and information the user chooses, and the ability to carry out tasks across daily workflows. Teams must use at least one NVIDIA open-source model, along with tools like NVIDIA NemoClaw, OpenShell, Hermes Agent, and Nebius Serverless to assemble, secure, and run the system.</p>
+<div class="flex flex-wrap items-center justify-between pt-space-xs gap-space-xs backdrop-blur-md bg-white/80 border border-white/90 rounded-xl p-space-xs glass-card">
+<div class="flex items-center gap-space-2xs">
+<span class="px-space-xs py-space-3xs bg-surface-container/70 text-on-surface rounded font-label-caps text-label-caps font-semibold">ECE</span>
+<span class="px-space-xs py-space-3xs bg-surface-container/70 text-on-surface rounded font-label-caps text-label-caps font-semibold">CSE</span>
+<span class="px-space-xs py-space-3xs bg-surface-container/70 text-on-surface rounded font-label-caps text-label-caps font-semibold">IT</span>
+</div>
+<button class="px-space-sm py-space-2xs bg-primary-container text-white rounded-lg font-headline-sm text-headline-sm flex items-center gap-space-3xs hover:bg-red-700 transition-colors shadow-sm" onclick="toggleTrackSpec('trk-3')">
+<span class="font-label-caps text-label-caps uppercase font-bold tracking-wider">Specs</span>
+<span class="material-symbols-outlined text-[16px]" id="icon-trk-3">expand_more</span>
+</button>
+</div>
+<div class="hidden flex-col gap-space-xs pt-space-xs" id="trk-3">
+<div class="p-space-sm backdrop-blur-md bg-red-50/70 border border-red-100/80 rounded-xl flex flex-col gap-space-2xs glass-card">
+<span class="font-label-caps text-label-caps text-primary-container font-semibold">DEPARTMENT SPECIALIZATION ADVISORY</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              ECE and CSE submissions receive elevated scoring for quantizing weights (4-bit/AWQ) on consumer mobile silicon and offline fallbacks.
+            </p>
+</div>
+</div>
+</div>
+<!-- TRACK 04 -->
+<div class="track-card backdrop-blur-xl bg-white/70 border border-white/80 border-l-4 border-l-red-600 shadow-[0_8px_30px_rgb(0,0,0,0.04)] rounded-2xl p-5 mb-5 relative overflow-hidden flex flex-col gap-space-sm glass-card" data-category="edge" style="display: flex;">
+<div class="flex items-start justify-between gap-space-xs">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-2xs mb-space-3xs">
+<span class="px-space-xs py-space-3xs bg-primary-fixed text-primary rounded font-label-caps text-label-caps uppercase font-bold">TRACK 04</span>
+<span class="font-label-regular text-label-regular text-secondary">#EMBODIED-ROBOTICS</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface font-semibold">Physical AI</h2>
+</div>
+<div class="w-10 h-10 rounded-lg bg-red-50 border border-red-100 flex items-center justify-center text-primary-container flex-shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[24px]">precision_manufacturing</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">This track is for embodied and edge AI — agents that sense and act in the real world, such as robotics, IoT devices, and on-device intelligence. Solutions are powered by Nemotron, GROOT, Cosmos, and Sonic models, coordinated through an agent runtime. Nebius Serverless Jobs can be used for simulations, synthetic data generation, robot policy evaluation, or large-scale sensor data processing, while Nebius Serverless Endpoints handle real-time inference. The demo video must show at least 1 minute of the physical hardware/robot actually operating — or, if there's no physical hardware, the key application modules in action.</p>
+<div class="flex flex-wrap items-center justify-between pt-space-xs gap-space-xs backdrop-blur-md bg-white/80 border border-white/90 rounded-xl p-space-xs glass-card">
+<div class="flex items-center gap-space-2xs">
+<span class="px-space-xs py-space-3xs bg-surface-container/70 text-on-surface rounded font-label-caps text-label-caps font-semibold">MECH</span>
+<span class="px-space-xs py-space-3xs bg-surface-container/70 text-on-surface rounded font-label-caps text-label-caps font-semibold">ECE</span>
+<span class="px-space-xs py-space-3xs bg-surface-container/70 text-on-surface rounded font-label-caps text-label-caps font-semibold">AIML</span>
+</div>
+<button class="px-space-sm py-space-2xs bg-primary-container text-white rounded-lg font-headline-sm text-headline-sm flex items-center gap-space-3xs hover:bg-red-700 transition-colors shadow-sm" onclick="toggleTrackSpec('trk-4')">
+<span class="font-label-caps text-label-caps uppercase font-bold tracking-wider">Specs</span>
+<span class="material-symbols-outlined text-[16px]" id="icon-trk-4">expand_more</span>
+</button>
+</div>
+<div class="flex-col gap-space-xs pt-space-xs hidden" id="trk-4">
+<div class="p-space-sm backdrop-blur-md bg-red-50/70 border border-red-100/80 rounded-xl flex flex-col gap-space-2xs glass-card">
+<span class="font-label-caps text-label-caps text-primary-container font-semibold">DEPARTMENT SPECIALIZATION ADVISORY</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Mechanical and ECE teams should prioritize kinematic chain optimization, sensor fusion latency under 20ms, and spatial telemetry recording.
+            </p>
+</div>
+</div>
+</div>
+</div>
+<script>
+      function toggleTrackSpec(id) {
+        const panel = document.getElementById(id);
+        const icon = document.getElementById('icon-' + id);
+        if (panel.classList.contains('hidden')) {
+          panel.classList.remove('hidden');
+          panel.classList.add('flex');
+          icon.innerText = 'expand_less';
+        } else {
+          panel.classList.add('hidden');
+          panel.classList.remove('flex');
+          icon.innerText = 'expand_more';
+        }
+      }
+
+      const tabs = document.querySelectorAll('.track-tab');
+      const cards = document.querySelectorAll('.track-card');
+
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          tabs.forEach(t => {
+            t.classList.remove('bg-primary-container', 'text-white', 'active-tab');
+            t.classList.add('backdrop-blur-md', 'bg-white/80', 'border', 'border-white/80', 'text-on-surface');
+          });
+          tab.classList.remove('backdrop-blur-md', 'bg-white/80', 'border', 'border-white/80', 'text-on-surface');
+          tab.classList.add('bg-primary-container', 'text-white', 'active-tab');
+
+          const filter = tab.getAttribute('data-filter');
+          cards.forEach(card => {
+            if (filter === 'all' || card.getAttribute('data-category') === filter) {
+              card.style.display = 'flex';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+    </script>
+</div>
+<!-- Institutional Affiliation Footer -->
+<footer class="w-full mt-auto py-space-xl px-margin-mobile backdrop-blur-xl bg-white/75 border-t border-white/60 shadow-[0_1px_8px_rgba(0,0,0,0.04)] mb-20 flex flex-col gap-space-md glass-card">
+<div class="flex flex-col gap-space-2xs">
+<span class="font-label-caps text-label-caps text-primary-container font-bold">INSTITUTIONAL AFFILIATION</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">SRM TRP Engineering College</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Department of Computer Science &amp; Engineering • Code Crafters</span>
+</div>
+<div class="flex flex-wrap items-center gap-space-xs pt-space-xs">
+<span class="px-space-xs py-space-3xs bg-white/80 border border-slate-200 text-on-surface font-label-caps text-label-caps rounded-md">AIDS</span>
+<span class="px-space-xs py-space-3xs bg-white/80 border border-slate-200 text-on-surface font-label-caps text-label-caps rounded-md">AIML</span>
+<span class="px-space-xs py-space-3xs bg-white/80 border border-slate-200 text-on-surface font-label-caps text-label-caps rounded-md">CSE</span>
+<span class="px-space-xs py-space-3xs bg-white/80 border border-slate-200 text-on-surface font-label-caps text-label-caps rounded-md">IT</span>
+<span class="px-space-xs py-space-3xs bg-white/80 border border-slate-200 text-on-surface font-label-caps text-label-caps rounded-md">ECE</span>
+<span class="px-space-xs py-space-3xs bg-white/80 border border-slate-200 text-on-surface font-label-caps text-label-caps rounded-md">MECH</span>
+</div>
+<div class="flex flex-col gap-space-3xs font-label-regular text-label-regular text-secondary">
+<span class="flex items-center gap-space-2xs"><span class="material-symbols-outlined text-[14px]">mail</span> codecrafters@srmtrp.edu.in</span>
+<span class="flex items-center gap-space-2xs"><span class="material-symbols-outlined text-[14px]">location_on</span> Trichy - Chennai Highway, Irungalur, TN</span>
+</div>
+</footer>
+</main>
+<!-- Frosted Glass Bottom Navigation -->
+<nav class="fixed bottom-0 w-full z-50 pb-safe backdrop-blur-xl bg-white/75 border-t border-white/60 shadow-lg glass-card">
+<div class="flex justify-around items-center h-16 px-space-xs">
+<a class="flex flex-col items-center justify-center gap-space-3xs min-w-[44px] min-h-[44px] px-space-xs text-on-surface-variant hover:text-slate-900 transition-colors" data-path="home" href="#">
+<span class="material-symbols-outlined text-[20px]">home</span>
+<span class="font-label-caps text-label-caps">Home</span>
+</a>
+<a aria-current="page" class="flex flex-col items-center justify-center gap-space-3xs min-w-[44px] min-h-[44px] px-space-xs text-[#dc2626] font-semibold transition-colors" data-path="tracks" href="#">
+<span class="material-symbols-outlined text-[20px]">hub</span>
+<span class="font-label-caps text-label-caps">Tracks</span>
+</a>
+<a class="flex flex-col items-center justify-center gap-space-3xs min-w-[44px] min-h-[44px] px-space-xs text-on-surface-variant hover:text-slate-900 transition-colors" data-path="schedule" href="#">
+<span class="material-symbols-outlined text-[20px]">calendar_today</span>
+<span class="font-label-caps text-label-caps">Schedule</span>
+</a>
+<a class="flex flex-col items-center justify-center gap-space-3xs min-w-[44px] min-h-[44px] px-space-xs text-on-surface-variant hover:text-slate-900 transition-colors" data-path="about-us" href="#">
+<span class="material-symbols-outlined text-[20px]">info</span>
+<span class="font-label-caps text-label-caps">About Us</span>
+</a>
+</div>
+</nav>
+</body></html>
