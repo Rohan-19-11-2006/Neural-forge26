@@ -96,6 +96,10 @@
           <span class="material-symbols-outlined text-[18px]">home</span>
           <span>Home</span>
         </a>
+        <a href="index.html#prizes" class="nav-link" data-path="prizes">
+          <span class="material-symbols-outlined text-[18px]">emoji_events</span>
+          <span>Prizes</span>
+        </a>
         <a href="index.html#tracks" class="nav-link active" data-path="tracks">
           <span class="material-symbols-outlined text-[18px]">hub</span>
           <span>Tracks</span>
@@ -134,6 +138,10 @@
           <span class="material-symbols-outlined text-[#94a3b8]">home</span>
           <span>Home</span>
         </a>
+        <a href="index.html#prizes" class="drawer-link" data-path="prizes">
+          <span class="material-symbols-outlined text-[#fbbf24]">emoji_events</span>
+          <span>Prizes</span>
+        </a>
         <a href="index.html#tracks" class="drawer-link active" data-path="tracks">
           <span class="material-symbols-outlined text-[#4ade80]">hub</span>
           <span>Tracks</span>
@@ -163,6 +171,95 @@
   <main class="main-content">
     <div style="display: flex; flex-direction: column; gap: 24px;">
 
+      <!-- ===============================================================
+           SECTION: HACKATHON PRIZES & REWARDS
+           =============================================================== -->
+      <section id="prizes" class="portal-section" style="display: flex; flex-direction: column; gap: 20px;">
+        <!-- Header Banner -->
+        <div class="glass-liquid" style="padding: 24px; position: relative; overflow: hidden;">
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <span class="badge-pill" style="border-color: rgba(251, 191, 36, 0.45); color: #fbbf24; background: rgba(251, 191, 36, 0.12); letter-spacing: 0.12em;">
+                  <span class="pulse-dot" style="background: #fbbf24; box-shadow: 0 0 10px #fbbf24;"></span>
+                  BOUNTY-2026
+                </span>
+                <span class="dept-dot" style="background: #fbbf24; box-shadow: 0 0 8px #fbbf24;"></span>
+                <span class="mono-label">FRONTIER AI REWARDS</span>
+              </div>
+            </div>
+
+            <h2 class="hero-heading" style="font-size: 2.25rem; margin-top: 4px;">Hackathon Prizes</h2>
+          </div>
+        </div>
+
+        <!-- 3-Tier Prizes Grid (Only Image & Name) -->
+        <div class="prizes-grid">
+
+          <!-- 1st Prize: Claude One Month Subscription -->
+          <div class="prize-card gold-tier">
+            <div class="prize-header-meta">
+              <span class="prize-rank-badge">
+                <span class="material-symbols-outlined text-[16px]">emoji_events</span>
+                <span>1st Prize</span>
+              </span>
+              <span class="prize-rank-num">#01</span>
+            </div>
+
+            <div class="prize-logo-wrapper">
+              <img src="assets/claude_logo.svg" alt="Claude One Month Subscription" class="prize-brand-logo-img" />
+            </div>
+
+            <div class="prize-title-block">
+              <h3 class="prize-main-heading">Claude One Month Subscription</h3>
+            </div>
+          </div>
+
+          <!-- 2nd Prize: ChatGPT or Replit One Month Subscription -->
+          <div class="prize-card silver-tier">
+            <div class="prize-header-meta">
+              <span class="prize-rank-badge">
+                <span class="material-symbols-outlined text-[16px]">military_tech</span>
+                <span>2nd Prize</span>
+              </span>
+              <span class="prize-rank-num">#02</span>
+            </div>
+
+            <div class="prize-logo-wrapper">
+              <div class="prize-dual-logos">
+                <img src="assets/chatgpt_logo.svg" alt="ChatGPT" class="prize-brand-logo-img" />
+                <span class="prize-or-pill">OR</span>
+                <img src="assets/replit_logo.svg" alt="Replit" class="prize-brand-logo-img" />
+              </div>
+            </div>
+
+            <div class="prize-title-block">
+              <h3 class="prize-main-heading">ChatGPT or Replit One Month Subscription</h3>
+            </div>
+          </div>
+
+          <!-- 3rd Prize: ChatGPT One Month Subscription -->
+          <div class="prize-card bronze-tier">
+            <div class="prize-header-meta">
+              <span class="prize-rank-badge">
+                <span class="material-symbols-outlined text-[16px]">workspace_premium</span>
+                <span>3rd Prize</span>
+              </span>
+              <span class="prize-rank-num">#03</span>
+            </div>
+
+            <div class="prize-logo-wrapper">
+              <img src="assets/chatgpt_logo.svg" alt="ChatGPT One Month Subscription" class="prize-brand-logo-img" />
+            </div>
+
+            <div class="prize-title-block">
+              <h3 class="prize-main-heading">ChatGPT One Month Subscription</h3>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
       <!-- Header Banner -->
       <section class="glass-liquid" style="padding: 24px; position: relative; overflow: hidden;">
         <div style="display: flex; flex-direction: column; gap: 10px;">
@@ -184,33 +281,7 @@
         </div>
       </section>
 
-      <!-- Tracks Search & Filter Toolbar -->
-      <div class="tracks-header-toolbar glass-liquid">
-        <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
-          <div style="display: flex; align-items: center; gap: 6px;">
-            <span class="material-symbols-outlined text-[18px] text-[#38bdf8]">filter_list</span>
-            <span class="mono-label" style="color: var(--on-surface); font-weight: 700;">Category:</span>
-          </div>
-          <div class="tab-btn-group">
-            <button class="tab-btn active" data-filter="all">ALL (4)</button>
-            <button class="tab-btn" data-filter="software">SOFTWARE</button>
-            <button class="tab-btn" data-filter="hybrid">HYBRID</button>
-            <button class="tab-btn" data-filter="hardware">HARDWARE</button>
-          </div>
-        </div>
 
-        <div class="tracks-search-wrapper">
-          <span class="material-symbols-outlined search-icon">search</span>
-          <input 
-            type="text" 
-            id="track-search-input" 
-            class="tracks-search-input" 
-            placeholder="Search tech tracks (e.g. agentic, nemotron, privacy)..." 
-            aria-label="Search tech tracks"
-            autocomplete="off"
-          />
-        </div>
-      </div>
 
       <!-- Tracks 3D Flip Grid (4 Official Tracks) -->
       <div class="tracks-flip-grid" id="tracks-flip-container">
@@ -431,12 +502,7 @@
           </div>
         </div>
 
-        <!-- No Results Feedback for Search -->
-        <div id="tracks-no-results" class="tracks-no-results">
-          <span class="material-symbols-outlined" style="font-size: 40px; color: #64748b; margin-bottom: 8px;">search_off</span>
-          <p style="color: #cbd5e1; font-weight: 700; margin-bottom: 4px;">No matching tracks found</p>
-          <p style="color: #94a3b8; font-size: 0.8125rem;">Try adjusting your query or click "ALL (4)" to view all official hackathon tracks.</p>
-        </div>
+
 
       </div>
 
@@ -495,9 +561,21 @@
 
         <!-- Section: How to use it -->
         <div class="glass-liquid" style="padding: 24px; display: flex; flex-direction: column; gap: 16px;">
-          <div style="display: flex; align-items: center; gap: 8px;">
-            <span class="material-symbols-outlined text-[#4ade80] text-[22px]">integration_instructions</span>
-            <h4 style="font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; color: var(--on-surface);">How to use it:</h4>
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span class="material-symbols-outlined text-[#4ade80] text-[22px]">integration_instructions</span>
+              <h4 style="font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; color: var(--on-surface); margin: 0;">How to use it:</h4>
+            </div>
+            <a href="https://www.image2url.com/r2/default/videos/1790494358861-c6303c76-27a5-41ec-894b-a6a57a28210d.mp4" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="nav-cta-btn" 
+               style="padding: 6px 14px; font-size: 0.8125rem; gap: 6px; text-decoration: none; border-color: rgba(74, 222, 128, 0.4); color: #86efac; background: rgba(74, 222, 128, 0.08);"
+               title="Watch Integration Video Guide">
+              <span class="material-symbols-outlined text-[16px]">play_circle</span>
+              <span>Watch Video Tutorial</span>
+              <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+            </a>
           </div>
 
           <div class="tech-steps-grid">
@@ -550,6 +628,33 @@
               <div class="tech-step-title">Demonstrate Feature</div>
               <p class="tech-step-desc">Demonstrate the working NVIDIA AI feature during the final demo.</p>
             </div>
+          </div>
+
+          <!-- Video Tutorial Walkthrough Banner -->
+          <div class="tech-video-banner" style="margin-top: 6px; padding: 16px 20px; border-radius: 12px; background: linear-gradient(135deg, rgba(74, 222, 128, 0.08) 0%, rgba(30, 41, 59, 0.6) 100%); border: 1px solid rgba(74, 222, 128, 0.28); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px;">
+            <div style="display: flex; align-items: center; gap: 14px;">
+              <div style="width: 44px; height: 44px; border-radius: 10px; background: rgba(74, 222, 128, 0.15); border: 1.5px solid rgba(74, 222, 128, 0.4); display: flex; align-items: center; justify-content: center; color: #4ade80; flex-shrink: 0;">
+                <span class="material-symbols-outlined" style="font-size: 24px;">play_circle</span>
+              </div>
+              <div>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <span class="badge-pill" style="font-size: 0.65rem; padding: 2px 8px; background: rgba(74, 222, 128, 0.2); color: #86efac; border: 1px solid rgba(74, 222, 128, 0.4);">VIDEO GUIDE</span>
+                  <span style="font-family: var(--font-display); font-size: 0.95rem; font-weight: 700; color: #f8fafc;">Step-by-Step Video Walkthrough</span>
+                </div>
+                <p style="font-size: 0.8125rem; color: #94a3b8; margin: 4px 0 0 0; line-height: 1.45;">
+                  Watch the video demonstration on how to acquire your NVIDIA API key, configure Nemotron, and integrate models into your hackathon project.
+                </p>
+              </div>
+            </div>
+            <a href="https://www.image2url.com/r2/default/videos/1790494358861-c6303c76-27a5-41ec-894b-a6a57a28210d.mp4" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="btn-primary" 
+               style="padding: 9px 18px; font-size: 0.8125rem; gap: 6px; text-decoration: none; flex-shrink: 0;">
+              <span class="material-symbols-outlined" style="font-size: 18px;">play_arrow</span>
+              <span>Open Video Guide</span>
+              <span class="material-symbols-outlined" style="font-size: 14px;">open_in_new</span>
+            </a>
           </div>
         </div>
 
@@ -670,23 +775,25 @@
         <p style="font-size: 0.875rem; color: var(--secondary);">Department of Computer Science & Engineering • Code Crafters Club</p>
       </div>
 
-      <div class="dept-pill-group">
-        <span class="dept-pill">AIDS</span>
-        <span class="dept-pill">AIML</span>
-        <span class="dept-pill">CSE</span>
-        <span class="dept-pill">IT</span>
-        <span class="dept-pill">ECE</span>
-        <span class="dept-pill">MECH</span>
-      </div>
-
-      <div style="display: flex; flex-direction: column; gap: 4px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--secondary); border-top: 1px solid var(--border-default); padding-top: 16px;">
-        <div style="display: flex; align-items: center; gap: 8px;">
-          <span class="material-symbols-outlined text-[16px] text-[#4ade80]">mail</span>
-          <span>codecrafters@srmtrp.edu.in</span>
-        </div>
+      <div class="footer-bottom-row">
         <div style="display: flex; align-items: center; gap: 8px;">
           <span class="material-symbols-outlined text-[16px] text-[#4ade80]">location_on</span>
           <span>Trichy - Chennai Highway, Irungalur, Tamil Nadu 621105</span>
+        </div>
+
+        <div class="footer-social-links">
+          <a href="https://www.instagram.com/trichysrmtrp?stkn=MWtsbG55dWt2b2ZtMg==" target="_blank" rel="noopener noreferrer" class="footer-social-btn instagram-btn" aria-label="SRM TRP Instagram" title="Follow SRM TRP on Instagram">
+            <svg class="social-svg-icon" viewBox="0 0 24 24" width="15" height="15" fill="currentColor">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+            <span>Instagram</span>
+          </a>
+          <a href="https://www.linkedin.com/company/srm-trp-engineering-college/" target="_blank" rel="noopener noreferrer" class="footer-social-btn linkedin-btn" aria-label="SRM TRP LinkedIn" title="Follow SRM TRP on LinkedIn">
+            <svg class="social-svg-icon" viewBox="0 0 24 24" width="15" height="15" fill="currentColor">
+              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+            </svg>
+            <span>LinkedIn</span>
+          </a>
         </div>
       </div>
     </div>
@@ -698,6 +805,10 @@
       <a href="index.html#home" class="bottom-nav-item" data-path="home">
         <span class="material-symbols-outlined text-[20px]">home</span>
         <span>Home</span>
+      </a>
+      <a href="index.html#prizes" class="bottom-nav-item" data-path="prizes">
+        <span class="material-symbols-outlined text-[20px]">emoji_events</span>
+        <span>Prizes</span>
       </a>
       <a href="index.html#tracks" class="bottom-nav-item active" data-path="tracks">
         <span class="material-symbols-outlined text-[20px]">hub</span>
@@ -781,6 +892,85 @@
   </div>
 
   <!-- ===============================================================
+       REGISTRATION DATES & SLOT RESERVATION MODAL
+       =============================================================== -->
+  <div id="registration-modal" class="modal-overlay" onclick="if(event.target === this) window.closeRegistrationModal();">
+    <div class="registration-modal-card" role="dialog" aria-label="Hackathon Registration Window">
+      
+      <!-- Modal Header -->
+      <div class="reg-modal-header">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <div style="width: 38px; height: 38px; border-radius: 10px; background: rgba(74, 222, 128, 0.15); border: 1.5px solid rgba(74, 222, 128, 0.45); display: flex; align-items: center; justify-content: center; color: #4ade80;">
+            <span class="material-symbols-outlined" style="font-size: 22px;">how_to_reg</span>
+          </div>
+          <div>
+            <h3 style="font-family: 'Orbitron', var(--font-display); font-size: 1.15rem; font-weight: 800; color: #f8fafc; margin: 0; letter-spacing: 0.02em;">
+              Registration Window
+            </h3>
+            <div class="mono-label" style="font-size: 0.7rem; color: #86efac; margin-top: 2px;">
+              NEURAL FORGE '26 • CSE DEPT SRM TRP
+            </div>
+          </div>
+        </div>
+        <button type="button" class="track-unflip-btn" onclick="window.closeRegistrationModal();" title="Close Dialog">
+          <span class="material-symbols-outlined" style="font-size: 20px;">close</span>
+        </button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="reg-modal-body">
+        <!-- Two-column Dates Grid -->
+        <div class="reg-dates-grid">
+          <div class="reg-date-box start-box">
+            <span class="reg-date-label">
+              <span class="material-symbols-outlined" style="font-size: 16px;">calendar_month</span>
+              REGISTRATION STARTS
+            </span>
+            <span class="reg-date-val">28 September 2026</span>
+            <span class="reg-date-sub">Portal Opens • Early Verification</span>
+          </div>
+
+          <div class="reg-date-box end-box">
+            <span class="reg-date-label">
+              <span class="material-symbols-outlined" style="font-size: 16px;">event_busy</span>
+              REGISTRATION ENDS
+            </span>
+            <span class="reg-date-val">4 October 2026</span>
+            <span class="reg-date-sub">11:59 PM IST • Strict Deadline</span>
+          </div>
+        </div>
+
+        <!-- Slot Urgency Notice -->
+        <div class="reg-slots-notice">
+          <div class="reg-slots-badge">
+            <span class="pulse-dot" style="width: 7px; height: 7px; background: #fbbf24;"></span>
+            <span>LIMITED TEAM SLOTS • MAKE YOUR SLOTS</span>
+          </div>
+          <p class="reg-slots-text">
+            <strong>Make your slots early!</strong> Registration starts from <strong>28 September 2026</strong> and registration ends on <strong>4 October 2026</strong>. Limited team slots are available on a strictly first-come, first-served basis. Make your slots or reserve your team's spot now before registrations close!
+          </p>
+        </div>
+
+        <!-- Bottom Action CTA: Register Now Opens Google Form -->
+        <div class="reg-modal-actions">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdPUSn6Qpd585HlKsup8jDA4SXCDRuiGuTqHe-YNZMvdJEjgA/viewform?usp=publish-editor"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="reg-btn-submit"
+             id="reg-modal-gform-btn"
+             onclick="window.closeRegistrationModal();">
+            <span>Register Now</span>
+            <span class="material-symbols-outlined" style="font-size: 20px;">open_in_new</span>
+          </a>
+          <button type="button" class="reg-btn-dismiss" onclick="window.closeRegistrationModal();">
+            Maybe later, close window
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===============================================================
        OFFICIAL POSTER LIGHTBOX MODAL (TRIGGERED BY HANGING EYE)
        =============================================================== -->
   <div id="poster-lightbox-modal" class="modal-overlay" onclick="if(event.target === this) window.closePosterLightbox();">
@@ -818,7 +1008,7 @@
 
       <div class="poster-modal-footer">
         <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--secondary); text-align: center;">
-          DEPARTMENT OF CSE • CODE CRAFTERS CLUB • 5TH FLOOR SEMINAR HALL • REGISTRATION DEADLINE: 02.10.2026
+          DEPARTMENT OF CSE • CODE CRAFTERS CLUB • 5TH FLOOR SEMINAR HALL • REGISTRATION DEADLINE: 04.10.2026 • REGISTRATION FEE: ₹150
         </span>
       </div>
     </div>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64" fill="none">
+  <defs>
+    <linearGradient id="replitGrad" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FF7A29"/>
+      <stop offset="100%" stop-color="#DE4A00"/>
+    </linearGradient>
+    <filter id="replitGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2.5" flood-color="#F26207" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+  <rect width="24" height="24" rx="6" fill="#1f130b" stroke="rgba(242, 98, 7, 0.4)" stroke-width="0.8"/>
+  <g fill="url(#replitGrad)" filter="url(#replitGlow)">
+    <!-- Top block -->
+    <path d="M2.5 3.5C2.5 2.67 3.17 2 4 2H11C11.83 2 12.5 2.67 12.5 3.5V8.5H4C3.17 8.5 2.5 7.83 2.5 7V3.5Z"/>
+    <!-- Middle-right block -->
+    <path d="M12.5 8.5H19.5C20.33 8.5 21 9.17 21 10V14C21 14.83 20.33 15.5 19.5 15.5H12.5V8.5Z"/>
+    <!-- Bottom block -->
+    <path d="M2.5 17C2.5 16.17 3.17 15.5 4 15.5H12.5V20.5C12.5 21.33 11.83 22 11 22H4C3.17 22 2.5 21.33 2.5 20.5V17Z"/>
+  </g>
+</svg>

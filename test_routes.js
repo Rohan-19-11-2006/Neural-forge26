@@ -27,12 +27,14 @@ const endpoints = [
   '/assets/doomsday_exact.png',
   '/assets/doomsday_widescreen.png',
   '/assets/AI_Hackathon_2026_Rulebook.docx',
+  '/assets/Neural_Forge_26_Rulebook.docx',
   '/assets/evil_eye_amulet.jpg',
   '/assets/official_poster_v2.jpg',
   '/assets/icon_venue.jpg',
   '/assets/icon_date.jpg',
   '/assets/icon_teamsize.jpg',
-  '/assets/icon_regfee.jpg'
+  '/assets/icon_regfee.jpg',
+  '/assets/avengers_title_transparent.png'
 ];
 
 async function checkEndpoint(path) {

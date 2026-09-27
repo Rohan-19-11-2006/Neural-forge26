@@ -22,7 +22,7 @@ const tests = [
   { name: 'FAQ contains exact answer content', pass:
     indexHtml.includes('Nebius Token Factory or Nebius AI Cloud') &&
     indexHtml.includes('at least one NVIDIA open-source AI model') &&
-    indexHtml.includes('registration fee of ₹100 per team') &&
+    indexHtml.includes('registration fee of ₹150 per team') &&
     indexHtml.includes('Technological Implementation, Design & UX, Potential Impact, and Quality of Idea')
   },
   { name: 'All FAQ cards start closed by default (opens on touch/click)', pass: !indexHtml.includes('faq-card active') },

@@ -4,6 +4,10 @@
   "description": "Neural Forge 26 Hackathon Portal",
   "private": true,
   "scripts": {
-    "start": "node serve.js"
+    "start": "node serve.js",
+    "build": "node scripts/build.js"
+  },
+  "devDependencies": {
+    "firebase-tools": "^15.31.0"
   }
 }

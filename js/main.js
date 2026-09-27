@@ -697,7 +697,7 @@
     }
 
     // 2. Single-Page Portal on index.html: Section Scroll Spy & Click Handling
-    const sectionIds = ['home', 'tracks', 'schedule', 'about'];
+    const sectionIds = ['home', 'prizes', 'tracks', 'schedule', 'about'];
     const sectionElements = sectionIds
       .map((id) => ({ id, el: document.getElementById(id) }))
       .filter((item) => item.el !== null);
@@ -1417,7 +1417,7 @@
           </div>
           <div class="poster-modal-footer">
             <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--secondary); text-align: center;">
-              DEPARTMENT OF CSE • CODE CRAFTERS CLUB • 5TH FLOOR SEMINAR HALL • REGISTRATION DEADLINE: 02.10.2026
+              DEPARTMENT OF CSE • CODE CRAFTERS CLUB • 5TH FLOOR SEMINAR HALL • REGISTRATION DEADLINE: 04.10.2026 • REGISTRATION FEE: ₹150
             </span>
           </div>
         </div>
@@ -1447,11 +1447,121 @@
     document.body.style.overflow = '';
   };
 
+  /* ===================================================================
+     REGISTRATION WINDOW & SLOT CONFIRMATION MODAL CONTROLLER
+     =================================================================== */
+  window.openRegistrationModal = function () {
+    let modal = document.getElementById('registration-modal');
+    if (!modal) {
+      // Dynamic self-healing injection: guarantees registration modal works on ANY page
+      modal = document.createElement('div');
+      modal.id = 'registration-modal';
+      modal.className = 'modal-overlay';
+      modal.onclick = function (e) {
+        if (e.target === this) window.closeRegistrationModal();
+      };
+      modal.innerHTML = `
+        <div class="registration-modal-card" role="dialog" aria-label="Hackathon Registration Window">
+          <div class="reg-modal-header">
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <div style="width: 38px; height: 38px; border-radius: 10px; background: rgba(74, 222, 128, 0.15); border: 1.5px solid rgba(74, 222, 128, 0.45); display: flex; align-items: center; justify-content: center; color: #4ade80;">
+                <span class="material-symbols-outlined" style="font-size: 22px;">how_to_reg</span>
+              </div>
+              <div>
+                <h3 style="font-family: 'Orbitron', var(--font-display); font-size: 1.15rem; font-weight: 800; color: #f8fafc; margin: 0; letter-spacing: 0.02em;">
+                  Registration Window
+                </h3>
+                <div class="mono-label" style="font-size: 0.7rem; color: #86efac; margin-top: 2px;">
+                  NEURAL FORGE '26 • CSE DEPT SRM TRP
+                </div>
+              </div>
+            </div>
+            <button type="button" class="track-unflip-btn" onclick="window.closeRegistrationModal();" title="Close Dialog">
+              <span class="material-symbols-outlined" style="font-size: 20px;">close</span>
+            </button>
+          </div>
+
+          <div class="reg-modal-body">
+            <!-- Timeline Dates Box -->
+            <div class="reg-dates-grid">
+              <div class="reg-date-box start-box">
+                <span class="reg-date-label">
+                  <span class="material-symbols-outlined" style="font-size: 16px;">calendar_month</span>
+                  REGISTRATION STARTS
+                </span>
+                <span class="reg-date-val">28 September 2026</span>
+                <span class="reg-date-sub">Portal Opens • Early Verification</span>
+              </div>
+
+              <div class="reg-date-box end-box">
+                <span class="reg-date-label">
+                  <span class="material-symbols-outlined" style="font-size: 16px;">event_busy</span>
+                  REGISTRATION ENDS
+                </span>
+                <span class="reg-date-val">4 October 2026</span>
+                <span class="reg-date-sub">11:59 PM IST • Strict Cutoff</span>
+              </div>
+            </div>
+
+            <!-- Urgent Slots Notice -->
+            <div class="reg-slots-notice">
+              <div class="reg-slots-badge">
+                <span class="pulse-dot" style="width: 7px; height: 7px; background: #fbbf24;"></span>
+                <span>LIMITED TEAM SLOTS • MAKE YOUR SLOTS</span>
+              </div>
+              <p class="reg-slots-text">
+                <strong>Make your slots early!</strong> Registration starts from <strong>28 September 2026</strong> and registration ends on <strong>4 October 2026</strong>. Limited team slots are available on a first-come, first-served basis. Make your slots or reserve your team's spot now before registrations close!
+              </p>
+            </div>
+
+            <!-- Actions: Register Now Opens Google Form -->
+            <div class="reg-modal-actions">
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSdPUSn6Qpd585HlKsup8jDA4SXCDRuiGuTqHe-YNZMvdJEjgA/viewform?usp=publish-editor"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 class="reg-btn-submit"
+                 id="reg-modal-gform-btn"
+                 onclick="window.closeRegistrationModal();">
+                <span>Register Now</span>
+                <span class="material-symbols-outlined" style="font-size: 20px;">open_in_new</span>
+              </a>
+              <button type="button" class="reg-btn-dismiss" onclick="window.closeRegistrationModal();">
+                Maybe later, close window
+              </button>
+            </div>
+          </div>
+        </div>
+      `;
+      document.body.appendChild(modal);
+    } else if (modal.parentElement !== document.body) {
+      document.body.appendChild(modal);
+    }
+
+    modal.classList.add('active');
+    modal.style.display = 'flex';
+    modal.style.opacity = '1';
+    modal.style.visibility = 'visible';
+    modal.style.pointerEvents = 'auto';
+    document.body.style.overflow = 'hidden';
+  };
+
+  window.closeRegistrationModal = function () {
+    const modal = document.getElementById('registration-modal');
+    if (!modal) return;
+    modal.classList.remove('active');
+    modal.style.opacity = '0';
+    modal.style.visibility = 'hidden';
+    modal.style.pointerEvents = 'none';
+    modal.style.display = '';
+    document.body.style.overflow = '';
+  };
+
   // Close modals when pressing Escape
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       if (typeof window.closeRulebookModal === 'function') window.closeRulebookModal();
       if (typeof window.closePosterLightbox === 'function') window.closePosterLightbox();
+      if (typeof window.closeRegistrationModal === 'function') window.closeRegistrationModal();
     }
   });
 
@@ -1464,6 +1574,22 @@
       e.preventDefault();
       e.stopPropagation();
       window.openPosterLightbox();
+      return;
+    }
+
+    // Global delegation: Clicks on any "Register Now" or registration CTA triggers the Registration Modal
+    if (e.target.closest('#reg-modal-gform-btn')) {
+      // Don't intercept: Allow direct navigation to the Google Form from inside the modal!
+      return;
+    }
+
+    const regTarget = e.target.closest(
+      '[data-action="open-registration"], .btn-register-trigger, [data-path="register"], a[href*="docs.google.com/forms"]'
+    );
+    if (regTarget) {
+      e.preventDefault();
+      e.stopPropagation();
+      window.openRegistrationModal();
     }
   });
 
@@ -1531,11 +1657,291 @@
     }
   }
 
+  /* ===================================================================
+     CINEMATIC OPENING INTRO VIDEO CONTROLLER (NEURAL FORGE '26)
+     - Controls playback, audio toggle, skip intro, time tracking & ESC key
+     - Provides window.playOpeningVideo(), window.closeOpeningVideo(), 
+       window.toggleOpeningAudio(), window.seekOpeningVideo()
+     =================================================================== */
+  function formatVideoTime(seconds) {
+    if (isNaN(seconds) || seconds < 0) return '0:00';
+    const mins = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+    return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+  }
+
+  function ensureOpeningVideoOverlayMarkup() {
+    let overlay = document.getElementById('opening-video-overlay');
+    if (!overlay) {
+      overlay = document.createElement('div');
+      overlay.id = 'opening-video-overlay';
+      overlay.className = 'opening-video-overlay';
+      overlay.setAttribute('aria-label', 'Neural Forge Opening Video');
+      overlay.innerHTML = `
+        <div class="opening-video-ambient-glow"></div>
+        <div class="opening-video-container" id="opening-video-wrapper" title="Click to Toggle Sound / Play">
+          <video
+            id="opening-video"
+            class="opening-video-player"
+            src="assets/opening_video.mp4"
+            playsinline
+            autoplay
+            muted
+            preload="auto">
+            Your browser does not support HTML5 video.
+          </video>
+        </div>
+        <div class="opening-video-vignette"></div>
+        <div class="opening-video-topbar">
+          <div class="opening-brand-badge">
+            <div class="opening-brand-logo-wrap">
+              <img src="assets/code_crafters_logo.png" alt="Code Crafters Club" class="opening-brand-logo">
+            </div>
+            <div class="opening-brand-meta">
+              <span class="opening-brand-title">NEURAL FORGE '26</span>
+              <span class="opening-brand-tagline">OFFICIAL HACKATHON TEASER</span>
+            </div>
+          </div>
+          <div class="opening-actions-group">
+            <button type="button" id="opening-audio-btn" class="opening-hud-btn audio-btn" aria-label="Toggle Sound" onclick="window.toggleOpeningAudio();">
+              <span class="material-symbols-outlined" id="opening-audio-icon" style="font-size: 18px;">volume_off</span>
+              <span id="opening-audio-label">Sound Off</span>
+            </button>
+            <button type="button" id="opening-skip-btn" class="opening-hud-btn skip-btn" aria-label="Skip Intro Video" onclick="window.closeOpeningVideo();">
+              <span>Skip Intro</span>
+              <span class="material-symbols-outlined" style="font-size: 18px;">fast_forward</span>
+              <kbd class="opening-key-hint">ESC</kbd>
+            </button>
+          </div>
+        </div>
+        <div class="opening-video-bottombar">
+          <div class="opening-progress-track" id="opening-progress-track" onclick="window.seekOpeningVideo(event);" title="Click to scrub timeline">
+            <div class="opening-progress-bar" id="opening-progress-bar"></div>
+          </div>
+          <div class="opening-status-row">
+            <div class="opening-hint-text">
+              <span class="pulse-dot" style="width: 6px; height: 6px; background: #4ade80;"></span>
+              <span id="opening-hint-label">Click video or "Sound Off" to unmute audio</span>
+            </div>
+            <div class="opening-time-display">
+              <span id="opening-time-current">0:00</span> / <span id="opening-time-duration">0:00</span>
+            </div>
+          </div>
+        </div>
+      `;
+      document.body.prepend(overlay);
+    }
+    return overlay;
+  }
+
+  function initOpeningVideoEngine() {
+    let overlay = document.getElementById('opening-video-overlay');
+    if (!overlay) return;
+
+    const video = document.getElementById('opening-video');
+    const audioBtn = document.getElementById('opening-audio-btn');
+    const audioIcon = document.getElementById('opening-audio-icon');
+    const audioLabel = document.getElementById('opening-audio-label');
+    const hintLabel = document.getElementById('opening-hint-label');
+    const progressBar = document.getElementById('opening-progress-bar');
+    const timeCurrent = document.getElementById('opening-time-current');
+    const timeDuration = document.getElementById('opening-time-duration');
+    const videoWrapper = document.getElementById('opening-video-wrapper');
+
+    if (!video) return;
+
+    function updateAudioUI(isMuted) {
+      if (!audioBtn) return;
+      if (isMuted) {
+        audioBtn.classList.remove('unmuted');
+        if (audioIcon) audioIcon.textContent = 'volume_off';
+        if (audioLabel) audioLabel.textContent = 'Sound Off';
+        if (hintLabel) hintLabel.textContent = 'Click video or "Sound Off" to unmute audio';
+      } else {
+        audioBtn.classList.add('unmuted');
+        if (audioIcon) audioIcon.textContent = 'volume_up';
+        if (audioLabel) audioLabel.textContent = 'Sound On';
+        if (hintLabel) hintLabel.textContent = 'Audio active • Enjoy the teaser';
+      }
+    }
+
+    window.toggleOpeningAudio = function () {
+      const vid = document.getElementById('opening-video');
+      if (!vid) return;
+      vid.muted = !vid.muted;
+      updateAudioUI(vid.muted);
+    };
+
+    window.seekOpeningVideo = function (e) {
+      const vid = document.getElementById('opening-video');
+      if (!vid || !vid.duration) return;
+      const track = document.getElementById('opening-progress-track');
+      if (!track) return;
+      const rect = track.getBoundingClientRect();
+      const clickPos = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+      vid.currentTime = clickPos * vid.duration;
+    };
+
+    window.closeOpeningVideo = function () {
+      const targetOverlay = document.getElementById('opening-video-overlay');
+      if (!targetOverlay) return;
+      targetOverlay.classList.add('closing');
+      document.body.style.overflow = '';
+
+      try {
+        sessionStorage.setItem('nf26_intro_played', 'true');
+      } catch (err) {}
+
+      setTimeout(() => {
+        targetOverlay.classList.add('hidden');
+        targetOverlay.classList.remove('closing');
+        const vid = document.getElementById('opening-video');
+        if (vid) {
+          vid.pause();
+          vid.currentTime = 0;
+        }
+      }, 750);
+    };
+
+    window.playOpeningVideo = function (withSound) {
+      const targetOverlay = ensureOpeningVideoOverlayMarkup();
+      const vid = document.getElementById('opening-video');
+      if (!vid) return;
+
+      targetOverlay.classList.remove('hidden', 'closing');
+      document.body.style.overflow = 'hidden';
+      vid.currentTime = 0;
+
+      if (withSound) {
+        vid.muted = false;
+        updateAudioUI(false);
+        const playPromise = vid.play();
+        if (playPromise !== undefined) {
+          playPromise.catch(() => {
+            // Autoplay unmuted restriction fallback
+            vid.muted = true;
+            updateAudioUI(true);
+            vid.play().catch(() => {});
+          });
+        }
+      } else {
+        vid.muted = true;
+        updateAudioUI(true);
+        vid.play().catch(() => {});
+      }
+    };
+
+    // Video events
+    video.addEventListener('loadedmetadata', () => {
+      if (timeDuration) timeDuration.textContent = formatVideoTime(video.duration);
+    });
+
+    video.addEventListener('timeupdate', () => {
+      if (video.duration) {
+        const pct = (video.currentTime / video.duration) * 100;
+        if (progressBar) progressBar.style.width = `${pct}%`;
+        if (timeCurrent) timeCurrent.textContent = formatVideoTime(video.currentTime);
+      }
+    });
+
+    video.addEventListener('ended', () => {
+      window.closeOpeningVideo();
+    });
+
+    // Clicking the video screen directly toggles audio or unmutes
+    if (videoWrapper) {
+      videoWrapper.addEventListener('click', (e) => {
+        if (e.target.closest('.opening-video-topbar') || e.target.closest('.opening-video-bottombar')) return;
+        window.toggleOpeningAudio();
+      });
+    }
+
+    // Keyboard ESC, Space, and M key handling
+    window.addEventListener('keydown', (e) => {
+      const currentOverlay = document.getElementById('opening-video-overlay');
+      if (!currentOverlay || currentOverlay.classList.contains('hidden') || currentOverlay.classList.contains('closing')) return;
+
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        window.closeOpeningVideo();
+      } else if (e.key === ' ' || e.key === 'Spacebar') {
+        e.preventDefault();
+        const vid = document.getElementById('opening-video');
+        if (vid) {
+          if (vid.paused) {
+            vid.play();
+          } else {
+            vid.pause();
+          }
+        }
+      } else if (e.key && e.key.toLowerCase() === 'm') {
+        e.preventDefault();
+        window.toggleOpeningAudio();
+      }
+    });
+
+    // Title Style Switcher
+    window.switchTitleStyle = function (styleId) {
+      const buttons = document.querySelectorAll('.style-choice-btn');
+      const panels = document.querySelectorAll('.title-variant-panel');
+
+      buttons.forEach(btn => {
+        if (btn.getAttribute('data-style') === styleId) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+
+      panels.forEach(panel => {
+        if (panel.id === `title-${styleId}`) {
+          panel.classList.add('active');
+        } else {
+          panel.classList.remove('active');
+        }
+      });
+
+      try {
+        localStorage.setItem('nf26_title_style', styleId);
+      } catch (e) {}
+    };
+
+    function initTitleStyleSwitcher() {
+      let savedStyle = 'style-2';
+      try {
+        const stored = localStorage.getItem('nf26_title_style');
+        if (stored) savedStyle = stored;
+      } catch (e) {}
+      window.switchTitleStyle(savedStyle);
+    }
+
+    // Start video on page load
+    document.body.style.overflow = 'hidden';
+    const initialPlay = video.play();
+    if (initialPlay !== undefined) {
+      initialPlay.catch((err) => {
+        console.log('Video autoplay initial wait:', err);
+      });
+    }
+  }
+
   // Initialize on load
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', ensureHangingEyeRig);
+    document.addEventListener('DOMContentLoaded', () => {
+      ensureHangingEyeRig();
+      initOpeningVideoEngine();
+      if (typeof window.switchTitleStyle === 'function') {
+        const stored = localStorage.getItem('nf26_title_style') || 'style-2';
+        window.switchTitleStyle(stored);
+      }
+    });
   } else {
     ensureHangingEyeRig();
+    initOpeningVideoEngine();
+    if (typeof window.switchTitleStyle === 'function') {
+      const stored = localStorage.getItem('nf26_title_style') || 'style-2';
+      window.switchTitleStyle(stored);
+    }
   }
 })();
 

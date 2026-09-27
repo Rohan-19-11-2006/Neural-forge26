@@ -1,1 +1,8 @@
 .vercel
+node_modules
+dist/
+.firebase/
+scratch/
+scripts/login_*.json
+scripts/login_url.txt
+firebase-debug.log*
