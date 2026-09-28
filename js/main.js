@@ -1417,7 +1417,7 @@
           </div>
           <div class="poster-modal-footer">
             <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--secondary); text-align: center;">
-              DEPARTMENT OF CSE • CODE CRAFTERS CLUB • 5TH FLOOR SEMINAR HALL • REGISTRATION DEADLINE: 04.10.2026 • REGISTRATION FEE: ₹150
+              DEPARTMENT OF CSE • CODE CRAFTERS CLUB • 5TH FLOOR SEMINAR HALL • REGISTRATION DEADLINE: 04.10.2026 • REGISTRATION FEE: ₹100
             </span>
           </div>
         </div>
