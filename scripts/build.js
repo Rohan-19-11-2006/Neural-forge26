@@ -40,3 +40,4 @@ dirsToCopy.forEach(dir => {
 });
 
 console.log('Production build successfully generated in ./dist');
+
