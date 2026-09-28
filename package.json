@@ -9,5 +9,8 @@
   },
   "devDependencies": {
     "firebase-tools": "^15.31.0"
+  },
+  "dependencies": {
+    "jimp": "^1.6.1"
   }
 }
